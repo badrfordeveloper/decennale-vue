@@ -8,17 +8,34 @@ export const useFormStore = defineStore('form', {
     currentStep: 1,
     formData: {
       step1: {
-        type_habitation: '',
-        assured: '',
+        profession:  "",
+        siren:  "",
+        nom_entreprise:  "",
+        type:"",
+        adresse: "",
+        code_postal:  "",
+        ville:  "",
+        mobile:  "",
+        mail: "",
+        nombre_salaries: "",
+        chiffre_affaires:  "",
+        date_creation: "",
+        nom_dirigeant: "",
+        date_naissance: "",
       },
       step2: {
-        qualiteAssure: 'LOCATAIRE_OCCUPANT',
-        appartement_situe: '',
-        nbrEtageImmb: '',
-        specification: '',
-        zipcode: '',
-        codePostal: '',
-        ville: '',
+        deja_assure: '',
+        assureur : {
+            annee: '',
+            en_cours: '',
+            date_resiliation: '',
+            nom: '',
+            nombre_sinistre: '',
+            montant_sinistre: '',
+            non_paiement: '',
+            arriere: '',
+            fausse_declaration: '',
+        }
       },
       step3: {
         type_residence: 'RESIDENCE_PRINCIPALE',
@@ -279,6 +296,7 @@ export const useFormStore = defineStore('form', {
       }
     },
     updateStepData(step, data) {
+      console.log(data);
       if(step == "tarifs" || step == "selectedTarifOptions" || step == "dependecies" ){
         this.formData[step]=[];
       }
