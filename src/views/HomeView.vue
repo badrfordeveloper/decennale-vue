@@ -235,9 +235,7 @@
                 </div>
                 <div class="lp-hero_image-wrapper">
                   <div data-format="landscape" class="lp-feature_image-wrap">
-                    <img loading="lazy" alt=""
-                      src="../assets/images/decennale.png"
-                      class="lp-feature_image is-lp" />
+                    <img loading="lazy" alt="" src="../assets/images/decennale.png" class="lp-feature_image is-lp" />
                   </div>
                 </div>
               </div>
@@ -250,6 +248,77 @@
             class="circle_background_linear"></div>
         </div>
       </div>
+      <section class="section">
+        <div class="spacer-large" bis_skin_checked="1"></div>
+        <div class="spacer-large" bis_skin_checked="1"></div>
+        <div class="container">
+          <div class="text-align-center">
+            <h2 class="h3">Nos partenaires</h2>
+          </div>
+          <div class="partenaire_component" bis_skin_checked="1">
+            <div class="margin-top margin-custom1" bis_skin_checked="1">
+              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list" bis_skin_checked="1">
+                <div role="list" class="partenaires_list-items w-dyn-items" bis_skin_checked="1">
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire1.png"
+                        loading="eager" alt="partenaire1" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire2.png"
+                        loading="eager" alt="partenaire2" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire3.png"
+                        loading="eager" alt="partenaire3" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire4.png"
+                        loading="eager" alt="partenaire4" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire5.png"
+                        loading="eager" alt="partenaire5" class="logo-partenaire"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="partenaire_component w-condition-invisible" bis_skin_checked="1">
+            <div class="margin-top margin-custom1" bis_skin_checked="1">
+              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list" bis_skin_checked="1">
+                <div role="list" class="partenaires_list-items w-dyn-items" bis_skin_checked="1">
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/6570814eda3c2afc09449e2b_LOGOBIOBURGER.webp"
+                        loading="eager" alt="Bioburger" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657082796f50e4b444fed815_LOGOBRIGADE.webp"
+                        loading="eager" alt="la brigade" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65708163f7ba342d20442f8f_LOGOBLEND.webp"
+                        loading="eager" alt="blend" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657081700c28a8d6019d3775_LOGOOTACOS.webp"
+                        loading="eager" alt="o tacos" class="logo-partenaire"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spacer-large" bis_skin_checked="1"></div>
+      </section>
       <section class="section">
         <div class="padding-section-64">
           <div class="container">
