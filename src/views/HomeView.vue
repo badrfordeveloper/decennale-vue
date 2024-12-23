@@ -234,40 +234,8 @@
                   </div>
                 </div>
                 <div class="lp-hero_image-wrapper">
-                  <div data-format="portrait" class="lp-feature_image-wrap">
-                    <img loading="lazy" alt=""
-                      src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65ef164cc6c648bfaa4adccb_65ef0bc1dbf3c550d0da31f5_artisan.webp"
-                      class="lp-feature_image is-lp" />
-                  </div>
-                  <div class="widget-wrapper">
-                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
-                      <g id="Logo Orus" clip-path="url(#clip0_1239_5843)">
-                        <g id="Background">
-                          <path fill="#fff"
-                            d="M32 18.176c0 5.76 0 8.64-1.467 10.658a7.68 7.68 0 0 1-1.699 1.7C26.815 32 23.936 32 18.176 32h-4.352c-5.76 0-8.64 0-10.658-1.467a7.68 7.68 0 0 1-1.7-1.699C0 26.815 0 23.936 0 18.176v-4.352c0-5.76 0-8.64 1.467-10.658a7.68 7.68 0 0 1 1.699-1.7C5.185 0 8.064 0 13.824 0h4.352c5.76 0 8.64 0 10.658 1.467a7.68 7.68 0 0 1 1.7 1.699C32 5.185 32 8.064 32 13.824v4.352Z">
-                          </path>
-                          <path fill="#DFD6F5" fill-opacity=".5"
-                            d="M32 18.176c0 5.76 0 8.64-1.467 10.658a7.68 7.68 0 0 1-1.699 1.7C26.815 32 23.936 32 18.176 32h-4.352c-5.76 0-8.64 0-10.658-1.467a7.68 7.68 0 0 1-1.7-1.699C0 26.815 0 23.936 0 18.176v-4.352c0-5.76 0-8.64 1.467-10.658a7.68 7.68 0 0 1 1.699-1.7C5.185 0 8.064 0 13.824 0h4.352c5.76 0 8.64 0 10.658 1.467a7.68 7.68 0 0 1 1.7 1.699C32 5.185 32 8.064 32 13.824v4.352Z">
-                          </path>
-                        </g>
-                        <g id="Submark Orus Foreground">
-                          <path id="Orus" fill="#01044A"
-                            d="M12.08 11.263c-2.552 2.574-3.906 6.712-4.064 12.414a1.123 1.123 0 0 0 1.132 1.147h5.864a1.18 1.18 0 0 0 1.168-1.148c.114-3.195.72-5.486 1.82-6.873 1.077-1.351 2.684-2.126 4.824-2.323.631-.059 1.147-.565 1.147-1.198V8.294c0-.634-.515-1.15-1.149-1.124-4.645.19-8.226 1.554-10.742 4.093Z">
-                          </path>
-                        </g>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_1239_5843">
-                          <path fill="#fff" d="M0 0h32v32H0z"></path>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <div>
-                      <strong class="text-weight-medium">
-                        Votre attestation est disponible<br />
-                      </strong>
-                      Et voilà, vous êtes assuré 🎉
-                    </div>
+                  <div data-format="landscape" class="lp-feature_image-wrap">
+                    <img loading="lazy" alt="" src="../assets/images/decennale.png" class="lp-feature_image is-lp" />
                   </div>
                 </div>
               </div>
@@ -280,6 +248,77 @@
             class="circle_background_linear"></div>
         </div>
       </div>
+      <section class="section">
+        <div class="spacer-large" bis_skin_checked="1"></div>
+        <div class="spacer-large" bis_skin_checked="1"></div>
+        <div class="container">
+          <div class="text-align-center">
+            <h2 class="h3">Nos partenaires</h2>
+          </div>
+          <div class="partenaire_component" bis_skin_checked="1">
+            <div class="margin-top margin-custom1" bis_skin_checked="1">
+              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list" bis_skin_checked="1">
+                <div role="list" class="partenaires_list-items w-dyn-items" bis_skin_checked="1">
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire1.png"
+                        loading="eager" alt="partenaire1" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire2.png"
+                        loading="eager" alt="partenaire2" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire3.png"
+                        loading="eager" alt="partenaire3" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire4.png"
+                        loading="eager" alt="partenaire4" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="../assets/images/partenaires/partenaire5.png"
+                        loading="eager" alt="partenaire5" class="logo-partenaire"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="partenaire_component w-condition-invisible" bis_skin_checked="1">
+            <div class="margin-top margin-custom1" bis_skin_checked="1">
+              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list" bis_skin_checked="1">
+                <div role="list" class="partenaires_list-items w-dyn-items" bis_skin_checked="1">
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/6570814eda3c2afc09449e2b_LOGOBIOBURGER.webp"
+                        loading="eager" alt="Bioburger" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657082796f50e4b444fed815_LOGOBRIGADE.webp"
+                        loading="eager" alt="la brigade" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65708163f7ba342d20442f8f_LOGOBLEND.webp"
+                        loading="eager" alt="blend" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
+                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657081700c28a8d6019d3775_LOGOOTACOS.webp"
+                        loading="eager" alt="o tacos" class="logo-partenaire"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spacer-large" bis_skin_checked="1"></div>
+      </section>
       <section class="section">
         <div class="padding-section-64">
           <div class="container">
