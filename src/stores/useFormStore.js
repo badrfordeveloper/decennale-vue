@@ -38,9 +38,10 @@ export const useFormStore = defineStore('form', {
         }
       },
       step3: {
-        type_residence: 'RESIDENCE_PRINCIPALE',
-        nbr_pieces_principales: '',
-        surface_habitable: '',
+        chantiers_sous_traitance: '',
+        reprise_un_annee: '',
+        redressement_judiciaire: '',
+        diplomes_batiment: '',
       },
       step4: {
         selectedOptions: [],
