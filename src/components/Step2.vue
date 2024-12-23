@@ -10,9 +10,9 @@
                             <div class="btn-group formIconContainer miniClass" role="group"
                                 aria-label="Basic radio toggle button group">
                                 <input type="radio" class="btn-check resilie_par_assureur3ans"
-                                    name="resilie_par_assureur3ans" id="resnon" value="NON"
+                                    name="deja_assure" id="deja_assure_non" value="NON"
                                     v-model="formData.deja_assure">
-                                <label class="btn btn-outline-primary iconLabel" for="resnon">
+                                <label class="btn btn-outline-primary iconLabel" for="deja_assure_non">
                                     <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
                                             width="15" height="15" alt="checked"></div>
                                     <div class="twoBtns">Non</div>
@@ -23,9 +23,9 @@
                             <div class="btn-group formIconContainer miniClass" role="group"
                                 aria-label="Basic radio toggle button group">
                                 <input type="radio" class="btn-check resilie_par_assureur3ans"
-                                    name="resilie_par_assureur3ans" id="resoui" value="OUI"
+                                    name="deja_assure" id="deja_assure_oui" value="OUI"
                                     v-model="formData.deja_assure">
-                                <label class="btn btn-outline-primary iconLabel" for="resoui">
+                                <label class="btn btn-outline-primary iconLabel" for="deja_assure_oui">
                                     <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
                                             width="15" height="15" alt="checked"></div>
                                     <div class="twoBtns">Oui</div>
@@ -37,12 +37,179 @@
                 </div>
             </div>
 
+            <div class="col-12 ">
+                <label class="formLabel mb-2"> Nombre d'années d'assurance
+                </label>
+                <input type="number" v-model="formData.assureur.annee" class="form-control">
+            </div>
+
+            <div class="col-12">
+                <label class="formLabel mb-3" for="resiliation">Votre contrat est-il en cours</label>
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="btn-group formIconContainer miniClass" role="group"
+                                aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check resilie_par_assureur3ans"
+                                    name="en_cours" id="en_cours_non" value="NON"
+                                    v-model="formData.assureur.en_cours">
+                                <label class="btn btn-outline-primary iconLabel" for="en_cours_non">
+                                    <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
+                                            width="15" height="15" alt="checked"></div>
+                                    <div class="twoBtns">Non</div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="btn-group formIconContainer miniClass" role="group"
+                                aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check resilie_par_assureur3ans"
+                                    name="en_cours" id="en_cours_oui" value="OUI"
+                                    v-model="formData.assureur.en_cours">
+                                <label class="btn btn-outline-primary iconLabel" for="en_cours_oui">
+                                    <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
+                                            width="15" height="15" alt="checked"></div>
+                                    <div class="twoBtns">Oui</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-6 ">
+                <label class="formLabel mb-2"> Date de résiliation de votre dernier contrat
+                </label>
+                <input type="date" v-model="formData.assureur.date_resiliation" class="form-control">
+            </div>
+
+            <div class="col-6 ">
+                <label class="formLabel mb-2"> Nom de l'ancienne compagnie
+                </label>
+                <input type="text" v-model="formData.assureur.nom" class="form-control">
+            </div>
+            <div class="col-6 ">
+                <label class="formLabel mb-2"> Nombre de sinistres déclarés sur 36 mois
+                </label>
+                <input type="number" v-model="formData.assureur.nombre_sinistre" class="form-control">
+            </div>
+            <div class="col-6 ">
+                <label class="formLabel mb-2"> Montant des sinistres déclarés sur 36 mois
+                </label>
+                <input type="number" v-model="formData.assureur.montant_sinistre" class="form-control">
+            </div>
+            <div class="col-12">
+                <label class="formLabel mb-3" for="resiliation">Votre ancien contrat a-t'il-été résilié pour
+                    non-paiement</label>
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="btn-group formIconContainer miniClass" role="group"
+                                aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check resilie_par_assureur3ans"
+                                    name="non_paiement" id="non_paiement_non" value="NON"
+                                    v-model="formData.assureur.non_paiement">
+                                <label class="btn btn-outline-primary iconLabel" for="non_paiement_non">
+                                    <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
+                                            width="15" height="15" alt="checked"></div>
+                                    <div class="twoBtns">Non</div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="btn-group formIconContainer miniClass" role="group"
+                                aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check resilie_par_assureur3ans"
+                                    name="non_paiement" id="non_paiement_oui" value="OUI"
+                                    v-model="formData.assureur.non_paiement">
+                                <label class="btn btn-outline-primary iconLabel" for="non_paiement_oui">
+                                    <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
+                                            width="15" height="15" alt="checked"></div>
+                                    <div class="twoBtns">Oui</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label class="formLabel mb-3" for="resiliation">Si oui, avez-vous réglé l’arriéré à la compagnie</label>
+                        <div class="container-fluid p-0">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="btn-group formIconContainer miniClass" role="group"
+                                        aria-label="Basic radio toggle button group">
+                                        <input type="radio" class="btn-check resilie_par_assureur3ans"
+                                            name="arriere" id="arriere_non" value="NON"
+                                            v-model="formData.assureur.arriere">
+                                        <label class="btn btn-outline-primary iconLabel" for="arriere_non">
+                                            <div class="text-end checkedLabel"><img
+                                                    src="../assets/icons/checkedicon.svg" width="15" height="15"
+                                                    alt="checked"></div>
+                                            <div class="twoBtns">Non</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="btn-group formIconContainer miniClass" role="group"
+                                        aria-label="Basic radio toggle button group">
+                                        <input type="radio" class="btn-check resilie_par_assureur3ans"
+                                            name="arriere" id="arriere_oui" value="OUI"
+                                            v-model="formData.assureur.arriere">
+                                        <label class="btn btn-outline-primary iconLabel" for="arriere_oui">
+                                            <div class="text-end checkedLabel"><img
+                                                    src="../assets/icons/checkedicon.svg" width="15" height="15"
+                                                    alt="checked"></div>
+                                            <div class="twoBtns">Oui</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="formLabel mb-3" for="resiliation">Votre ancien contrat a-t'il-été résilié pour fausse déclaration</label>
+                        <div class="container-fluid p-0">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="btn-group formIconContainer miniClass" role="group"
+                                        aria-label="Basic radio toggle button group">
+                                        <input type="radio" class="btn-check resilie_par_assureur3ans"
+                                            name="fausse_declaration" id="fausse_declaration_non" value="NON"
+                                            v-model="formData.assureur.fausse_declaration">
+                                        <label class="btn btn-outline-primary iconLabel" for="fausse_declaration_non">
+                                            <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
+                                                    width="15" height="15" alt="checked"></div>
+                                            <div class="twoBtns">Non</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="btn-group formIconContainer miniClass" role="group"
+                                        aria-label="Basic radio toggle button group">
+                                        <input type="radio" class="btn-check resilie_par_assureur3ans"
+                                            name="fausse_declaration" id="fausse_declaration_oui" value="OUI"
+                                            v-model="formData.assureur.fausse_declaration">
+                                        <label class="btn btn-outline-primary iconLabel" for="fausse_declaration_oui">
+                                            <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
+                                                    width="15" height="15" alt="checked"></div>
+                                            <div class="twoBtns">Oui</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-12 mt-0">
                 <div class="container-fluid p-0">
                     <div class="row align-items-center">
                         <div class="col-12">
                             <button type="submit"
-                                class="navBtn nextBtn mt-4 flex justify-center align-items-center">Étape suivante <img
+                                class="navBtn nextBtn mt-4 d-flex justify-content-center align-items-center">Étape suivante <img
                                     src="../assets/icons/arrow-next.svg" alt="suivant" class="ms-3 img-fluid"></button>
                         </div>
                         <div class="col-12 text-center">
@@ -78,78 +245,16 @@ const formData = reactive({
     }
 })
 
-const allCities = ref([])
-const filteredCities = ref([])
-const showVillesCp = ref(false)
-const showErrorMsg = ref(false)
 
-const toutesOptions = {
-    RDC: "Au rez-de-chaussée",
-    INTERMEDIAIRE: "À un étage intermédiaire",
-    DERNIER: "Au dernier étage",
-};
 
-const options = computed(() => {
-    if (formData.nbrEtageImmb === 0) {
-        return { RDC: toutesOptions.RDC, DERNIER: toutesOptions.DERNIER };
-    } else if (formData.nbrEtageImmb > 1) {
-        return toutesOptions;
-    } else {
-        return { RDC: toutesOptions.RDC, DERNIER: toutesOptions.DERNIER };
-    }
-});
-
-const isMaison = computed(() => {
-    return formStore.formData.step1.type_habitation == "MAISON_INDIVIDUELLE";
-});
-
-const updateOptions = () => {
-    if (!Object.keys(options.value).includes(formData.appartement_situe)) {
-        formData.appartement_situe = Object.keys(options.value)[0];
-    }
-};
 
 function submitStep() {
-    if (showErrorMsg.value == false && String(formData.codePostal).length == 5) {
-        formStore.updateStepData('step2', formData);
-        formStore.nextStep();
-    } else {
-        showErrorMsg.value = true;
-        showVillesCp.value = false;
-    }
+    formStore.updateStepData('step2', formData);
+    formStore.nextStep();
 }
 
-const onVilleCpSearchKeyup = async () => {
-    const pressedKey = formData.zipcode.trim();
-    if (pressedKey && pressedKey.length >= 3) {
-        await getVilleZip(pressedKey);
-        showErrorMsg.value = false;
-    } else {
-        showErrorMsg.value = pressedKey.length === 0 ? false : true;
-        showVillesCp.value = false;
-    }
 
-}
-function selectCpVille(cp, ville) {
-    formData.zipcode = `${cp} ${ville}`;
-    formData.codePostal = cp;
-    formData.ville = ville;
-    showVillesCp.value = false;
-}
-async function getVilleZip(query) {
-    try {
-        const response = await fetch('/Villes.json');
-        const data = await response.json();
-        allCities.value = data;
-        filteredCities.value = allCities.value.filter(city => String(city.code_postal).includes(query) || city.code_postal == query || city.commune.toLowerCase().includes(query.toLowerCase()));
-        showVillesCp.value = filteredCities.value.length > 0;
-        showErrorMsg.value = filteredCities.value.length === 0;
-    } catch (error) {
-        console.error("Error fetching city data:", error);
-        showErrorMsg.value = true;
-        showVillesCp.value = false;
-    }
-}
+
 </script>
 <style scoped>
 .villeSearchResult,
