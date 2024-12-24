@@ -94,7 +94,7 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import allActivities from "@/assets/activities.json";
-import { useFormStore } from '@/stores/useFormStore';
+import { useFormStore } from "@/stores/useFormStore";
 
 const searchTerm = ref("");
 const activities = ref(allActivities);
@@ -109,11 +109,21 @@ const selectedActivityNames = computed(() =>
 );
 
 onMounted(() => {
+  initializeSelectedActivities();
   showInitialActivities();
 });
 
 function showInitialActivities() {
-  filteredActivities.value = activities.value.slice(0, 5);
+  if (selectedActivities.value.length === 0) {
+    filteredActivities.value = activities.value.slice(0, 5);
+  }
+}
+
+function initializeSelectedActivities() {
+  const storedActivities = formStore.formData?.step5 || [];
+  selectedActivities.value = storedActivities.map(name =>
+    activities.value.find(activity => activity.name === name)
+  ).filter(Boolean); 
 }
 
 function filterActivities() {
