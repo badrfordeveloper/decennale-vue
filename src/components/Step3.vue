@@ -34,6 +34,9 @@
           </div>
 
         </div>
+
+        <ErrorComponent v-if="$v.chantiers_sous_traitance.$error" :errors="$v.chantiers_sous_traitance.$errors" />
+
       </div>
 
       <div class="col-12">
@@ -67,6 +70,8 @@
           </div>
 
         </div>
+        <ErrorComponent v-if="$v.reprise_un_annee.$error" :errors="$v.reprise_un_annee.$errors" />
+
       </div>
 
       <div class="col-12">
@@ -100,6 +105,8 @@
           </div>
 
         </div>
+        <ErrorComponent v-if="$v.redressement_judiciaire.$error" :errors="$v.redressement_judiciaire.$errors" />
+
       </div>
 
       <div class="col-12">
@@ -133,6 +140,8 @@
           </div>
 
         </div>
+        <ErrorComponent v-if="$v.diplomes_batiment.$error" :errors="$v.diplomes_batiment.$errors" />
+
       </div>
       
       
@@ -156,8 +165,12 @@
 import BonASavoir from '../components/BonASavoir.vue';
 import { useFormStore } from '@/stores/useFormStore';
 import { ref, reactive, computed } from 'vue';
+import useVuelidate from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
+
 import { VueSpinner } from 'vue3-spinners';
 import { toast } from 'vue3-toastify';
+
 import axios from 'axios';
 
 const formStore = useFormStore();
@@ -168,11 +181,21 @@ const formData = reactive({
   redressement_judiciaire: step3Data.step3.redressement_judiciaire,
   diplomes_batiment: step3Data.step3.diplomes_batiment,
 })
+const rules = {
+    chantiers_sous_traitance: { required },
+    reprise_un_annee: { required },
+    redressement_judiciaire:{ required },
+    diplomes_batiment: { required },
+};
 
+const $v = useVuelidate(rules, formData);
 
 async function submitStep() {
-    formStore.updateStepData('step3', formData);
-    formStore.nextStep();
+  $v.value.$touch(); // Mark all fields as touched
+    if (!$v.value.$invalid) {
+      formStore.updateStepData('step3', formData);
+      formStore.nextStep();
+    }
 }
 
 </script>

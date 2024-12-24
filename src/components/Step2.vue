@@ -35,12 +35,17 @@
                     </div>
 
                 </div>
+
+                <ErrorComponent v-if="$v.deja_assure.$error" :errors="$v.deja_assure.$errors" />
+
             </div>
 
             <div class="col-12 ">
                 <label class="formLabel mb-2"> Nombre d'années d'assurance
                 </label>
                 <input type="number" v-model="formData.assureur.annee" class="form-control">
+                <ErrorComponent v-if="$v.assureur.annee.$error" :errors="$v.assureur.annee.$errors" />
+
             </div>
 
             <div class="col-12">
@@ -76,27 +81,37 @@
                     </div>
 
                 </div>
+                <ErrorComponent v-if="$v.assureur.en_cours.$error" :errors="$v.assureur.en_cours.$errors" />
+
             </div>
             <div class="col-6 ">
                 <label class="formLabel mb-2"> Date de résiliation de votre dernier contrat
                 </label>
                 <input type="date" v-model="formData.assureur.date_resiliation" class="form-control">
+                <ErrorComponent v-if="$v.assureur.date_resiliation.$error" :errors="$v.assureur.date_resiliation.$errors" />
+
             </div>
 
             <div class="col-6 ">
                 <label class="formLabel mb-2"> Nom de l'ancienne compagnie
                 </label>
                 <input type="text" v-model="formData.assureur.nom" class="form-control">
+                <ErrorComponent v-if="$v.assureur.nom.$error" :errors="$v.assureur.nom.$errors" />
+
             </div>
             <div class="col-6 ">
                 <label class="formLabel mb-2"> Nombre de sinistres déclarés sur 36 mois
                 </label>
                 <input type="number" v-model="formData.assureur.nombre_sinistre" class="form-control">
+                <ErrorComponent v-if="$v.assureur.nombre_sinistre.$error" :errors="$v.assureur.nombre_sinistre.$errors" />
+
             </div>
             <div class="col-6 ">
                 <label class="formLabel mb-2"> Montant des sinistres déclarés sur 36 mois
                 </label>
                 <input type="number" v-model="formData.assureur.montant_sinistre" class="form-control">
+                <ErrorComponent v-if="$v.assureur.montant_sinistre.$error" :errors="$v.assureur.montant_sinistre.$errors" />
+
             </div>
             <div class="col-12">
                 <label class="formLabel mb-3" for="resiliation">Votre ancien contrat a-t'il-été résilié pour
@@ -129,6 +144,8 @@
                                 </label>
                             </div>
                         </div>
+                        <ErrorComponent v-if="$v.assureur.non_paiement.$error" :errors="$v.assureur.non_paiement.$errors" />
+
                     </div>
                     <div class="col-12">
                         <label class="formLabel mb-3" for="resiliation">Si oui, avez-vous réglé l’arriéré à la compagnie</label>
@@ -162,6 +179,8 @@
                                         </label>
                                     </div>
                                 </div>
+                                <ErrorComponent v-if="$v.assureur.arriere.$error" :errors="$v.assureur.arriere.$errors" />
+
                             </div>
 
                         </div>
@@ -197,6 +216,8 @@
                                         </label>
                                     </div>
                                 </div>
+                                <ErrorComponent v-if="$v.assureur.fausse_declaration.$error" :errors="$v.assureur.fausse_declaration.$errors" />
+
                             </div>
 
                         </div>
@@ -226,7 +247,8 @@
 import BonASavoir from '../components/BonASavoir.vue';
 import { useFormStore } from '@/stores/useFormStore';
 import { ref, reactive, computed } from 'vue'
-
+import useVuelidate from '@vuelidate/core';
+import { required ,requiredIf} from '@vuelidate/validators';
 const formStore = useFormStore();
 const step2Data = formStore.getFormData;
 
@@ -245,12 +267,35 @@ const formData = reactive({
     }
 })
 
+const rules = {
+    deja_assure:  { required },
+    assureur: {
+        annee: { requiredIf : requiredIf(isDejaAssure) },
+        en_cours: { requiredIf : requiredIf(isDejaAssure) },
+        date_resiliation: { requiredIf : requiredIf(isDejaAssure) },
+        nom: { requiredIf : requiredIf(isDejaAssure) },
+        nombre_sinistre: { requiredIf : requiredIf(isDejaAssure) },
+        montant_sinistre:{ requiredIf : requiredIf(isDejaAssure) },
+        non_paiement: { requiredIf : requiredIf(isDejaAssure) },
+        arriere: { requiredIf : requiredIf(isDejaAssure) },
+        fausse_declaration: { requiredIf : requiredIf(isDejaAssure) },
+    }
 
+};
 
+const $v = useVuelidate(rules, formData);
+
+function isDejaAssure(){
+    return formData.deja_assure == "OUI"
+}
 
 function submitStep() {
-    formStore.updateStepData('step2', formData);
-    formStore.nextStep();
+    $v.value.$touch(); // Mark all fields as touched
+    if (!$v.value.$invalid) {
+        formStore.updateStepData('step2', formData);
+        formStore.nextStep();
+    }
+
 }
 
 
