@@ -45,6 +45,10 @@ export const useFormStore = defineStore('form', {
       step5: {
       },
       step6: {
+        date_effet: '',
+        franchise: '',
+        fractionnement: '',
+        observations_diverses: ''
       }
 
     },

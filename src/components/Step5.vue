@@ -120,10 +120,14 @@ function showInitialActivities() {
 }
 
 function initializeSelectedActivities() {
-  const storedActivities = formStore.formData?.step5 || [];
-  selectedActivities.value = storedActivities.map(name =>
-    activities.value.find(activity => activity.name === name)
-  ).filter(Boolean); 
+  const storedActivities = formStore.formData.step5;
+  if (!Array.isArray(storedActivities) || storedActivities.length === 0) {
+    showInitialActivities();
+    return;
+  }
+  selectedActivities.value = storedActivities
+    .map(name => activities.value.find(activity => activity.name === name))
+    .filter(Boolean);
 }
 
 function filterActivities() {
