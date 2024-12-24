@@ -10,8 +10,14 @@
                 </div>
             </div>
             <div class="row justify-content-md-center justify-content-lg-center m-0">
-                 <div class="col-3">
-                 </div>
+             
+                <div class="col-3">
+                    <div class="container-fluid pt-3">
+                        <h5 class="heading mb-4 fw-bold">Bienvenue chez nous !</h5>
+                        <p>Prêt à faire un pas vers vos objectifs ? Chaque clic ici peut être le début d'une grande aventure. Nous sommes là pour vous accompagner.</p>
+                        <p><img src="https://preview.colorlib.com/theme/bootstrap/contact-form-16/images/undraw-contact.svg" alt="Image" class="img-fluid"></p>
+                    </div>
+                </div>
                 <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
                     <div class="container-fluid p-0">
                         <Step1 v-if="formStore.currentStep === 1" />
@@ -109,7 +115,7 @@
     import Step4 from '../components/Step4.vue';
     import Step5 from '../components/Step5.vue';
     import Step6 from '../components/Step6.vue';
-    import Step7 from '../components/Step7.vue';
+    import Step7 from '../components/Step7OLD.vue';
     import MyHeader from '../components/header.vue';
     import { ref, onMounted } from 'vue'
     const formStore = useFormStore();

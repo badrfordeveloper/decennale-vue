@@ -8,6 +8,11 @@
     showModal.value = false;
   };
 
+  const clearLocalStorage = () => {
+    localStorage.clear();
+    console.log("LocalStorage cleared, starting a new devis.");
+  };
+  
   const faqItems = ref([
     {
       question: "Quels artisans doivent s’assurer avec une décennale ?",
@@ -157,7 +162,7 @@
                 </a>
               </div>
               <div class="nav-button-group">
-                <a href="/devis" class="nav-button-primary plausible-event-name--startquote w-inline-block">
+                <a href="/devis"  @click="clearLocalStorage" class="nav-button-primary plausible-event-name--startquote w-inline-block">
                   <div class="button-text hide-mobile-landscape">Mon devis en 3 minutes</div>
                   <div class="button-text show-mobile-landscape">Devis en 3 minutes</div>
                 </a>
@@ -550,7 +555,7 @@
                 <div class="button-text">09 72 88 01 01</div>
               </a>
               <a data-property-ctaText="Mon devis en 5 minutes" data-analytics="Cta Subscription Start Clicked"
-                data-property-position="Hero" data-property-pageName="Home" href="/devis"
+                data-property-position="Hero" data-property-pageName="Home" href="/devis" 
                 class="button-primary plausible-event-name--startquote w-inline-block">
                 <div class="button-text">Mon devis en 3 minutes</div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="arrow_cta">
