@@ -463,10 +463,14 @@ button.pusletooltip {
   font-size: 21px;
 }
 #formulaire {
-  padding: 40px 0;
+  padding: 10px 0;
+  /* background: url('./images/background-image.jpg') center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh; */
 }
 #header-bar {
-  padding: 6px 0;
+  padding: 0px;
 }
 @media (min-width: 576px) {
   .container, .container-sm {

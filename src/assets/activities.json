@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Garage",
+      "description": "A place for vehicle repairs.",
+      "includedGaranties": ["Repair tools", "Warranty service"],
+      "excludedGaranties": ["Third-party liability", "Home insurance"]
+    },
+    {
+      "name": "Garde d’enfants",
+      "description": "Childcare services.",
+      "includedGaranties": ["Child safety", "Education"],
+      "excludedGaranties": ["Transport", "Health coverage"]
+    },
+    {
+      "name": "enfants",
+      "description": "Childcare services.",
+      "includedGaranties": ["Child safety", "Education"],
+      "excludedGaranties": ["Transport", "Health coverage"]
+    },
+    {
+      "name": "ccants",
+      "description": "Childcare services.",
+      "includedGaranties": ["Child safety", "Education"],
+      "excludedGaranties": ["Transport", "Health coverage"]
+    },
+    {
+      "name": "ccGar",
+      "description": "Childcare services.",
+      "includedGaranties": ["Child safety", "Education"],
+      "excludedGaranties": ["Transport", "Health coverage"]
+    }
+  ]
+  

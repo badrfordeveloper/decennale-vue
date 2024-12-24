@@ -1,324 +1,371 @@
 <template>
-    <form @submit.prevent="submitStep">
-        <div class="row g-1 g-md-4">
-            <div class="col-12 mt-0 mb-3">
-                <h2 class="stepTitle mb-3">Equipements de votre logement</h2>
-                <p class="stepDescription mb-3 mb-md-0">
-                    Votre logement dispose-t-il des éléments ci-dessous ?
-                </p>
-            </div>
-            <label for="economique" class="formLabel">Dans ce logement, vous avez</label>
-            <div v-for="(option, index) in options" :key="index" class="col-4 mt-3 accomodation">
-                <div class="btn-group formIconContainer" role="group" aria-label="Basic radio toggle button group" v-if="!isAppartement || (option.id !== 'veranda' && option.id !== 'presencePicineOuTennis')">
-                    <input type="checkbox" class="btn-check" :id="option.id" :value="option.value"
-                        v-model="formData.selectedOptions" />
-                    <label class="btn btn-outline-primary iconLabel" :for="option.id">
-                        <div class="text-end checkedLabel">
-                            <img src="../assets/icons/checkedicon.svg" width="15" height="15" alt="checked">
-                        </div>
-                        <div class="btnImg">
-                            <img :src="option.icon" :alt="option.alt">
-                        </div>
-                        <div>{{ option.label }}</div>
-                    </label>
-                </div>
-            </div>
-            <div v-if="showPieceSup" class="col-12 mt-3 surfaceSup">
-                <label for="nbr_pieces_principales_sup30" class="formLabel mb-3">Nombre de pièces de plus de 30
-                    m²</label>
-                <div class="sufpiece">
-                    <input @input="updateNbrPieces" type="number" class="form-control" id="nbr_pieces_principales_sup30" placeholder="Ex : 5"
-                        v-model="formData.nbrPiecePrincipalePlus30m" />
-                </div>
-                <div class="errorMsg d-none">
-                    <div class="d-flex align-items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10.497" height="10.008"
-                            viewBox="0 0 10.497 10.008">
-                            <g id="Groupe_36" data-name="Groupe 36" transform="translate(-36 -597.573)">
-                                <g id="Page-1" transform="translate(30 591)">
-                                    <g id="Alert" transform="translate(5 5)">
-                                        <rect id="Rectangle" width="10" height="10" transform="translate(1 1.581)"
-                                            fill="none"></rect>
-                                        <path id="Path"
-                                            d="M-.476,2.145A.524.524,0,0,1-1,1.621v-2.1A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v2.1A.524.524,0,0,1-.476,2.145Z"
-                                            transform="translate(6.766 5.194)" fill="#f4627f"></path>
-                                        <path id="Path-2" data-name="Path"
-                                            d="M-.476.117A.524.524,0,0,1-1-.408V-.476A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v.068A.524.524,0,0,1-.476.117Z"
-                                            transform="translate(6.766 9.125)" fill="#f4627f"></path>
-                                        <path id="Path-3" data-name="Path"
-                                            d="M7.274,3a1.557,1.557,0,0,1,1.362.786l3.632,6.29a1.573,1.573,0,0,1-1.362,2.359H3.642A1.573,1.573,0,0,1,2.28,10.077l3.632-6.29A1.557,1.557,0,0,1,7.274,3Zm3.632,8.387a.524.524,0,0,0,.454-.786L7.728,4.31a.524.524,0,0,0-.908,0L3.188,10.6a.524.524,0,0,0,.454.786Z"
-                                            transform="translate(-0.983 -1.427)" fill="#f4627f"></path>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                        <p class="m-0 ms-2">Veuillez renseigner votre nom</p>
-                    </div>
-                </div>
-            </div>
-            <div v-if="showDepSup" class="col-12 mt-3 depSup">
-                <label for="nbr_dependances_sup30" class="formLabel mb-3">Nombre de dépendances de plus de 30 m²</label>
-                <div class="sufdep">
-                    <input @input="updateNbrPieces" type="number" class="form-control" id="nbr_dependances_sup30" placeholder="Ex : 5"
-                        v-model="formData.dependenceCount" />
-                </div>
-                <div class="errorMsg d-none">
-                    <div class="d-flex align-items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10.497" height="10.008"
-                            viewBox="0 0 10.497 10.008">
-                            <g id="Groupe_36" data-name="Groupe 36" transform="translate(-36 -597.573)">
-                                <g id="Page-1" transform="translate(30 591)">
-                                    <g id="Alert" transform="translate(5 5)">
-                                        <rect id="Rectangle" width="10" height="10" transform="translate(1 1.581)"
-                                            fill="none"></rect>
-                                        <path id="Path"
-                                            d="M-.476,2.145A.524.524,0,0,1-1,1.621v-2.1A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v2.1A.524.524,0,0,1-.476,2.145Z"
-                                            transform="translate(6.766 5.194)" fill="#f4627f"></path>
-                                        <path id="Path-2" data-name="Path"
-                                            d="M-.476.117A.524.524,0,0,1-1-.408V-.476A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v.068A.524.524,0,0,1-.476.117Z"
-                                            transform="translate(6.766 9.125)" fill="#f4627f"></path>
-                                        <path id="Path-3" data-name="Path"
-                                            d="M7.274,3a1.557,1.557,0,0,1,1.362.786l3.632,6.29a1.573,1.573,0,0,1-1.362,2.359H3.642A1.573,1.573,0,0,1,2.28,10.077l3.632-6.29A1.557,1.557,0,0,1,7.274,3Zm3.632,8.387a.524.524,0,0,0,.454-.786L7.728,4.31a.524.524,0,0,0-.908,0L3.188,10.6a.524.524,0,0,0,.454.786Z"
-                                            transform="translate(-0.983 -1.427)" fill="#f4627f"></path>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                        <p class="m-0 ms-2">Veuillez renseigner votre nom</p>
-                    </div>
-                </div>
-            </div>
-            <div v-if="showDepSup" class="col-12 mt-3 depSup">
-                <label for="surface_dependance" class="formLabel mb-3">Surface des dépendances en m<sup>2</sup></label>
-                <div class="sufm2">
-                    <input type="number" class="form-control" id="surface_dependance" placeholder="Ex : 5"
-                        v-model="formData.surfaceDependance" />
-                </div>
-                <div class="errorMsg d-none">
-                    <div class="d-flex align-items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10.497" height="10.008"
-                            viewBox="0 0 10.497 10.008">
-                            <g id="Groupe_36" data-name="Groupe 36" transform="translate(-36 -597.573)">
-                                <g id="Page-1" transform="translate(30 591)">
-                                    <g id="Alert" transform="translate(5 5)">
-                                        <rect id="Rectangle" width="10" height="10" transform="translate(1 1.581)"
-                                            fill="none"></rect>
-                                        <path id="Path"
-                                            d="M-.476,2.145A.524.524,0,0,1-1,1.621v-2.1A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v2.1A.524.524,0,0,1-.476,2.145Z"
-                                            transform="translate(6.766 5.194)" fill="#f4627f"></path>
-                                        <path id="Path-2" data-name="Path"
-                                            d="M-.476.117A.524.524,0,0,1-1-.408V-.476A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v.068A.524.524,0,0,1-.476.117Z"
-                                            transform="translate(6.766 9.125)" fill="#f4627f"></path>
-                                        <path id="Path-3" data-name="Path"
-                                            d="M7.274,3a1.557,1.557,0,0,1,1.362.786l3.632,6.29a1.573,1.573,0,0,1-1.362,2.359H3.642A1.573,1.573,0,0,1,2.28,10.077l3.632-6.29A1.557,1.557,0,0,1,7.274,3Zm3.632,8.387a.524.524,0,0,0,.454-.786L7.728,4.31a.524.524,0,0,0-.908,0L3.188,10.6a.524.524,0,0,0,.454.786Z"
-                                            transform="translate(-0.983 -1.427)" fill="#f4627f"></path>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                        <p class="m-0 ms-2">Veuillez renseigner votre nom</p>
-                    </div>
-                </div>
-            </div>
-            <div v-if="showChemSup" class="col-12 mt-3 chemSup">
-                <div class="formLabel mb-3">Cette cheminée a été installée par un professionnel du bâtiment ?</div>
-                <div class="container-fluid p-0">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="btn-group formIconContainer miniClass" role="group"
-                                aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check" value="OUI" id="chemOui" v-model="formData.cheminepro" />
-                                <label class="btn btn-outline-primary iconLabel" for="chemOui">
-                                    <div class="text-end checkedLabel">
-                                        <img src="../assets/icons/checkedicon.svg" width="15" height="15" alt="checked">
-                                    </div>
-                                    <div class="twoBtns">Oui</div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="btn-group formIconContainer miniClass" role="group"
-                                aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check" value="NON" id="chemNon" v-model="formData.cheminepro" />
-                                <label class="btn btn-outline-primary iconLabel" for="chemNon">
-                                    <div class="text-end checkedLabel">
-                                        <img src="../assets/icons/checkedicon.svg" width="15" height="15" alt="checked">
-                                    </div>
-                                    <div class="twoBtns">Non</div>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Show the error message dynamically -->
-                <div class="errorMsg" v-if="showErrorMsg">
-                    <div class="d-flex align-items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10.497" height="10.008" viewBox="0 0 10.497 10.008">
-                            <g id="Groupe_36" data-name="Groupe 36" transform="translate(-36 -597.573)">
-                                <g id="Page-1" transform="translate(30 591)">
-                                    <g id="Alert" transform="translate(5 5)">
-                                        <rect id="Rectangle" width="10" height="10" transform="translate(1 1.581)" fill="none"></rect>
-                                        <path id="Path" d="M-.476,2.145A.524.524,0,0,1-1,1.621v-2.1A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v2.1A.524.524,0,0,1-.476,2.145Z"
-                                            transform="translate(6.766 5.194)" fill="#f4627f"></path>
-                                        <path id="Path-2" data-name="Path"
-                                            d="M-.476.117A.524.524,0,0,1-1-.408V-.476A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v.068A.524.524,0,0,1-.476.117Z"
-                                            transform="translate(6.766 9.125)" fill="#f4627f"></path>
-                                        <path id="Path-3" data-name="Path"
-                                            d="M7.274,3a1.557,1.557,0,0,1,1.362.786l3.632,6.29a1.573,1.573,0,0,1-1.362,2.359H3.642A1.573,1.573,0,0,1,2.28,10.077l3.632-6.29A1.557,1.557,0,0,1,7.274,3Zm3.632,8.387a.524.524,0,0,0,.454-.786L7.728,4.31a.524.524,0,0,0-.908,0L3.188,10.6a.524.524,0,0,0,.454.786Z"
-                                            transform="translate(-0.983 -1.427)" fill="#f4627f"></path>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                        <p class="m-0 ms-2">Votre cheminée doit être certifiée par un professionnel du bâtiment.</p>
-                    </div>
-                </div>
-            </div>
+  <form @submit.prevent="submitStep">
+    <h3>
+      {{ selectedActivities.length > 0 ? "Exercez-vous d'autres activités ?" : "Quelle est votre activité principale ?"}}
+    </h3>
 
-            <div class="col-12 mt-0">
-                <div class="container-fluid p-0">
-                    <div class="row align-items-center">
-                        <div class="col-12">
-                            <button v-if="loading" type="button" class="navBtn nextBtn mt-4 flex justify-center align-items-center">
-                                <vue-spinner size="30" color="white" />
-                            </button>
-                            <button v-else type="submit" class="navBtn nextBtn mt-4 flex justify-center align-items-center">
-                                <span :class="{ 'equippedOrNot': !isAnyOptionSelected }">{{ isAnyOptionSelected ? 'Étape suivante' : 'Aucun de ces équipements' }}</span>
-                                <img src="../assets/icons/arrow-next.svg" alt="suivant" class="ms-3 img-fluid">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <BonASavoir
-                remarque="Les dépendances et annexes sont tous les locaux qui ne sont pas à usage d’habitation, communiquant ou non avec l’habitation (buanderie, cellier, remise, débarras, les abris de jardin, cave, les combles et le sous-sol)." />
+    <input v-model="searchTerm" @input="filterActivities"
+      :placeholder="selectedActivities.length > 0 ? 'Ajouter une autre activité' : 'Exemple : Maçon...'"
+      class="activity-input" v-show="selectedActivities.length < 5" aria-label="Rechercher une activité" />
+
+    <ul v-if="filteredActivities.length" class="activity-dropdown">
+      <li v-for="activity in filteredActivities" :key="activity.name"
+        @click="!isActivitySelected(activity) && selectActivity(activity)" class="activity-item"
+        :class="{ disabled: isActivitySelected(activity) }">
+        {{ activity.name }}
+      </li>
+    </ul>
+
+    <h6 style="margin-top: 20px;" v-if="selectedActivities.length">Vos activités (5 maximum)</h6>
+
+    <ul class="selected-activities">
+      <li v-for="activity in selectedActivities" :key="activity.name" class="selected-activity">
+        <div class="activity-details">
+          <span>{{ activity.name }}</span>
+          <div class="d-flex gap-2">
+            <button type="button" class="details-button" @click="openModal(activity)"
+              aria-label="Voir les détails de l'activité">
+              Plus de détails
+            </button>
+            <button type="button" class="close-icon" @click="removeActivity(activity)"
+              aria-label="Supprimer cette activité">
+              ✖
+            </button>
+          </div>
         </div>
-    </form>
+      </li>
+    </ul>
+
+    <p v-if="selectedActivities.length">
+      Votre expérience devra être justifiée : fiches de paie, factures, certificats de travail, etc.
+    </p>
+
+    <button v-if="selectedActivities.length" type="submit"
+      class="navBtn nextBtn mt-4 d-flex justify-content-center align-items-center">
+      Étape suivante
+      <img src="../assets/icons/arrow-next.svg" alt="Suivant" class="ms-3 img-fluid">
+    </button>
+  </form>
+
+  <div v-if="showModal" class="modal-overlay" @click.self="closeModal">
+    <div class="modal-content">
+      <div class="d-flex justify-content-between">
+        <h3>{{ selectedActivityDetails?.name }}</h3>
+        <div @click="closeModal">
+          <img src="../assets/icons/xmark.svg" alt="xmark" class="xmark">
+        </div>
+      </div>
+      <p>{{ selectedActivityDetails?.description }}</p>
+
+      <div v-if="selectedActivityDetails?.includedGaranties" class="garanties-inclues">
+        <h5>Les prestations principales</h5>
+        <h6>Les principaux cas</h6>
+        <ul>
+          <li v-for="item in selectedActivityDetails.includedGaranties" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="selectedActivityDetails?.secondaryGaranties" class="garanties-inclues">
+        <h5>Garanties Secondaires</h5>
+        <h6>Les principaux cas</h6>
+        <ul>
+          <li v-for="item in selectedActivityDetails.secondaryGaranties" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="selectedActivityDetails?.excludedGaranties" class="garanties-exclues">
+        <h5>Garanties Exclues</h5>
+        <h6>Les principaux cas</h6>
+        <ul>
+          <li v-for="item in selectedActivityDetails.excludedGaranties" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
 </template>
 
 <script setup>
-import BonASavoir from '../components/BonASavoir.vue';
+import { ref, onMounted, computed } from "vue";
+import allActivities from "@/assets/activities.json";
 import { useFormStore } from '@/stores/useFormStore';
-import chemineIcon from '../assets/icons/chemine.svg';
-import dependancesIcon from '../assets/icons/dependances.svg';
-import verandaIcon from '../assets/icons/veranda.svg';
-import garageIcon from '../assets/icons/garage.svg';
-import alarmeIcon from '../assets/icons/alarme.svg';
-import pieceIcon from '../assets/icons/piece.svg';
-import piscineIcon from '../assets/icons/piscine.svg';
-import {VueSpinner} from 'vue3-spinners';
-import axios from 'axios';
-import { ref, reactive, computed } from 'vue'
+
+const searchTerm = ref("");
+const activities = ref(allActivities);
+const filteredActivities = ref([]);
+const selectedActivities = ref([]);
+const showModal = ref(false);
+const selectedActivityDetails = ref(null);
 const formStore = useFormStore();
-const nbrPieces = ref(formStore.getNbrPieces);
-const loading =ref(false)
-const formData = reactive({
-    selectedOptions: formStore.formData.step4.selectedOptions,
-    nbrPiecePrincipalePlus30m: formStore.formData.step4.nbrPiecePrincipalePlus30m,
-    dependenceCount: formStore.formData.step4.dependenceCount,
-    surfaceDependance: formStore.formData.step4.surfaceDependance,
-    cheminepro: formStore.formData.step4.surfaceDependance || 'OUI',
-})
-const options = reactive([
-    {
-        id: 'chemine',
-        value: 'chemine',
-        label: "Cheminée ou poêle à bois",
-        icon: chemineIcon,
-        alt: 'chemine',
-    },
-    {
-        id: 'dependances',
-        value: 'dependances',
-        label: 'Dépendance supérieure à 30 m²',
-        icon: dependancesIcon,
-        alt: 'dependances',
-    },
-    // {
-    //     id: 'garage',
-    //     value: 'garage',
-    //     label: 'Garage ou box fermé',
-    //     icon: garageIcon,
-    //     alt: 'garage',
-    // },
-    {
-        id: 'alarme',
-        value: 'alarme',
-        label: 'Alarme antivol',
-        icon: alarmeIcon,
-        alt: 'alarme',
-    },
-    {
-        id: 'superieur30m',
-        value: 'superieur30m',
-        label: 'Pièce supérieure à 30 m²',
-        icon: pieceIcon,
-        alt: 'superieur30m',
-    },
-    {
-        id: 'veranda',
-        value: 'veranda',
-        label: 'Véranda ou loggia',
-        icon: verandaIcon,
-        alt: 'veranda',
-    },
-    {
-        id: 'presencePicineOuTennis',
-        value: 'presencePicineOuTennis',
-        label: 'Piscine et/ou un terrain de tennis',
-        icon: piscineIcon,
-        alt: 'presencePicineOuTennis',
-    },
-])
-const showErrorMsg = computed(() => formData.cheminepro === "NON");
-const isAnyOptionSelected = computed(() => {
-    return formData.selectedOptions.length > 0;
-});
-const showPieceSup = computed(() => {
-    return formData.selectedOptions.includes('superieur30m');
-});
-const showDepSup = computed(() => {
-    return formData.selectedOptions.includes('dependances');
-});
-const showChemSup = computed(() => {
-    return formData.selectedOptions.includes('chemine');
-});
-const isAppartement = computed(() => {
-    return formStore.formData.step1.type_habitation == "APPARTEMENT";
+
+const selectedActivityNames = computed(() =>
+  selectedActivities.value.map(activity => activity.name)
+);
+
+onMounted(() => {
+  showInitialActivities();
 });
 
-function updateNbrPieces() {
-    formStore.updateStepData('step4', formData);
-    nbrPieces.value = formStore.getNbrPieces;
-    console.log(nbrPieces.value)
+function showInitialActivities() {
+  filteredActivities.value = activities.value.slice(0, 5);
 }
+
+function filterActivities() {
+  const term = searchTerm.value.trim().toLowerCase();
+
+  if (term === "") {
+    filteredActivities.value = selectedActivities.value.length === 0 
+      ? activities.value.slice(0, 5) 
+      : [];
+    return;
+  }
+
+  filteredActivities.value = activities.value.filter(
+    activity =>
+      activity.name.toLowerCase().includes(term) &&
+      !isActivitySelected(activity)
+  );
+}
+
+function isActivitySelected(activity) {
+  return selectedActivities.value.some(
+    selected => selected.name === activity.name
+  );
+}
+
+function selectActivity(activity) {
+  if (!isActivitySelected(activity) && selectedActivities.value.length < 5) {
+    selectedActivities.value.push(activity);
+    searchTerm.value = "";
+    filteredActivities.value = [];
+  }
+}
+
+function removeActivity(activity) {
+  selectedActivities.value = selectedActivities.value.filter(
+    a => a.name !== activity.name
+  );
+
+  if (selectedActivities.value.length === 0) {
+    showInitialActivities();
+  }
+}
+
+function openModal(activity) {
+  selectedActivityDetails.value = activity;
+  showModal.value = true;
+}
+
+function closeModal() {
+  showModal.value = false;
+  selectedActivityDetails.value = null;
+}
+
 async function submitStep() {
-    if(showErrorMsg.value == false){
-        if (nbrPieces.value > 1) {
-            loading.value =true;
-            await axios.get(import.meta.env.VITE_BASE_URL+'/api/getDependecies/'+nbrPieces.value)
-            .then(response => {
-                if (response.status === 200) {
-                    formStore.updateStepData('dependecies', response.data);
-                    formStore.updateStepData('step4', formData);
-                    formStore.nextStep();
-                }
-            }).catch(({response}) => {
-                toast.error('une erreur est survenue merci de réessayer plus tard');
-                console.log(response);
-            }).finally(() => {
-                loading.value =false;
-            });
-        }else{
-            formStore.updateStepData('step4', formData);
-            formStore.nextStep();
-        }
-    }
+  formStore.updateStepData("step4", selectedActivityNames.value);
+  formStore.nextStep();
 }
 </script>
 
 <style scoped>
-.formIconContainer {
-    height: 100%;
+.label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
 }
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.results {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden;
+}
+
+.result-item {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.result-item:hover {
+  background-color: #f0f0f0;
+}
+
+.details {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.details-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.details-description {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.details-garanties h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.details-garanties ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.activity-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.activity-dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.activity-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+.activity-item:hover {
+  background-color: #f5f5f5;
+}
+
+.selected-activities {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.selected-activity {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  background-color: var(--color-bg-base-normal);
+}
+
+.activity-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #f97316;
+  background-color: transparent;
+  border: 1px solid #f97316;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.details-button:hover {
+  background-color: #f97316;
+  color: #fff;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-close:hover {
+  background: #0056b3;
+}
+.xmark{
+  height: 24px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+.garanties-inclues{
+  border: 1px solid #d9d8e1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 24px;
+  background-color: #fafaff;
+  margin-top: 32px;
+}
+.garanties-exclues{
+  border: 1px solid #d9d8e1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 24px;
+  background-color: #ffeff0;
+  margin-top: 32px;
+}
+
 </style>
