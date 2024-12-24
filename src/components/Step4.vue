@@ -13,8 +13,7 @@
                 <input type="radio" class="btn-check resilie_par_assureur3ans" name="resilie_par_assureur3ans"
                   id="resnon" value="NON" v-model="formData.chantiers_sous_traitance">
                 <label class="btn btn-outline-primary iconLabel" for="resnon">
-                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
-                      alt="checked"></div>
+             
                   <div class="twoBtns">Non</div>
                 </label>
               </div>
@@ -25,8 +24,7 @@
                 <input type="radio" class="btn-check resilie_par_assureur3ans" name="resilie_par_assureur3ans"
                   id="resoui" value="OUI" v-model="formData.chantiers_sous_traitance">
                 <label class="btn btn-outline-primary iconLabel" for="resoui">
-                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
-                      alt="checked"></div>
+                
                   <div class="twoBtns">Oui</div>
                 </label>
               </div>
@@ -49,8 +47,7 @@
                 <input type="radio" class="btn-check resilie_par_assureur3ans" name="reprise_un_annee"
                   id="reprise_un_annee_non" value="NON" v-model="formData.reprise_un_annee">
                 <label class="btn btn-outline-primary iconLabel" for="reprise_un_annee_non">
-                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
-                      alt="checked"></div>
+                
                   <div class="twoBtns">Non</div>
                 </label>
               </div>
@@ -61,8 +58,7 @@
                 <input type="radio" class="btn-check resilie_par_assureur3ans" name="reprise_un_annee"
                   id="reprise_un_annee_oui" value="OUI" v-model="formData.reprise_un_annee">
                 <label class="btn btn-outline-primary iconLabel" for="reprise_un_annee_oui">
-                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
-                      alt="checked"></div>
+             
                   <div class="twoBtns">Oui</div>
                 </label>
               </div>
@@ -84,8 +80,7 @@
                 <input type="radio" class="btn-check resilie_par_assureur3ans" name="redressement_judiciaire"
                   id="redressement_judiciaire_non" value="NON" v-model="formData.redressement_judiciaire">
                 <label class="btn btn-outline-primary iconLabel" for="redressement_judiciaire_non">
-                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
-                      alt="checked"></div>
+             
                   <div class="twoBtns">Non</div>
                 </label>
               </div>
@@ -96,8 +91,7 @@
                 <input type="radio" class="btn-check resilie_par_assureur3ans" name="redressement_judiciaire"
                   id="redressement_judiciaire_oui" value="OUI" v-model="formData.redressement_judiciaire">
                 <label class="btn btn-outline-primary iconLabel" for="redressement_judiciaire_oui">
-                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
-                      alt="checked"></div>
+                 
                   <div class="twoBtns">Oui</div>
                 </label>
               </div>
@@ -119,8 +113,7 @@
                 <input type="radio" class="btn-check resilie_par_assureur3ans" name="diplomes_batiment"
                   id="diplomes_batiment_non" value="NON" v-model="formData.diplomes_batiment">
                 <label class="btn btn-outline-primary iconLabel" for="diplomes_batiment_non">
-                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
-                      alt="checked"></div>
+               
                   <div class="twoBtns">Non</div>
                 </label>
               </div>
@@ -131,8 +124,7 @@
                 <input type="radio" class="btn-check resilie_par_assureur3ans" name="diplomes_batiment"
                   id="diplomes_batiment_oui" value="OUI" v-model="formData.diplomes_batiment">
                 <label class="btn btn-outline-primary iconLabel" for="diplomes_batiment_oui">
-                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
-                      alt="checked"></div>
+           
                   <div class="twoBtns">Oui</div>
                 </label>
               </div>
