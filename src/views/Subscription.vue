@@ -21,6 +21,13 @@
                 <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
                     <div class="container-fluid p-0">
                         <Step1 v-if="formStore.currentStep === 1" />
+                        <Step2 v-if="formStore.currentStep === 2" />
+                        <Step3 v-if="formStore.currentStep === 3" />
+                        <Step4 v-if="formStore.currentStep === 4" />
+                        <Step5 v-if="formStore.currentStep === 5" />
+                        <Step6 v-if="formStore.currentStep === 6" />
+                        <Step7 v-if="formStore.currentStep === 7" />
+
                     </div>
                 </div>
                 <div class="col-3">
@@ -60,48 +67,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-md-center justify-content-lg-center m-0">
-                <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
-                    <div class="container-fluid p-0">
-                        <Step2 v-if="formStore.currentStep === 2" />
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center justify-content-lg-center m-0">
-                <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
-                    <div class="container-fluid p-0">
-                        <Step3 v-if="formStore.currentStep === 3" />
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center justify-content-lg-center m-0">
-                <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
-                    <div class="container-fluid p-0">
-                        <Step4 v-if="formStore.currentStep === 4" />
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center justify-content-lg-center m-0">
-                <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
-                    <div class="container-fluid p-0">
-                        <Step5 v-if="formStore.currentStep === 5" />
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center justify-content-lg-center m-0">
-                <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
-                    <div class="container-fluid p-0">
-                        <Step6 v-if="formStore.currentStep === 6" />
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center justify-content-lg-center m-0">
-                <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
-                    <div class="container-fluid p-0">
-                        <Step7 v-if="formStore.currentStep === 7" />
-                    </div>
-                </div>
-            </div>
+
             <!-- <button v-if="formStore.currentStep === 7" @click="submitForm">Submit</button> -->
         </div>
     </section>

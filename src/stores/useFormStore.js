@@ -10,6 +10,9 @@ export const useFormStore = defineStore('form', {
       step1: {
         profession:  "",
         siren:  "",
+      
+      },
+      step2: {
         nom_entreprise:  "",
         type:"",
         adresse: "",
@@ -22,9 +25,6 @@ export const useFormStore = defineStore('form', {
         date_creation: "",
         nom_dirigeant: "",
         date_naissance: "",
-      },
-      step2: {
-        
       },
       step3: {
         deja_assure: '',
