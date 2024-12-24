@@ -11,7 +11,6 @@
             </div>
             <div class="row justify-content-md-center justify-content-lg-center m-0">
                  <div class="col-3">
-                    little menu
                  </div>
                 <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
                     <div class="container-fluid p-0">
@@ -19,8 +18,41 @@
                     </div>
                 </div>
                 <div class="col-3">
-                    contact support
-                 </div>
+                    <div class="contact" style="
+                            background: #c5f3ff;
+                            padding: 10px;
+                            margin: 10px;
+
+                            border-radius: 9px;
+                            text-align: center;
+                            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                        ">
+                                                <img src="../assets/images/assistance.png" class="assistanceImg img-fluid" style="
+                            border-radius: 50%;
+                            width: 170px;
+                            margin-top: 18px;
+                        ">  
+                        <h3>Besoin d'aide ?
+
+                        </h3>
+                        <p class="text-center">
+                            Vous pouvez contacter nos conseillers pour obtenir votre devis personnalisé.                        </p>
+                        <div class="divider" ></div>
+                        <div class="text-center" >
+                            <div class="social-buttons">
+                                <a href="https://wa.me/33767779822" target="_blank" class="social-button" aria-label="whatsapp">
+                                    <i class='fa fa-whatsapp' style='font-size:36px;color:green'></i>
+                                </a>
+                                <a href="tel:0146592228" class="social-button" aria-label="phone">
+                                    <i class="fa fa-phone" style='font-size:36px'></i>
+                                </a>
+                                <a href="mailto:contact@assurmabarak.fr" class="social-button" aria-label="envelope">
+                                    <i class="fa fa-envelope" style='font-size:36px'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row justify-content-md-center justify-content-lg-center m-0">
                 <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
@@ -89,4 +121,6 @@
 </script>
  
 <style>
+ @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
 </style>

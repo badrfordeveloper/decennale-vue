@@ -2,8 +2,9 @@
     <form @submit.prevent="submitStep">
         <div class="row  ">
 
-            <div class="col-12 row g-3 g-md-4 mb-2">
-                <label for="maison" class="formLabel mb-3">Quelle profession souhaitez-vous assurer ?</label>
+            <div class="col-12  mb-2">
+                <label for="maison" class="formLabel mb-5">Quelle profession souhaitez-vous assurer ?</label>
+               <div class="row g-3 g-md-4">
                 <div class="col-4 mt-0">
                     <div class="btn-group formIconContainer" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check profession" name="profession" value="ARTISAN_ENTREPRISE_BATIMENT"
@@ -12,7 +13,7 @@
                             <div class="text-end checkedLabel">
                                 <img src="../assets/icons/checkedicon.svg" width="15" height="15" alt="checked">
                             </div>
-                            <div class="btnImg"><img src="../assets/icons/appartement.svg" alt="ARTISAN_ENTREPRISE_BATIMENT"></div>
+                            <div class=""><img src="../assets/icons/worker.svg"  style="width: 80px;" alt="ARTISAN_ENTREPRISE_BATIMENT"></div>
                             <div>Artisan entreprise du batiment</div>
                         </label>
                     </div>
@@ -24,7 +25,7 @@
                         <label class="btn btn-outline-primary iconLabel" for="PROFESSION_INTELLECTUELLE_BATIMENT">
                             <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15"
                                     height="15" alt="checked"></div>
-                            <div class="btnImg"><img src="../assets/icons/appartement.svg" alt="PROFESSION_INTELLECTUELLE_BATIMENT"></div>
+                            <div class=""><img src="../assets/icons/engineer.svg"  style="width: 80px;" alt="PROFESSION_INTELLECTUELLE_BATIMENT"></div>
                             <div>Profession Intellectuelle du batiment</div>
                         </label>
                     </div>
@@ -36,21 +37,24 @@
                         <label class="btn btn-outline-primary iconLabel" for="ACTIVITE_PISCINISTE">
                             <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15"
                                     height="15" alt="checked"></div>
-                            <div class="btnImg"><img src="../assets/icons/appartement.svg" alt="ACTIVITE_PISCINISTE"></div>
+                            <div class=""><img src="../assets/icons/pool.svg" style="width: 80px;" alt="ACTIVITE_PISCINISTE"></div>
                             <div>Activite de pisciniste</div>
                         </label>
                     </div>
 
 
                 </div>
+                </div>
                 <div  class="col-12 mt-0">
                     <ErrorComponent v-if="$v.profession.$error" :errors="$v.profession.$errors" />
                 </div>
-            </div>
+            </div >
+            <div class="col-12 ">
+
                 <label class="formLabel mb-2"> Rechercher mon entreprise (nom, SIREN, SIRET) </label>
                 <input type="text"  v-model="data.siren" class="form-control ">
                 <ErrorComponent v-if="$v.siren.$error" :errors="$v.siren.$errors" />
-           
+            </div >
             <div class="col-6 ">
                 <label class="formLabel mb-2">Nom de l'établissement</label>
                 <input type="text" v-model="data.nom_entreprise" class="form-control">
@@ -210,6 +214,9 @@ function submitStep() {
 }
 </script>
 <style scoped>
+.formIconContainer{
+    height: 100%;
+}
 .customCloseBtn {
     background: var(--color1);
     border: 0;
