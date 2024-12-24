@@ -1,371 +1,201 @@
 <template>
   <form @submit.prevent="submitStep">
-    <h3>
-      {{ selectedActivities.length > 0 ? "Exercez-vous d'autres activités ?" : "Quelle est votre activité principale ?"}}
-    </h3>
+    <div class="row g-3 g-md-4">
 
-    <input v-model="searchTerm" @input="filterActivities"
-      :placeholder="selectedActivities.length > 0 ? 'Ajouter une autre activité' : 'Exemple : Maçon...'"
-      class="activity-input" v-show="selectedActivities.length < 5" aria-label="Rechercher une activité" />
+      <div class="col-12">
+        <label class="formLabel mb-3" for="resiliation">Donnez vous des chantiers en sous traitance à plus de
+          30%</label>
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-6">
+              <div class="btn-group formIconContainer miniClass" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check resilie_par_assureur3ans" name="resilie_par_assureur3ans"
+                  id="resnon" value="NON" v-model="formData.chantiers_sous_traitance">
+                <label class="btn btn-outline-primary iconLabel" for="resnon">
+                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
+                      alt="checked"></div>
+                  <div class="twoBtns">Non</div>
+                </label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="btn-group formIconContainer miniClass" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check resilie_par_assureur3ans" name="resilie_par_assureur3ans"
+                  id="resoui" value="OUI" v-model="formData.chantiers_sous_traitance">
+                <label class="btn btn-outline-primary iconLabel" for="resoui">
+                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
+                      alt="checked"></div>
+                  <div class="twoBtns">Oui</div>
+                </label>
+              </div>
+            </div>
+          </div>
 
-    <ul v-if="filteredActivities.length" class="activity-dropdown">
-      <li v-for="activity in filteredActivities" :key="activity.name"
-        @click="!isActivitySelected(activity) && selectActivity(activity)" class="activity-item"
-        :class="{ disabled: isActivitySelected(activity) }">
-        {{ activity.name }}
-      </li>
-    </ul>
+        </div>
 
-    <h6 style="margin-top: 20px;" v-if="selectedActivities.length">Vos activités (5 maximum)</h6>
+        <ErrorComponent v-if="$v.chantiers_sous_traitance.$error" :errors="$v.chantiers_sous_traitance.$errors" />
 
-    <ul class="selected-activities">
-      <li v-for="activity in selectedActivities" :key="activity.name" class="selected-activity">
-        <div class="activity-details">
-          <span>{{ activity.name }}</span>
-          <div class="d-flex gap-2">
-            <button type="button" class="details-button" @click="openModal(activity)"
-              aria-label="Voir les détails de l'activité">
-              Plus de détails
-            </button>
-            <button type="button" class="close-icon" @click="removeActivity(activity)"
-              aria-label="Supprimer cette activité">
-              ✖
-            </button>
+      </div>
+
+      <div class="col-12">
+        <label class="formLabel mb-3" for="resiliation">Souhaitez vous la reprise du passé sur 1 an (+15%)</label>
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-6">
+              <div class="btn-group formIconContainer miniClass" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check resilie_par_assureur3ans" name="reprise_un_annee"
+                  id="reprise_un_annee_non" value="NON" v-model="formData.reprise_un_annee">
+                <label class="btn btn-outline-primary iconLabel" for="reprise_un_annee_non">
+                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
+                      alt="checked"></div>
+                  <div class="twoBtns">Non</div>
+                </label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="btn-group formIconContainer miniClass" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check resilie_par_assureur3ans" name="reprise_un_annee"
+                  id="reprise_un_annee_oui" value="OUI" v-model="formData.reprise_un_annee">
+                <label class="btn btn-outline-primary iconLabel" for="reprise_un_annee_oui">
+                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
+                      alt="checked"></div>
+                  <div class="twoBtns">Oui</div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <ErrorComponent v-if="$v.reprise_un_annee.$error" :errors="$v.reprise_un_annee.$errors" />
+
+      </div>
+
+      <div class="col-12">
+        <label class="formLabel mb-3" for="resiliation">Etes-vous en redressement judiciaire</label>
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-6">
+              <div class="btn-group formIconContainer miniClass" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check resilie_par_assureur3ans" name="redressement_judiciaire"
+                  id="redressement_judiciaire_non" value="NON" v-model="formData.redressement_judiciaire">
+                <label class="btn btn-outline-primary iconLabel" for="redressement_judiciaire_non">
+                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
+                      alt="checked"></div>
+                  <div class="twoBtns">Non</div>
+                </label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="btn-group formIconContainer miniClass" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check resilie_par_assureur3ans" name="redressement_judiciaire"
+                  id="redressement_judiciaire_oui" value="OUI" v-model="formData.redressement_judiciaire">
+                <label class="btn btn-outline-primary iconLabel" for="redressement_judiciaire_oui">
+                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
+                      alt="checked"></div>
+                  <div class="twoBtns">Oui</div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <ErrorComponent v-if="$v.redressement_judiciaire.$error" :errors="$v.redressement_judiciaire.$errors" />
+
+      </div>
+
+      <div class="col-12">
+        <label class="formLabel mb-3" for="resiliation">Avez-vous des diplomes du batiment</label>
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-6">
+              <div class="btn-group formIconContainer miniClass" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check resilie_par_assureur3ans" name="diplomes_batiment"
+                  id="diplomes_batiment_non" value="NON" v-model="formData.diplomes_batiment">
+                <label class="btn btn-outline-primary iconLabel" for="diplomes_batiment_non">
+                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
+                      alt="checked"></div>
+                  <div class="twoBtns">Non</div>
+                </label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="btn-group formIconContainer miniClass" role="group"
+                aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check resilie_par_assureur3ans" name="diplomes_batiment"
+                  id="diplomes_batiment_oui" value="OUI" v-model="formData.diplomes_batiment">
+                <label class="btn btn-outline-primary iconLabel" for="diplomes_batiment_oui">
+                  <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15" height="15"
+                      alt="checked"></div>
+                  <div class="twoBtns">Oui</div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <ErrorComponent v-if="$v.diplomes_batiment.$error" :errors="$v.diplomes_batiment.$errors" />
+
+      </div>
+      
+      
+      <div class="col-12 mt-0">
+        <div class="container-fluid p-0">
+          <div class="row align-items-center">
+            <div class="col-12">
+            
+              <button type="submit" class="navBtn nextBtn mt-4 d-flex justify-content-center align-items-center">Étape suivante
+                <img src="../assets/icons/arrow-next.svg" alt="suivant" class="ms-3 img-fluid"></button>
+            </div>
           </div>
         </div>
-      </li>
-    </ul>
-
-    <p v-if="selectedActivities.length">
-      Votre expérience devra être justifiée : fiches de paie, factures, certificats de travail, etc.
-    </p>
-
-    <button v-if="selectedActivities.length" type="submit"
-      class="navBtn nextBtn mt-4 d-flex justify-content-center align-items-center">
-      Étape suivante
-      <img src="../assets/icons/arrow-next.svg" alt="Suivant" class="ms-3 img-fluid">
-    </button>
-  </form>
-
-  <div v-if="showModal" class="modal-overlay" @click.self="closeModal">
-    <div class="modal-content">
-      <div class="d-flex justify-content-between">
-        <h3>{{ selectedActivityDetails?.name }}</h3>
-        <div @click="closeModal">
-          <img src="../assets/icons/xmark.svg" alt="xmark" class="xmark">
-        </div>
-      </div>
-      <p>{{ selectedActivityDetails?.description }}</p>
-
-      <div v-if="selectedActivityDetails?.includedGaranties" class="garanties-inclues">
-        <h5>Les prestations principales</h5>
-        <h6>Les principaux cas</h6>
-        <ul>
-          <li v-for="item in selectedActivityDetails.includedGaranties" :key="item">
-            {{ item }}
-          </li>
-        </ul>
-      </div>
-
-      <div v-if="selectedActivityDetails?.secondaryGaranties" class="garanties-inclues">
-        <h5>Garanties Secondaires</h5>
-        <h6>Les principaux cas</h6>
-        <ul>
-          <li v-for="item in selectedActivityDetails.secondaryGaranties" :key="item">
-            {{ item }}
-          </li>
-        </ul>
-      </div>
-
-      <div v-if="selectedActivityDetails?.excludedGaranties" class="garanties-exclues">
-        <h5>Garanties Exclues</h5>
-        <h6>Les principaux cas</h6>
-        <ul>
-          <li v-for="item in selectedActivityDetails.excludedGaranties" :key="item">
-            {{ item }}
-          </li>
-        </ul>
       </div>
 
     </div>
-  </div>
+  </form>
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
-import allActivities from "@/assets/activities.json";
+import BonASavoir from './BonASavoir.vue';
 import { useFormStore } from '@/stores/useFormStore';
+import { ref, reactive, computed } from 'vue';
+import useVuelidate from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
 
-const searchTerm = ref("");
-const activities = ref(allActivities);
-const filteredActivities = ref([]);
-const selectedActivities = ref([]);
-const showModal = ref(false);
-const selectedActivityDetails = ref(null);
+import { VueSpinner } from 'vue3-spinners';
+import { toast } from 'vue3-toastify';
+
+import axios from 'axios';
+
 const formStore = useFormStore();
+const step4Data = formStore.getFormData;
+const formData = reactive({
+  chantiers_sous_traitance: step4Data.step4.chantiers_sous_traitance,
+  reprise_un_annee: step4Data.step4.reprise_un_annee,
+  redressement_judiciaire: step4Data.step4.redressement_judiciaire,
+  diplomes_batiment: step4Data.step4.diplomes_batiment,
+})
+const rules = {
+    chantiers_sous_traitance: { required },
+    reprise_un_annee: { required },
+    redressement_judiciaire:{ required },
+    diplomes_batiment: { required },
+};
 
-const selectedActivityNames = computed(() =>
-  selectedActivities.value.map(activity => activity.name)
-);
-
-onMounted(() => {
-  showInitialActivities();
-});
-
-function showInitialActivities() {
-  filteredActivities.value = activities.value.slice(0, 5);
-}
-
-function filterActivities() {
-  const term = searchTerm.value.trim().toLowerCase();
-
-  if (term === "") {
-    filteredActivities.value = selectedActivities.value.length === 0 
-      ? activities.value.slice(0, 5) 
-      : [];
-    return;
-  }
-
-  filteredActivities.value = activities.value.filter(
-    activity =>
-      activity.name.toLowerCase().includes(term) &&
-      !isActivitySelected(activity)
-  );
-}
-
-function isActivitySelected(activity) {
-  return selectedActivities.value.some(
-    selected => selected.name === activity.name
-  );
-}
-
-function selectActivity(activity) {
-  if (!isActivitySelected(activity) && selectedActivities.value.length < 5) {
-    selectedActivities.value.push(activity);
-    searchTerm.value = "";
-    filteredActivities.value = [];
-  }
-}
-
-function removeActivity(activity) {
-  selectedActivities.value = selectedActivities.value.filter(
-    a => a.name !== activity.name
-  );
-
-  if (selectedActivities.value.length === 0) {
-    showInitialActivities();
-  }
-}
-
-function openModal(activity) {
-  selectedActivityDetails.value = activity;
-  showModal.value = true;
-}
-
-function closeModal() {
-  showModal.value = false;
-  selectedActivityDetails.value = null;
-}
+const $v = useVuelidate(rules, formData);
 
 async function submitStep() {
-  formStore.updateStepData("step4", selectedActivityNames.value);
-  formStore.nextStep();
+  $v.value.$touch(); // Mark all fields as touched
+    if (!$v.value.$invalid) {
+      formStore.updateStepData('step4', formData);
+      formStore.nextStep();
+    }
 }
+
 </script>
-
-<style scoped>
-.label {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.search-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.results {
-  margin-top: 10px;
-  list-style: none;
-  padding: 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  overflow: hidden;
-}
-
-.result-item {
-  padding: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.result-item:hover {
-  background-color: #f0f0f0;
-}
-
-.details {
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #f9f9f9;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.details-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.details-description {
-  margin-bottom: 15px;
-  color: #555;
-}
-
-.details-garanties h3 {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-.details-garanties ul {
-  list-style: disc;
-  margin-left: 20px;
-}
-
-.activity-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.activity-dropdown {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  max-height: 200px;
-  overflow-y: auto;
-}
-
-.activity-item {
-  padding: 10px;
-  cursor: pointer;
-  border-bottom: 1px solid #eee;
-  transition: background-color 0.3s;
-}
-
-.activity-item:hover {
-  background-color: #f5f5f5;
-}
-
-.selected-activities {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.selected-activity {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 12px 16px;
-  background-color: var(--color-bg-base-normal);
-}
-
-.activity-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.details-button {
-  padding: 5px 10px;
-  font-size: 14px;
-  color: #f97316;
-  background-color: transparent;
-  border: 1px solid #f97316;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.details-button:hover {
-  background-color: #f97316;
-  color: #fff;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 600px;
-  width: 90%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content h2 {
-  margin-top: 0;
-}
-
-.modal-close:hover {
-  background: #0056b3;
-}
-.xmark{
-  height: 24px;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-.garanties-inclues{
-  border: 1px solid #d9d8e1;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 24px;
-  background-color: #fafaff;
-  margin-top: 32px;
-}
-.garanties-exclues{
-  border: 1px solid #d9d8e1;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 24px;
-  background-color: #ffeff0;
-  margin-top: 32px;
-}
-
-</style>

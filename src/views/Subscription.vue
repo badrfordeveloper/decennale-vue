@@ -77,7 +77,7 @@
     import Step4 from '../components/Step4.vue';
     import Step5 from '../components/Step5.vue';
     import Step6 from '../components/Step6.vue';
-    import Step7 from '../components/Step7.vue';
+    import Step7 from '../components/Step7OLD.vue';
     import MyHeader from '../components/header.vue';
     import { ref, onMounted } from 'vue'
     const formStore = useFormStore();

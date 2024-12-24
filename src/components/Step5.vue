@@ -1,214 +1,371 @@
 <template>
-    <form @submit.prevent="submitStep">
-        <div class="row g-3 g-md-4">
-            <div class="col-12 mt-0 mb-3">
-                <h2 class="stepTitle mb-3">On y est presque !</h2>
-                <p class="stepDescription mb-3 mb-md-0">
-                    J'ai besoin d'informations supplémentaires pour constituer la meilleure offre.
-                </p>
-            </div>
-            <label for="labelNbSinistres" class="formLabel mb-3">Nombre de sinistres déclarés</label>
-            <div class="col-6 mt-0">
-                <div class="btn-group formIconContainer" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check declare_sinistre2ans" name="declare_sinistre2ans"
-                        id="nonSinistre" value="NON" v-model="formData.declare_sinistre2ans">
-                    <label class="btn btn-outline-primary iconLabel" for="nonSinistre">
-                        <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15"
-                                height="15" alt="checked"></div>
-                        <div class="btnImg"><img src="../assets/icons/zero.svg" alt="oui"></div>
-                        <div>Aucun sinistre</div>
-                    </label>
-                </div>
-            </div>
-            <div class="col-6 mt-0">
-                <div class="btn-group formIconContainer" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check declare_sinistre2ans" name="declare_sinistre2ans"
-                        id="ouiSinistre" value="OUI" v-model="formData.declare_sinistre2ans">
-                    <label class="btn btn-outline-primary iconLabel" for="ouiSinistre">
-                        <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg" width="15"
-                                height="15" alt="checked"></div>
-                        <div class="btnImg"><img src="../assets/icons/oneplus.svg" alt="non"></div>
-                        <div>Un ou plusieurs</div>
-                    </label>
-                </div>
-            </div>
-            <div v-if="showSinistresError"  class="errorMsg">
-                <div class="d-flex align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10.497" height="10.008" viewBox="0 0 10.497 10.008">
-                    <g id="Groupe_36" data-name="Groupe 36" transform="translate(-36 -597.573)">
-                        <g id="Page-1" transform="translate(30 591)">
-                        <g id="Alert" transform="translate(5 5)">
-                            <rect id="Rectangle" width="10" height="10" transform="translate(1 1.581)" fill="none"></rect>
-                            <path id="Path"
-                            d="M-.476,2.145A.524.524,0,0,1-1,1.621v-2.1A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v2.1A.524.524,0,0,1-.476,2.145Z"
-                            transform="translate(6.766 5.194)" fill="#f4627f"></path>
-                            <path id="Path-2" data-name="Path"
-                            d="M-.476.117A.524.524,0,0,1-1-.408V-.476A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v.068A.524.524,0,0,1-.476.117Z"
-                            transform="translate(6.766 9.125)" fill="#f4627f"></path>
-                            <path id="Path-3" data-name="Path"
-                            d="M7.274,3a1.557,1.557,0,0,1,1.362.786l3.632,6.29a1.573,1.573,0,0,1-1.362,2.359H3.642A1.573,1.573,0,0,1,2.28,10.077l3.632-6.29A1.557,1.557,0,0,1,7.274,3Zm3.632,8.387a.524.524,0,0,0,.454-.786L7.728,4.31a.524.524,0,0,0-.908,0L3.188,10.6a.524.524,0,0,0,.454.786Z"
-                            transform="translate(-0.983 -1.427)" fill="#f4627f"></path>
-                        </g>
-                        </g>
-                    </g>
-                    </svg>
-                    <p class="m-0 ms-2">Souscription impossible</p>
-                </div>
-            </div>
-            <div class="col-12">
-                <label class="formLabel mb-3" for="resiliation">Avez-vous été résilié(e) par un assureur ?</label>
-                <div class="container-fluid p-0">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="btn-group formIconContainer miniClass" role="group"
-                                aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check resilie_par_assureur3ans"
-                                    name="resilie_par_assureur3ans" id="resnon" value="NON"
-                                    v-model="formData.resilie_par_assureur3ans">
-                                <label class="btn btn-outline-primary iconLabel" for="resnon">
-                                    <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
-                                            width="15" height="15" alt="checked"></div>
-                                    <div class="twoBtns">Non</div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="btn-group formIconContainer miniClass" role="group"
-                                aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check resilie_par_assureur3ans"
-                                    name="resilie_par_assureur3ans" id="resoui" value="OUI"
-                                    v-model="formData.resilie_par_assureur3ans">
-                                <label class="btn btn-outline-primary iconLabel" for="resoui">
-                                    <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
-                                            width="15" height="15" alt="checked"></div>
-                                    <div class="twoBtns">Oui</div>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-if="showResiliationError"  class="errorMsg">
-                        <div class="d-flex align-items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10.497" height="10.008" viewBox="0 0 10.497 10.008">
-                            <g id="Groupe_36" data-name="Groupe 36" transform="translate(-36 -597.573)">
-                                <g id="Page-1" transform="translate(30 591)">
-                                <g id="Alert" transform="translate(5 5)">
-                                    <rect id="Rectangle" width="10" height="10" transform="translate(1 1.581)" fill="none"></rect>
-                                    <path id="Path"
-                                    d="M-.476,2.145A.524.524,0,0,1-1,1.621v-2.1A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v2.1A.524.524,0,0,1-.476,2.145Z"
-                                    transform="translate(6.766 5.194)" fill="#f4627f"></path>
-                                    <path id="Path-2" data-name="Path"
-                                    d="M-.476.117A.524.524,0,0,1-1-.408V-.476A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v.068A.524.524,0,0,1-.476.117Z"
-                                    transform="translate(6.766 9.125)" fill="#f4627f"></path>
-                                    <path id="Path-3" data-name="Path"
-                                    d="M7.274,3a1.557,1.557,0,0,1,1.362.786l3.632,6.29a1.573,1.573,0,0,1-1.362,2.359H3.642A1.573,1.573,0,0,1,2.28,10.077l3.632-6.29A1.557,1.557,0,0,1,7.274,3Zm3.632,8.387a.524.524,0,0,0,.454-.786L7.728,4.31a.524.524,0,0,0-.908,0L3.188,10.6a.524.524,0,0,0,.454.786Z"
-                                    transform="translate(-0.983 -1.427)" fill="#f4627f"></path>
-                                </g>
-                                </g>
-                            </g>
-                            </svg>
-                            <p class="m-0 ms-2">Souscription impossible</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <label class="formLabel mb-3" for="insert">Le bien est utilisé à des fins profesionnelles</label>
-                <div class="container-fluid p-0">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="btn-group formIconContainer miniClass" role="group"
-                                aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check utilisations_professionnelles"
-                                    name="utilisations_professionnelles" id="utilisations_professionnelles_non"
-                                    value="NON" v-model="formData.utilisations_professionnelles">
-                                <label class="btn btn-outline-primary iconLabel"
-                                    for="utilisations_professionnelles_non">
-                                    <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
-                                            width="15" height="15" alt="checked"></div>
-                                    <div class="twoBtns">Non</div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="btn-group formIconContainer miniClass" role="group"
-                                aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check utilisations_professionnelles"
-                                    name="utilisations_professionnelles" id="utilisations_professionnelles_oui"
-                                    value="OUI" v-model="formData.utilisations_professionnelles">
-                                <label class="btn btn-outline-primary iconLabel"
-                                    for="utilisations_professionnelles_oui">
-                                    <div class="text-end checkedLabel"><img src="../assets/icons/checkedicon.svg"
-                                            width="15" height="15" alt="checked"></div>
-                                    <div class="twoBtns">Oui</div>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-if="showProError"  class="errorMsg">
-                        <div class="d-flex align-items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10.497" height="10.008" viewBox="0 0 10.497 10.008">
-                            <g id="Groupe_36" data-name="Groupe 36" transform="translate(-36 -597.573)">
-                                <g id="Page-1" transform="translate(30 591)">
-                                <g id="Alert" transform="translate(5 5)">
-                                    <rect id="Rectangle" width="10" height="10" transform="translate(1 1.581)" fill="none"></rect>
-                                    <path id="Path"
-                                    d="M-.476,2.145A.524.524,0,0,1-1,1.621v-2.1A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v2.1A.524.524,0,0,1-.476,2.145Z"
-                                    transform="translate(6.766 5.194)" fill="#f4627f"></path>
-                                    <path id="Path-2" data-name="Path"
-                                    d="M-.476.117A.524.524,0,0,1-1-.408V-.476A.524.524,0,0,1-.476-1a.524.524,0,0,1,.524.524v.068A.524.524,0,0,1-.476.117Z"
-                                    transform="translate(6.766 9.125)" fill="#f4627f"></path>
-                                    <path id="Path-3" data-name="Path"
-                                    d="M7.274,3a1.557,1.557,0,0,1,1.362.786l3.632,6.29a1.573,1.573,0,0,1-1.362,2.359H3.642A1.573,1.573,0,0,1,2.28,10.077l3.632-6.29A1.557,1.557,0,0,1,7.274,3Zm3.632,8.387a.524.524,0,0,0,.454-.786L7.728,4.31a.524.524,0,0,0-.908,0L3.188,10.6a.524.524,0,0,0,.454.786Z"
-                                    transform="translate(-0.983 -1.427)" fill="#f4627f"></path>
-                                </g>
-                                </g>
-                            </g>
-                            </svg>
-                            <p class="m-0 ms-2">Souscription impossible</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 mt-0">
-                <div class="container-fluid p-0">
-                    <div class="row align-items-center">
-                        <div class="col-12">
-                            <button type="submit" class="navBtn nextBtn mt-4 flex justify-center align-items-center">
-                                Étape suivante
-                                <img src="../assets/icons/arrow-next.svg" alt="suivant" class="ms-3 img-fluid">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <form @submit.prevent="submitStep">
+    <h3>
+      {{ selectedActivities.length > 0 ? "Exercez-vous d'autres activités ?" : "Quelle est votre activité principale ?"}}
+    </h3>
 
-            <BonASavoir
-                remarque="Dès lors que vous utilisez votre logement dans le cadre de vos activités professionnelles et/ou que vous y recevez des clients (même de manière occasionnelle), vous devez répondre positivement à cette question. Petite précision : vous ne devez pas prendre en compte le télétravail." />
+    <input v-model="searchTerm" @input="filterActivities"
+      :placeholder="selectedActivities.length > 0 ? 'Ajouter une autre activité' : 'Exemple : Maçon...'"
+      class="activity-input" v-show="selectedActivities.length < 5" aria-label="Rechercher une activité" />
+
+    <ul v-if="filteredActivities.length" class="activity-dropdown">
+      <li v-for="activity in filteredActivities" :key="activity.name"
+        @click="!isActivitySelected(activity) && selectActivity(activity)" class="activity-item"
+        :class="{ disabled: isActivitySelected(activity) }">
+        {{ activity.name }}
+      </li>
+    </ul>
+
+    <h6 style="margin-top: 20px;" v-if="selectedActivities.length">Vos activités (5 maximum)</h6>
+
+    <ul class="selected-activities">
+      <li v-for="activity in selectedActivities" :key="activity.name" class="selected-activity">
+        <div class="activity-details">
+          <span>{{ activity.name }}</span>
+          <div class="d-flex gap-2">
+            <button type="button" class="details-button" @click="openModal(activity)"
+              aria-label="Voir les détails de l'activité">
+              Plus de détails
+            </button>
+            <button type="button" class="close-icon" @click="removeActivity(activity)"
+              aria-label="Supprimer cette activité">
+              ✖
+            </button>
+          </div>
         </div>
-    </form>
+      </li>
+    </ul>
+
+    <p v-if="selectedActivities.length">
+      Votre expérience devra être justifiée : fiches de paie, factures, certificats de travail, etc.
+    </p>
+
+    <button v-if="selectedActivities.length" type="submit"
+      class="navBtn nextBtn mt-4 d-flex justify-content-center align-items-center">
+      Étape suivante
+      <img src="../assets/icons/arrow-next.svg" alt="Suivant" class="ms-3 img-fluid">
+    </button>
+  </form>
+
+  <div v-if="showModal" class="modal-overlay" @click.self="closeModal">
+    <div class="modal-content">
+      <div class="d-flex justify-content-between">
+        <h3>{{ selectedActivityDetails?.name }}</h3>
+        <div @click="closeModal">
+          <img src="../assets/icons/xmark.svg" alt="xmark" class="xmark">
+        </div>
+      </div>
+      <p>{{ selectedActivityDetails?.description }}</p>
+
+      <div v-if="selectedActivityDetails?.includedGaranties" class="garanties-inclues">
+        <h5>Les prestations principales</h5>
+        <h6>Les principaux cas</h6>
+        <ul>
+          <li v-for="item in selectedActivityDetails.includedGaranties" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="selectedActivityDetails?.secondaryGaranties" class="garanties-inclues">
+        <h5>Garanties Secondaires</h5>
+        <h6>Les principaux cas</h6>
+        <ul>
+          <li v-for="item in selectedActivityDetails.secondaryGaranties" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <div v-if="selectedActivityDetails?.excludedGaranties" class="garanties-exclues">
+        <h5>Garanties Exclues</h5>
+        <h6>Les principaux cas</h6>
+        <ul>
+          <li v-for="item in selectedActivityDetails.excludedGaranties" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
 </template>
 
 <script setup>
-import BonASavoir from '../components/BonASavoir.vue';
+import { ref, onMounted, computed } from "vue";
+import allActivities from "@/assets/activities.json";
 import { useFormStore } from '@/stores/useFormStore';
-import { ref, reactive, computed } from 'vue';
 
+const searchTerm = ref("");
+const activities = ref(allActivities);
+const filteredActivities = ref([]);
+const selectedActivities = ref([]);
+const showModal = ref(false);
+const selectedActivityDetails = ref(null);
 const formStore = useFormStore();
 
-const formData = reactive({
-    declare_sinistre2ans: 'NON',
-    resilie_par_assureur3ans: formStore.getFormData.step5.resilie_par_assureur3ans || 'NON',
-    utilisations_professionnelles: 'NON',
+const selectedActivityNames = computed(() =>
+  selectedActivities.value.map(activity => activity.name)
+);
+
+onMounted(() => {
+  showInitialActivities();
 });
 
-const showSinistresError = computed(() => formData.declare_sinistre2ans === 'OUI');
-//const showResiliationError = computed(() => formData.resilie_par_assureur3ans === 'OUI');
-const showProError = computed(() => formData.utilisations_professionnelles === 'OUI');
+function showInitialActivities() {
+  filteredActivities.value = activities.value.slice(0, 5);
+}
 
-function submitStep() {
-    if (!showSinistresError.value && !showProError.value) {
-        formStore.updateStepData('step5', formData);
-        formStore.nextStep();
-    }
+function filterActivities() {
+  const term = searchTerm.value.trim().toLowerCase();
+
+  if (term === "") {
+    filteredActivities.value = selectedActivities.value.length === 0 
+      ? activities.value.slice(0, 5) 
+      : [];
+    return;
+  }
+
+  filteredActivities.value = activities.value.filter(
+    activity =>
+      activity.name.toLowerCase().includes(term) &&
+      !isActivitySelected(activity)
+  );
+}
+
+function isActivitySelected(activity) {
+  return selectedActivities.value.some(
+    selected => selected.name === activity.name
+  );
+}
+
+function selectActivity(activity) {
+  if (!isActivitySelected(activity) && selectedActivities.value.length < 5) {
+    selectedActivities.value.push(activity);
+    searchTerm.value = "";
+    filteredActivities.value = [];
+  }
+}
+
+function removeActivity(activity) {
+  selectedActivities.value = selectedActivities.value.filter(
+    a => a.name !== activity.name
+  );
+
+  if (selectedActivities.value.length === 0) {
+    showInitialActivities();
+  }
+}
+
+function openModal(activity) {
+  selectedActivityDetails.value = activity;
+  showModal.value = true;
+}
+
+function closeModal() {
+  showModal.value = false;
+  selectedActivityDetails.value = null;
+}
+
+async function submitStep() {
+  formStore.updateStepData("step5", selectedActivityNames.value);
+  formStore.nextStep();
 }
 </script>
+
+<style scoped>
+.label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.results {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden;
+}
+
+.result-item {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.result-item:hover {
+  background-color: #f0f0f0;
+}
+
+.details {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.details-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.details-description {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.details-garanties h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.details-garanties ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.activity-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.activity-dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.activity-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+.activity-item:hover {
+  background-color: #f5f5f5;
+}
+
+.selected-activities {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.selected-activity {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  background-color: var(--color-bg-base-normal);
+}
+
+.activity-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #f97316;
+  background-color: transparent;
+  border: 1px solid #f97316;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.details-button:hover {
+  background-color: #f97316;
+  color: #fff;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-close:hover {
+  background: #0056b3;
+}
+.xmark{
+  height: 24px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+.garanties-inclues{
+  border: 1px solid #d9d8e1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 24px;
+  background-color: #fafaff;
+  margin-top: 32px;
+}
+.garanties-exclues{
+  border: 1px solid #d9d8e1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 24px;
+  background-color: #ffeff0;
+  margin-top: 32px;
+}
+
+</style>

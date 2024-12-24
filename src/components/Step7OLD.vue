@@ -323,7 +323,7 @@
 
 <script setup>
 import { ref, reactive, computed } from 'vue';
-import BonASavoir from '../components/BonASavoir.vue';
+import BonASavoir from './BonASavoir.vue';
 import { useFormStore } from '@/stores/useFormStore';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
