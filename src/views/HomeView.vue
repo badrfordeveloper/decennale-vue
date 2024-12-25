@@ -925,8 +925,8 @@
                     </svg>
                   </a>
                 </div>
-                <a href="mailto:contact@decennale-express.fr"
-                  class="footer_texte margin-top margin-footer">contact@decennale-express.fr</a>
+                <a href="mailto:pib@decennale-express.fr"
+                  class="footer_texte margin-top margin-footer">pib@decennale-express.fr</a>
                 <div class="footer_texte margin-top margin-footer">45 RUE DE BOULAINVILLIERS 75016, Paris</div>
                 <div class="footer_texte margin-top margin-footer">Du lundi au vendredi, de 9h à 18h</div>
               </div>

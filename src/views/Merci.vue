@@ -32,7 +32,7 @@
       <p>
         Notre service client est disponible pour répondre à toutes vos questions.<br>
         Appelez-nous au <span class="highlight"><a href="tel:0972880101">09 72 88 01 01</a></span><br>
-        ou envoyez-nous un e-mail à <span class="highlight"><a href="mailto:contact@decennale-express.fr">contact@decennale-express.fr</a></span>.
+        ou envoyez-nous un e-mail à <span class="highlight"><a href="mailto:pib@decennale-express.fr">pib@decennale-express.fr</a></span>.
       </p>
     </div>
     
