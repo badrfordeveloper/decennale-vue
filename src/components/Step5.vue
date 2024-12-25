@@ -36,9 +36,28 @@
       </li>
     </ul>
 
-    <p v-if="selectedActivities.length">
-      Votre expérience devra être justifiée : fiches de paie, factures, certificats de travail, etc.
-    </p>
+    <div v-if="selectedActivities.length">
+      <div class="css-y62p23 e1bayppm0">
+        <div class="css-70qvj9">
+          <div class="css-t1zs2o">
+            <div class="css-1tmuokj">
+              <div class="css-sua9d4"><img src="../assets/icons/bola.png" alt="" class="css-3ps8c1">
+              </div>
+            </div>
+          </div>
+          <div class="css-ufw65v">
+            <p class="css-6x79tc">Bon à savoir</p>
+          </div>
+        </div>
+        <div class="css-1gt2dqj">
+          <div class="css-1hw29i9">
+            <div class="css-6slv8k">
+              <p class="css-8swbkq">Votre expérience devra être justifiée : fiches de paie, factures, certificats de travail, etc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <button v-if="selectedActivities.length" type="submit"
       class="navBtn nextBtn mt-4 d-flex justify-content-center align-items-center">
@@ -381,5 +400,77 @@ async function submitStep() {
   background-color: #ffeff0;
   margin-top: 32px;
 }
-
+.css-y62p23 {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 32px;
+    background-color: #f9d9c3;
+    color: #070042;
+}
+.css-70qvj9 {
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.css-1gt2dqj {
+    margin-left: 0px;
+}
+.css-t1zs2o {
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+.css-1tmuokj {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex
+;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.css-sua9d4 {
+    display: flex
+;
+    width: 100%;
+    height: 100%;
+    
+}
+.css-6x79tc {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+.css-ufw65v {
+    min-width: 0px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+.css-1gt2dqj {
+    margin-left: 0px;
+}
+.css-1hw29i9 {
+    margin-top: 12px;
+}
+.css-6slv8k {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+.css-8swbkq {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+}
 </style>
