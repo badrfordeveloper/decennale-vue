@@ -97,6 +97,8 @@
 import { useFormStore } from "@/stores/useFormStore";
 import { ref, reactive, computed, onMounted } from "vue";
 import { useRouter } from 'vue-router';
+import { toast } from 'vue3-toastify';
+import axios from 'axios';
 
 const router = useRouter();
 const formStore = useFormStore();
@@ -125,13 +127,49 @@ const fractionnementOptions = ref([
   ]),
 ]);
 
-function submitStep() {
+const handleApiRequest = async (url, data, onSuccess = () => {}, errorMessage = 'Une erreur est survenue, merci de réessayer plus tard.') => {
+    try {
+        const response = await axios.post(url, data);
+        if (response.status === 200) {
+            onSuccess(response);
+        }
+        return response;
+    } catch (error) {
+        const errorResponse = error.response;
+        console.error(errorMessage, errorResponse || error.message);
+        toast.error(errorMessage);
+        throw error;
+    }
+};
+
+const sendEmail = async () => {
+    const data = formStore.getFormData;
+    console.log('Sending signature data:', data);
+
+    return await handleApiRequest(
+        `${import.meta.env.VITE_BASE_URL}/api/send-email`,
+        data,
+        (response) => {
+            console.log('Email sent successfully:', response);
+        },
+        'Erreur lors de l\'envoi du mail.'
+    );
+};
+
+const submitStep = async () => {
   if (formData.date_effet && formData.franchise && formData.fractionnement) {
     formStore.updateStepData("step6", { ...formData });
-    router.push('/devis/merci');
-
+    try {
+        const response = await sendEmail();
+        if (response?.status === 200) {
+            router.push('/devis/merci');
+        }
+    } catch (error) {
+        console.error('Error during finalizing devis:', error);
+    }
   } else {
-    alert("Veuillez remplir tous les champs requis.");
+    toast.error('Veuillez remplir tous les champs requis.');
+
   }
 }
 </script>
