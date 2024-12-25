@@ -3733,7 +3733,12 @@ figcaption {
 
 .padding-page {
     padding-left: 2.5rem;
-    padding-right: 2.5rem
+    padding-right: 2.5rem;
+    width: 100%;
+}
+
+a {
+    text-decoration: none !important;
 }
 
 .hero_about-subtitle {
@@ -10020,10 +10025,10 @@ figcaption {
         color: var(--color--blue-100)
     }
 
-    .padding-page {
+    /* .padding-page {
         padding-left: 1.5rem;
         padding-right: 1.5rem
-    }
+    } */
 
     .padding-large {
         padding: 1.5rem
