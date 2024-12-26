@@ -2,6 +2,8 @@
   import "../assets/orus.css"; 
   import { ref, onMounted, onUnmounted } from "vue";
   
+  import "../assets/index.js"; 
+
   const showModal = ref(false);
 
   const closeModal = () => {
@@ -119,30 +121,11 @@
     };
 
     onMounted(() => {
-      // Load scripts
-      loadResource(
-        "https://cdn.prod.website-files.com/6256799c3b49378c9309d264/js/webflow.446dde49ff357f8c345c632b2bb94895.js",
-        "script"
-      );
-      loadResource("/src/assets/index.js", "script");
-      loadResource(
-        "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js",
-        "script"
-      );
-
+   
     });
 
     onUnmounted(() => {
-      // Remove scripts
-      removeResource(
-        "https://cdn.prod.website-files.com/6256799c3b49378c9309d264/js/webflow.446dde49ff357f8c345c632b2bb94895.js",
-        "script"
-      );
-      removeResource("/src/assets/index.js", "script");
-      removeResource(
-        "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js",
-        "script"
-      );
+
 
     });
 
