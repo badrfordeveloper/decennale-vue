@@ -878,7 +878,7 @@
           </div>
         </div>
       </div>
-      <footer class="footer o-bg-blue900 p-4 text-center">
+      <footer class=" o-bg-blue900 p-4 text-center" style="padding: 20px;text-align: center;">
         <p class="footer-copyright m-0">© 2025 DECENNALE EXPRESS tous droits réservés. STE GLS LASSURANCES.</p>
 
       </footer>
