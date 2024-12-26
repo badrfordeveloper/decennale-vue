@@ -133,5 +133,8 @@
     .stepperdiv {
         display: none !important;
     }
+    .container-fluid{
+        padding: 15px !important;
+    }
 }
 </style>

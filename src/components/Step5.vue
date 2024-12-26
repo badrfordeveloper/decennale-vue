@@ -21,7 +21,7 @@
     <ul class="selected-activities">
       <li v-for="activity in selectedActivities" :key="activity.name" class="selected-activity">
         <div class="activity-details">
-          <span>{{ activity.name }}</span>
+          <span class="activity-name">{{ activity.name }}</span>
           <div class="d-flex gap-2 activity-buttons">
             <button type="button" class="details-button" @click="openModal(activity)"
               aria-label="Voir les détails de l'activité">
@@ -69,8 +69,8 @@
   <div v-if="showModal" class="modal-overlay" @click.self="closeModal">
     <div class="modal-content">
       <div class="d-flex justify-content-between">
-        <h3>{{ selectedActivityDetails?.name }}</h3>
-        <div @click="closeModal">
+        <h4>{{ selectedActivityDetails?.name }}</h4>
+        <div @click="closeModal" class="close-modal">
           <img src="../assets/icons/xmark.svg" alt="xmark" class="xmark">
         </div>
       </div>
@@ -85,7 +85,6 @@
 
       <div v-if="selectedActivityDetails?.secondaryGaranties" class="garanties-inclues">
         <h5>Garanties Secondaires</h5>
-        <h6>Les principaux cas</h6>
         <p v-html="selectedActivityDetails?.secondaryGaranties"> 
         </p>
       </div>
@@ -103,11 +102,13 @@
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
-import allActivities from "@/assets/activities.json";
+import activitiesPIB from "@/assets/activitiesPIB.json";
+import activitiesDuPisicine from "@/assets/activitiesDuPisicine.json";
+import activitiesDuBatiment from "@/assets/activitiesDuBatiment.json";
 import { useFormStore } from "@/stores/useFormStore";
 
 const searchTerm = ref("");
-const activities = ref(allActivities);
+const activities = ref();
 const filteredActivities = ref([]);
 const selectedActivities = ref([]);
 const showModal = ref(false);
@@ -119,18 +120,37 @@ const selectedActivityNames = computed(() =>
 );
 
 onMounted(() => {
+  initializeActivities();
   initializeSelectedActivities();
   showInitialActivities();
 });
 
+function initializeActivities() {
+  const profession = formStore.getFormData?.step1?.profession;
+  
+  if (profession === "ARTISAN_ENTREPRISE_BATIMENT") {
+    activities.value = activitiesDuBatiment;
+  } else if (profession === "PROFESSION_INTELLECTUELLE_BATIMENT") {
+    activities.value = activitiesPIB;
+  } else if (profession === "ACTIVITE_PISCINISTE") {
+    activities.value = activitiesDuPisicine;
+  } else {
+    activities.value = [];
+  }
+}
+
 function showInitialActivities() {
+  if (!activities.value) return;
+
   if (selectedActivities.value.length === 0) {
     filteredActivities.value = activities.value.slice(0, 5);
   }
 }
 
 function initializeSelectedActivities() {
-  const storedActivities = formStore.formData.step5;
+  if (!activities.value) return;
+
+  const storedActivities = formStore.getFormData?.step5;
   if (!Array.isArray(storedActivities) || storedActivities.length === 0) {
     showInitialActivities();
     return;
@@ -141,6 +161,8 @@ function initializeSelectedActivities() {
 }
 
 function filterActivities() {
+  if (!activities.value) return;
+
   const term = searchTerm.value.trim().toLowerCase();
 
   if (term === "") {
@@ -308,7 +330,7 @@ async function submitStep() {
   border-radius: 5px;
   margin-bottom: 10px;
   padding: 12px 16px;
-  background-color: var(--color-bg-base-normal);
+  background-color: #f7ece4;
 }
 @media (max-width: 768px) {
     .activity-details {
@@ -474,5 +496,22 @@ async function submitStep() {
     line-height: 20px;
     margin: 0px;
     padding: 0px;
+}
+.close-modal{
+  min-width: 10%;
+  display: flex;
+  justify-content: end;
+}
+.activity-name{
+  width: 75%;
+}
+@media (max-width: 768px) {
+  .activity-name{
+    text-align: center;
+  }
+  .selected-activity{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 </style>
