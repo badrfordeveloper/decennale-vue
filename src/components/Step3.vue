@@ -76,7 +76,7 @@
         <ErrorComponent v-if="$v.assureur.en_cours.$error" :errors="$v.assureur.en_cours.$errors" />
 
       </div>
-      <div class="col-6 ">
+      <div class="col-12 col-md-6">
         <label class="formLabel mb-2"> Date de résiliation de votre dernier contrat
         </label>
         <input type="date" v-model="formData.assureur.date_resiliation" class="form-control">
@@ -84,21 +84,21 @@
 
       </div>
 
-      <div class="col-6 ">
+      <div class="col-12 col-md-6 ">
         <label class="formLabel mb-2"> Nom de l'ancienne compagnie
         </label>
         <input type="text" v-model="formData.assureur.nom" class="form-control">
         <ErrorComponent v-if="$v.assureur.nom.$error" :errors="$v.assureur.nom.$errors" />
 
       </div>
-      <div class="col-6 ">
+      <div class="col-12 col-md-6 ">
         <label class="formLabel mb-2"> Nombre de sinistres déclarés sur 36 mois
         </label>
         <input type="number" v-model="formData.assureur.nombre_sinistre" class="form-control">
         <ErrorComponent v-if="$v.assureur.nombre_sinistre.$error" :errors="$v.assureur.nombre_sinistre.$errors" />
 
       </div>
-      <div class="col-6 ">
+      <div class="col-12 col-md-6">
         <label class="formLabel mb-2"> Montant des sinistres déclarés sur 36 mois
         </label>
         <input type="number" v-model="formData.assureur.montant_sinistre" class="form-control">

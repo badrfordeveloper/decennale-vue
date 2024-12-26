@@ -4,7 +4,6 @@
             <div class="col-12">
                 <h2 class="stepTitle mb-3">On y est presque !</h2>
                 <p class="stepDescription mb-3 mb-md-0">
-                    J'ai besoin d'informations supplémentaires pour constituer la meilleure offre.
                 </p>
             </div>
 
@@ -21,12 +20,17 @@
                         <div id="form">
                             <div id="franchise-slider" :class="{'franchise-false': isFranchise1}">
                                 <template v-if="isFranchise1">
+                              
+                                  <div class="group-input-franchise">
                                     <input type="radio" name="franchise" id="franchise4" value="500 € à 1500 €"
                                         v-model="formData.franchise" />
                                     <label for="franchise4" data-franchise="500 € à 1500 €"></label> 
+                                  </div>
+                                  <div class="group-input-franchise">
                                     <input type="radio" name="franchise" id="franchise5" value="2000 € à 3000 €"
                                         v-model="formData.franchise" />
                                     <label for="franchise5" data-franchise="2000 € à 3000 €"></label>
+                                  </div>
                                 </template>
                                 <template v-else>
                                     <input type="radio" name="franchise" id="franchise1" value="1500 €"
@@ -202,6 +206,16 @@ const submitStep = async () => {
 </script>
 
 <style scoped>
+.group-input-franchise{
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .group-input-franchise {
+    }
+}
+
 .franchise-option {
     margin-bottom: 10px;
 }

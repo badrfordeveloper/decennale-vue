@@ -895,66 +895,9 @@
           </div>
         </div>
       </div>
-      <footer class="footer o-bg-blue900">
-        <div class="container">
-          <div class="footer-header_wrapper">
-            <div class="footer-header_left">
-              <a aria-label="Logo " href="/" class="footer_link w-inline-block">
-                <img src='../assets/logo.png' width="300" height="75" alt="" />
-              </a>
-              <div class="margin-top margin-xlarge">
-                <div class="socials_wrapper">
-                  <a aria-label="Linkedin" href="https://www.linkedin.com/" target="_blank"
-                    class="social_link w-inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" fill="#000" viewBox="0 0 24 24">
-                      <g id="icon/linkedin" class="icon/linkedin">
-                        <path id="Vector" fill="#000"
-                          d="M20.47 2H3.53a1.45 1.45 0 0 0-1.47 1.43v17.14A1.45 1.45 0 0 0 3.53 22h16.94a1.45 1.45 0 0 0 1.47-1.43V3.43A1.45 1.45 0 0 0 20.47 2ZM8.09 18.74h-3v-9h3v9ZM6.59 8.48a1.56 1.56 0 0 1 0-3.12 1.57 1.57 0 1 1 0 3.12Zm12.32 10.26h-3v-4.83c0-1.21-.43-2-1.52-2A1.65 1.65 0 0 0 12.85 13a1.999 1.999 0 0 0-.1.73v5h-3v-9h3V11a3 3 0 0 1 2.71-1.5c2 0 3.45 1.29 3.45 4.06v5.18Z"
-                          class="Vector"></path>
-                      </g>
-                    </svg>
-                  </a>
-                  <a aria-label="Medium" href="https://www.instagram.com/" target="_blank"
-                    class="social_link w-inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" fill="#000" viewBox="0 0 24 24">
-                      <g id="Logo icon footer" class="Logo icon footer">
-                        <path id="Subtract" fill="#000" fill-rule="evenodd"
-                          d="M5.807 1.026C6.068 1.005 7.411 1 12.004 1h3.58c2.58.004 2.727.026 3.217.097l.028.004c1.061.153 1.951.576 2.679 1.27.407.393.688.777.941 1.29.308.629.46 1.222.53 2.106.014.19.021 3.205.021 6.223 0 3.017-.006 6.039-.021 6.228-.069.87-.22 1.468-.519 2.084a4.606 4.606 0 0 1-3.003 2.459c-.478.123-.91.181-1.655.216-.265.014-3.044.017-5.822.017s-5.555-.009-5.827-.02c-.643-.03-1.144-.095-1.597-.212a4.634 4.634 0 0 1-3.004-2.453c-.304-.631-.448-1.208-.524-2.125C1.006 17.924 1 16.58 1 11.993V8.418c.004-2.583.025-2.728.097-3.22 0-.009.002-.018.003-.026.153-1.06.576-1.951 1.274-2.676.384-.397.772-.68 1.264-.925.64-.318 1.226-.466 2.168-.545Zm2.842 2.9c.866-.04 1.143-.049 3.348-.049h-.002c2.206 0 2.482.01 3.349.05.864.039 1.455.176 1.972.376a3.98 3.98 0 0 1 1.439.937c.451.451.729.905.937 1.439.2.516.337 1.106.377 1.97.04.867.05 1.144.05 3.35 0 2.205-.01 2.481-.05 3.348-.04.864-.177 1.454-.377 1.97a3.987 3.987 0 0 1-.938 1.44c-.45.451-.903.73-1.437.937-.517.2-1.108.338-1.972.377-.867.04-1.143.05-3.349.05-2.205 0-2.482-.01-3.348-.05-.864-.04-1.455-.176-1.971-.377a3.977 3.977 0 0 1-1.439-.938 3.98 3.98 0 0 1-.936-1.438c-.201-.517-.338-1.107-.378-1.971-.039-.867-.049-1.143-.049-3.348 0-2.206.01-2.483.049-3.35.039-.864.176-1.454.377-1.97.208-.534.486-.988.938-1.439.451-.452.904-.73 1.438-.937.517-.2 1.107-.337 1.972-.377Zm3.078 1.415h-.458v-.002c-1.514.001-1.804.011-2.553.045-.792.037-1.222.169-1.508.28a2.52 2.52 0 0 0-.934.608 2.503 2.503 0 0 0-.608.934c-.111.286-.244.716-.28 1.508-.039.856-.047 1.112-.047 3.28 0 2.17.008 2.427.047 3.283.036.792.169 1.222.28 1.508a2.5 2.5 0 0 0 .608.933c.284.284.555.46.934.607.286.111.716.244 1.508.28.856.04 1.113.048 3.281.048 2.169 0 2.426-.009 3.282-.048.792-.036 1.222-.168 1.508-.28.38-.147.65-.323.933-.607.285-.284.46-.554.608-.933.111-.286.244-.716.28-1.507.039-.857.047-1.114.047-3.281 0-2.168-.008-2.425-.047-3.281-.036-.792-.169-1.222-.28-1.508a2.52 2.52 0 0 0-.608-.934 2.512 2.512 0 0 0-.933-.607c-.286-.111-.716-.243-1.508-.28-.856-.039-1.113-.046-3.282-.046h-.27Zm4.064 1.512a.975.975 0 1 1 1.083 1.62.975.975 0 0 1-1.083-1.62ZM7.827 12a4.17 4.17 0 1 1 8.341 0 4.17 4.17 0 0 1-8.341 0Zm6.878 0a2.707 2.707 0 1 0-5.415 0 2.707 2.707 0 0 0 5.415 0Z"
-                          class="Subtract" clip-rule="evenodd"></path>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-                <a href="mailto:pib@decennale-express.fr"
-                  class="footer_texte margin-top margin-footer">pib@decennale-express.fr</a>
-                <div class="footer_texte margin-top margin-footer">45 RUE DE BOULAINVILLIERS 75016, Paris</div>
-                <div class="footer_texte margin-top margin-footer">Du lundi au vendredi, de 9h à 18h</div>
-              </div>
-            </div>
-            <div class="footer-header_right">
-              <div class="footer-header_content">
-                <div class="footer-header_content-texte">Nous sommes là pour vous</div>
-              </div>
-              <div class="footer-header_content">
-                <div class="footer-header_content-texte">Vous êtes notre priorité</div>
-              </div>
-              <div class="footer-header_content">
-                <div class="footer-header_content-texte">Notre mission</div>
-                <div class="margin-top margin-footer">
-                  <div class="footer-header_accompagner">Vous accompagner en toute sérénité</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="footer-divider margin-vertical margin-medium"></div>
-          <div class="footer_bottom_component">
-            <div class="footer_copyright">
-              <div class="footer_copyright-wrapper">
-                <p class="footer-copyright">© 2025 DECENNALE EXPRESS tous droits réservés. STE GLS LASSURANCES.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <footer class="footer o-bg-blue900 p-4 text-center">
+        <p class="footer-copyright m-0">© 2025 DECENNALE EXPRESS tous droits réservés. STE GLS LASSURANCES.</p>
+
       </footer>
     </div>
   </div>

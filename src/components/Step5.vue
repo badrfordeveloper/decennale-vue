@@ -22,7 +22,7 @@
       <li v-for="activity in selectedActivities" :key="activity.name" class="selected-activity">
         <div class="activity-details">
           <span>{{ activity.name }}</span>
-          <div class="d-flex gap-2">
+          <div class="d-flex gap-2 activity-buttons">
             <button type="button" class="details-button" @click="openModal(activity)"
               aria-label="Voir les détails de l'activité">
               Plus de détails
@@ -319,7 +319,15 @@ async function submitStep() {
   padding: 12px 16px;
   background-color: var(--color-bg-base-normal);
 }
-
+@media (max-width: 768px) {
+    .activity-details {
+      display: flex ;
+      flex-direction: column;
+    }
+    .activity-buttons{
+      margin-top: 8px;
+    }
+}
 .activity-details {
   display: flex;
   justify-content: space-between;

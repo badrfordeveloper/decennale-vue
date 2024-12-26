@@ -5,7 +5,7 @@
             <div class="col-12  mb-2">
                 <label for="maison" class="formLabel mb-5">Quelle profession souhaitez-vous assurer ?</label>
                <div class="row g-3 g-md-4">
-                <div class="col-4 mt-0">
+                <div class="col-12 col-md-4 mt-0">
                     <div class="btn-group formIconContainer" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check profession" name="profession" value="ARTISAN_ENTREPRISE_BATIMENT"
                             id="ARTISAN_ENTREPRISE_BATIMENT" autocomplete="off" v-model="data.profession">
@@ -18,7 +18,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-4 mt-0">
+                <div class="col-12 col-md-4 mt-0">
                     <div class="btn-group formIconContainer" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check profession" name="profession"
                             value="PROFESSION_INTELLECTUELLE_BATIMENT" id="PROFESSION_INTELLECTUELLE_BATIMENT" autocomplete="off" v-model="data.profession">
@@ -30,7 +30,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-4 mt-0">
+                <div class="col-12 col-md-4 mt-0">
                     <div class="btn-group formIconContainer" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check profession" name="profession" value="ACTIVITE_PISCINISTE"
                             id="ACTIVITE_PISCINISTE" autocomplete="off" v-model="data.profession">
@@ -41,8 +41,6 @@
                             <div>Activite de pisciniste</div>
                         </label>
                     </div>
-
-
                 </div>
                 </div>
                 <div  class="col-12 mt-0">
@@ -50,8 +48,7 @@
                 </div>
             </div >
             <div class="col-12 ">
-
-                <label class="formLabel mb-2"> Num de SIREN : </label>
+                <label class="formLabel my-3"> Numéro de SIREN : </label>
                 <input type="text"  v-model="data.siren" class="form-control ">
                 <ErrorComponent v-if="$v.siren.$error" :errors="$v.siren.$errors" />
             </div >
@@ -144,6 +141,12 @@ async function submitStep() {
 }
 </script>
 <style scoped>
+@media (max-width: 768px) {
+    .firstBtn  {
+        font-size: medium;
+    }
+}
+
 .formIconContainer{
     height: 100%;
 }

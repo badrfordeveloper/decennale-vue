@@ -342,7 +342,8 @@ button.pusletooltip:hover {
 	}
 }
 .formLabel {
-  margin: 0 0 0px 0 !important;
+  margin: 15px 0 5px 0 !important;
+
 }
 .formLabel {
   font-weight: bold;
