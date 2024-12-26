@@ -1,0 +1,95 @@
+[
+
+  {
+    "name": "Architecte",
+    "description": "Mission complète ou partielle (conception et/ou direction de l’exécution des contrats de travaux) pour l’aménagement intérieur et l’agencement des ouvrages avec intervention sur la structure de la construction",
+    "includedGaranties": "<ul><li>ESQ (Esquisse)</li><li>AVP (Avant-Projet)</li><li>APS (Avant-projet sommaire)</li><li>APD (Avant-projet détaillé ou définitif)</li><li>DPC (Dossier de permis de construire)</li><li>DCE (Dossier de consultation des entreprises)</li></ul>",
+    "secondaryGaranties": "",
+    "excludedGaranties": ""
+  },
+  {
+    "name": "Architecte d’intérieur",
+    "description": "Mission complète ou partielle (conception et/ou direction de l’exécution des contrats de travaux) pour l’aménagement intérieur et l’agencement des ouvrages sans intervention sur la structure de la construction.",
+    "includedGaranties": "<ul><li>ESQ (Esquisse)</li><li>AVP (Avant-Projet)</li><li>APS (Avant-projet sommaire)</li><li>APD (Avant-projet détaillé ou définitif)</li><li>DCE (Dossier de consultation des entreprises)</li></ul>",
+    "secondaryGaranties": "",
+    "excludedGaranties": "<ul><li>Travaux de bâtiment.</li><li>Tous travaux portant atteinte à l'infrastructure et la super structure du bâtiment.</li></ul>"
+  },
+  {
+    "name": "Assistant Maître d’œuvre",
+    "description": "L'assistant Maître d'Œuvre est mandaté par et se substitue au Maître d'œuvre. Il l'assiste et en aucun cas il ne peut réceptionner ou éditer tout document engageant le maitre d'œuvre.",
+    "includedGaranties": "<ul><li>Assister la Maître d'œuvre notamment dans la définition de l'objectif du projet.</li><li>Définir et concevoir le projet.</li><li>Participer à la sélection de solutions adéquates.</li><li>Suivre et vérifier l'avancement du projet et le respect du cahier des charges.</li><li>Participer à la définition du plan de recettes.</li><li>Participer à la livraison du projet.</li><li>Communiquer sur l'avancée du projet.</li></ul>",
+    "secondaryGaranties": "",
+    "excludedGaranties": "<ul><li>Toute mission de maîtrise d’ouvrage directe.</li></ul>"
+  },
+  {
+    "name": "Assistant Maître d’ouvrage",
+    "description": "Mission d’assistance et de conseil au maître de l’ouvrage pour l’évaluation,la programmation,la budgétisation,la passation des marchés,les choix techniques et/ou architecturaux d’une opération de construction,au stade de la conception et/ou de la réalisation. Evaluation,programmation,budgétisation.",
+    "includedGaranties": "",
+    "secondaryGaranties": "",
+    "excludedGaranties": "Toute mission de maîtrise d’ouvrage déléguée (MOD) ou de mandataire du maître de l’ouvrage et de toute autre prestation y compris toutes activités de conception ou de réalisation"
+  },
+  {
+    "name": "BET TCE (Tous corps d'état)",
+    "description": "Un BET Tous Corps d'Etat (TCE), en collaboration avec l'architecte il réalise toutes les études pour des ouvrages neufs ou réhabilités. Élabore tout type de plans,de la conception à l’exécution. Édite toute note de calcul de dimensionnement conformément aux réglementations en vigueur. La consultation des entreprises et écrit le ou les CCTP correspondants.",
+    "includedGaranties": "<ul><li>BET Acoustique</li><li>BET Assainissement / VRD</li><li>BET Charpente / Couverture (Bois et fer)</li><li>BET Chauffage / Plomberie</li><li>BET Climatisation / Ventilation</li><li>BET Construction Bois</li><li>BET Electricité</li><li>BET Etanchéité</li><li>BET Fluides</li><li>BET Géotechnique</li><li>BET Infrastructure</li><li>BET Structure</li><li>BET</li></ul>",
+    "secondaryGaranties": "",
+    "excludedGaranties": ""
+  },
+  {
+    "name": "BET Acoustique ",
+    "description": "Un BET Tous Corps d'Etat (TCE), en collaboration avec l'architecte il réalise toutes les études pour des ouvrages neufs ou réhabilités. Élabore tout type de plans,de la conception à l’exécution. Édite toute note de calcul de dimensionnement conformément aux réglementations en vigueur. La consultation des entreprises et écrit le ou les CCTP correspondants.",
+    "includedGaranties": "",
+    "secondaryGaranties": "",
+    "excludedGaranties": ""
+  },
+  {
+    "name": "BET Assainissement / VRD",
+    "description": "Le BET (V.R.D.) assure la conception des espaces extérieurs d'un point de vue technique. En collaboration avec l'architecte et,ou le paysagiste de la maitrise d'œuvre, il réalise les documents graphiques et les descriptifs techniques correspondant aux prestations de surface (d'espaces verts et V.R.D.) Élabore tout type de plans,de la conception à l’exécution. Édite toute note de calcul de dimensionnement conformément aux réglementations en vigueur. La consultation des entreprises et écrit le ou les CCTP correspondants.",
+    "includedGaranties": "",
+    "secondaryGaranties": "",
+    "excludedGaranties": ""
+  },
+  {
+    "name": "BET Charpente / Couverture (Bois et fer) ",
+    "description": "Le BET charpente / couverture (Bois ou Fer),en collaboration avec l'architecte réalise des études de faisabilité ou de portance pour des ouvrages neufs ou réhabilités. Élabore tout type de plans,de la conception à l’exécution. Édite toute note de calcul de dimensionnement / portance conformément aux réglementations en vigueur. La consultation des entreprises et écrit le ou les CCTP correspondants.",
+    "includedGaranties": "",
+    "secondaryGaranties": "",
+    "excludedGaranties": ""
+  },
+  {
+    "name": "BET Chauffage / Plomberie",
+    "description": "Le BET Chauffage / Plomberie en collaboration avec l'architecte réalise des études de faisabilité et/ou calorifique pour des ouvrages neufs ou réhabilités. Élabore tout type de plans,de la conception à l’exécution. Édite toute note de calcul de dimensionnement conformément aux réglementations en vigueur. La consultation des entreprises et écrit le ou les CCTP correspondants.",
+    "includedGaranties": "",
+    "secondaryGaranties": "",
+    "excludedGaranties": ""
+  },
+  {
+    "name": "BET Climatisation / Ventilation ",
+    "description": "Le BET Climatisation / Ventilation en collaboration avec l'architecte réalise des études de faisabilité et/ou calorifique pour des ouvrages neufs ou réhabilités. Élabore tout type de plans,de la conception à l’exécution. Édite toute note de calcul de dimensionnement conformément aux réglementations en vigueur. La consultation des entreprises et écrit le ou les CCTP correspondants",
+    "includedGaranties": "",
+    "secondaryGaranties": "",
+    "excludedGaranties": ""
+  },
+  {
+    "name": "BET Construction Bois",
+    "description": "Un Bureau d'Etudes bois s'occupera des structures en bois,dont les charpentes et couvertures,réalisant des études et prestations de conseils techniques dans le cadre d'une construction bois. Il sera le principal acteur des lots structures / charpente / couverture en phase préparatoire.",
+    "includedGaranties": "<ul><li>L’étude de projets (en phase PRO)</li><li>L’étude d’exécutions (en phase EXE)</li><li>La direction de l'exécution du ou des contrats de travaux (en phase DET)</li><li>L’étude de diagnostic (DIA)</li><li>Expertise</li><li>Missions conseils</li></ul>",
+    "secondaryGaranties": "",
+    "excludedGaranties": ""
+  },
+  {
+    "name": "BET Electricité",
+    "description": "Le BET Electricité en collaboration avec l'architecte réalise des études pour des ouvrages neufs ou réhabilité. Élabore tout type de plans,de la conception à l’exécution. Édite toute note de calcul de dimensionnement conformément aux réglementations en vigueur. La consultation des entreprises et écrit le ou les CCTP correspondants.",
+    "includedGaranties": "",
+    "secondaryGaranties": "",
+    "excludedGaranties": "<ul><li>Tous travaux de bâtiment</li><li>Courant fort (Ouvrage Public)</li><li>Génie civile</li></ul>"
+  },
+  {
+    "name": "BET Etanchéité",
+    "description": "Le BET Etanchéité en collaboration avec l'architecte réalise des études pour des ouvrages neufs ou réhabilités. Élabore tout type de plans,de la conception à l’exécution. Édite toute note de calcul de dimensionnement conformément aux réglementations en vigueur. La consultation des entreprises et écrit le ou les CCTP correspondants.",
+    "includedGaranties": "",
+    "secondaryGaranties": "",
+    "excludedGaranties": ""
+  }
+  
+]
