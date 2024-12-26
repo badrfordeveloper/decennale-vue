@@ -361,6 +361,9 @@ async function submitStep() {
   max-width: 750px;
   width: 90%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  max-height: 100%;
+  display: block !important;
+  overflow: auto;
 }
 
 .modal-content h2 {
