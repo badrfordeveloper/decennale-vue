@@ -79,31 +79,22 @@
       <div v-if="selectedActivityDetails?.includedGaranties" class="garanties-inclues">
         <h5>Les prestations principales</h5>
         <h6>Les principaux cas</h6>
-        <ul>
-          <li v-for="item in selectedActivityDetails.includedGaranties" :key="item">
-            {{ item }}
-          </li>
-        </ul>
+        <p v-html="selectedActivityDetails?.includedGaranties"> 
+        </p>
       </div>
 
       <div v-if="selectedActivityDetails?.secondaryGaranties" class="garanties-inclues">
         <h5>Garanties Secondaires</h5>
         <h6>Les principaux cas</h6>
-        <ul>
-          <li v-for="item in selectedActivityDetails.secondaryGaranties" :key="item">
-            {{ item }}
-          </li>
-        </ul>
+        <p v-html="selectedActivityDetails?.secondaryGaranties"> 
+        </p>
       </div>
 
       <div v-if="selectedActivityDetails?.excludedGaranties" class="garanties-exclues">
         <h5>Garanties Exclues</h5>
         <h6>Les principaux cas</h6>
-        <ul>
-          <li v-for="item in selectedActivityDetails.excludedGaranties" :key="item">
-            {{ item }}
-          </li>
-        </ul>
+        <p v-html="selectedActivityDetails?.excludedGaranties">     
+        </p>
       </div>
 
     </div>
@@ -367,7 +358,7 @@ async function submitStep() {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  max-width: 600px;
+  max-width: 750px;
   width: 90%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }

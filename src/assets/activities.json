@@ -1,33 +1,81 @@
 [
     {
-      "name": "Garage",
-      "description": "A place for vehicle repairs.",
-      "includedGaranties": ["Repair tools", "Warranty service"],
-      "excludedGaranties": ["Third-party liability", "Home insurance"]
+      "name": "Démolition",
+      "description": "Démolition ou déconstruction, totale ou partielle, d’ouvrages par des moyens manuels ou mécaniques.",
+      "includedGaranties": "Cette activité comprend les travaux de sciage et carottage béton ainsi que les travaux d’ouverture de murs porteurs.",
+      "excludedGaranties": "Cette activité ne comprend pas : les travaux de désamiantage, l’utilisation d’explosifs, le terrassement, les travaux de maçonnerie."
     },
     {
-      "name": "Garde d’enfants",
-      "description": "Childcare services.",
-      "includedGaranties": ["Child safety", "Education"],
-      "excludedGaranties": ["Transport", "Health coverage"]
+      "name": "Terrassement",
+      "description": "",
+      "includedGaranties": "Défrichement, remise à niveau des terres, réalisation à ciel ouvert, de creusement et de blindage de fouilles provisoires dans dessols, ainsi que destravaux de rabattement de nappes nécessaires à l'exécution des travaux de remblai, d'enrochement non lié et de comblement (sauf pour les carrières) ayant pour objet soit de constituer par eux-mêmes un ouvrage soit de permettre la réalisation d'un ouvrage.",
+      "excludedGaranties": "Cette activité ne comprend pas les forages ni la réalisation de sondage."
     },
     {
-      "name": "enfants",
-      "description": "Childcare services.",
-      "includedGaranties": ["Child safety", "Education"],
-      "excludedGaranties": ["Transport", "Health coverage"]
+      "name": "VRD",
+      "description": "",
+      "includedGaranties": "Réalisation de canalisations, d'assainissement autonome, de réseaux enterrés, de voiries, de poteaux et clôtures. Cette activité comprend les travaux accessoires ou complémentaires de terrassement et de fouilles.",
+      "excludedGaranties": "Cette activité ne comprend pas la réalisation d’espaces verts."
     },
     {
-      "name": "ccants",
-      "description": "Childcare services.",
-      "includedGaranties": ["Child safety", "Education"],
-      "excludedGaranties": ["Transport", "Health coverage"]
+      "name": "Aménagement paysagé",
+      "description": "Réalisation et entretien d'espaces verts, parcs et jardins, limité aux activitéssuivantes",
+      "includedGaranties": "<ul><li>Terrassement nécessaire à l’aménagement d’espaces verts,</li> <li>Petite maçonnerie paysagère telle que muretsd’une hauteurinférieure à1m,poteaux, clôtures, allées piétonnières, bordures, chaussées, trottoirs, pavage,</li> <li>Systèmes d’arrosage intégrés,</li> <li>Brise vue, treillis,</li> <li>Pose d’abris de jardins à usage de stockage inférieurs à 20 m²,</li> <li>Eclairage extérieur des jardins,</li> <li>Installation de récupérateurs d’eau de pluie sans raccordement au réseau sanitaire,</li> <li>Plantation et toutes opérations d’entretien de végétaux, Murs végétalisés</li></ul>",
+      "excludedGaranties": ""
     },
     {
-      "name": "ccGar",
-      "description": "Childcare services.",
-      "includedGaranties": ["Child safety", "Education"],
-      "excludedGaranties": ["Transport", "Health coverage"]
+      "name": "Montages d’échafaudages – Etaiement pour le compte de tiers",
+      "description": "",
+      "includedGaranties": "Montage pour le compte de tiers de tous étaiements, échafaudages fixes, suspendus ou élévateurs employés à la construction ou à l'entretien desimmeubles, monuments et édifices ainsi que le montage de structures évènementielles.",
+      "excludedGaranties": ""
+    },
+    {
+      "name": "Traitement amiante ",
+      "description": "Retrait et évacuation de l'amiante, des matériaux, et produits en contenant, ou leur maintien avec confinement, dans tout ouvrage ou partie d'ouvrage.",
+      "includedGaranties": "Cette activité nécessite : - Une Qualification Amiante (AFNOR ou QUALI-PV) - Un processus de contrôle - Un agrément de transport pour les matières dangereuses si transport ",
+      "excludedGaranties": "Cette activité ne comprend pas : les travaux de démolition"
+    },
+    {
+      "name": "Assèchement des murs ",
+      "description": "Traitement des murs contre les remontées d'humidité par capillarité.",
+      "includedGaranties": "Les travaux préparatoires et de traitement proprement dits Ainsi que les travaux accessoires et complémentaires de : Remplacement des parements.",
+      "excludedGaranties": ""
+    },
+    {
+      "name": "Maçonnerie",
+      "description": "Réalisation de maçonnerie en béton armé préfabriqué ou non (hors précontraint préfabriqué et in situ), en blocs agglomérés de mortier ou de béton cellulaire, en pierre naturelles ou briques, cecitant en infrastructure qu’ensuperstructure(hors parois de soutènement structurellement autonomes), par toutes les techniques de maçonnerie de coulage, hourdage (hors revêtement mural agrafé, attaché ou collé).",
+      "includedGaranties": "<ul><li>Enduits à base de liants de synthèse (hors revêtements hydrauliques)</li>,<li>Ravalement en maçonnerie</li>,<li>Briquetage, pavage</li>,<li>Dallage, chape</li>,<li>Fondations superficielles (semelles filantes, isolées, radiers et puits courts).</li></ul><br>Ainsi que les travaux accessoires ou complémentaires de :<ul><li>Complément d’étanchéité des murs enterrés,</li><li>Pose de matériaux contribuant à l'isolation intérieure,</li><li>Pose de renforts bois ou métal nécessités par l'ouverture de baies et les reprises</li>en sous-œuvre,<li>Pose d'huisseries,</li><li>Plâtrerie,</li><li>Carrelage, faïence et revêtement en matériaux durs à baseminérale,</li><li>Calfeutrement de joints.</li></ul>",
+      "excludedGaranties": ""
+    },
+    {
+      "name": "Taille de pierre ",
+      "description": "Taille et façonnage de pierres de construction et de menus ouvrages en pierre.",
+      "includedGaranties": "",
+      "excludedGaranties": ""
+    },
+    {
+      "name": "",
+      "description": "",
+      "includedGaranties": "",
+      "excludedGaranties": ""
+    },
+    {
+      "name": "",
+      "description": "",
+      "includedGaranties": "",
+      "excludedGaranties": ""
+    },
+    {
+      "name": "",
+      "description": "",
+      "includedGaranties": "",
+      "excludedGaranties": ""
+    },
+    {
+      "name": "",
+      "description": "",
+      "includedGaranties": "",
+      "excludedGaranties": ""
     }
   ]
   

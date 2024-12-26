@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Démolition",
+      "description": "Démolition ou déconstruction, totale ou partielle, d’ouvrages par des moyens manuels ou mécaniques.",
+      "includedGaranties": ["les travaux de sciage et carottage béton", "les travaux d’ouverture de murs porteurs."],
+      "excludedGaranties": ["les travaux de désamiantage", "l’utilisation d’explosifs","le terrassement", "les travaux de maçonnerie"]
+    },
+    {
+      "name": "Garde d’enfants",
+      "description": "Childcare services.",
+      "includedGaranties": ["Child safety", "Education"],
+      "excludedGaranties": ["Transport", "Health coverage"]
+    },
+    {
+      "name": "enfants",
+      "description": "Childcare services.",
+      "includedGaranties": ["Child safety", "Education"],
+      "excludedGaranties": ["Transport", "Health coverage"]
+    },
+    {
+      "name": "ccants",
+      "description": "Childcare services.",
+      "includedGaranties": ["Child safety", "Education"],
+      "excludedGaranties": ["Transport", "Health coverage"]
+    },
+    {
+      "name": "ccGar",
+      "description": "Childcare services.",
+      "includedGaranties": ["Child safety", "Education"],
+      "excludedGaranties": ["Transport", "Health coverage"]
+    }
+  ]
+  
