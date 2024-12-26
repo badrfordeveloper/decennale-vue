@@ -97,7 +97,7 @@ const rules = {
         siren: { required },
     };
 
-    const $v = useVuelidate(rules, data);
+const $v = useVuelidate(rules, data);
 
 async function submitStep() {
 

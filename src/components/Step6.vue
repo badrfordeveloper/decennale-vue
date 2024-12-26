@@ -11,6 +11,7 @@
             <div class="col-12">
                 <label class="formLabel mb-2">Date d'effet</label>
                 <input type="date" name="date_effet" class="form-control" v-model="formData.date_effet" />
+                <ErrorComponent v-if="$v.date_effet.$error" :errors="$v.date_effet.$errors" />
             </div>
 
             <div class="col-12">
@@ -22,8 +23,7 @@
                                 <template v-if="isFranchise1">
                                     <input type="radio" name="franchise" id="franchise4" value="500 € à 1500 €"
                                         v-model="formData.franchise" />
-                                    <label for="franchise4" data-franchise="500 € à 1500 €"></label>
-
+                                    <label for="franchise4" data-franchise="500 € à 1500 €"></label> 
                                     <input type="radio" name="franchise" id="franchise5" value="2000 € à 3000 €"
                                         v-model="formData.franchise" />
                                     <label for="franchise5" data-franchise="2000 € à 3000 €"></label>
@@ -45,6 +45,7 @@
                         </div>
                     </div>
                 </div>
+                <ErrorComponent v-if="$v.franchise.$error" :errors="$v.franchise.$errors" />
             </div>
         </div>
 
@@ -70,6 +71,8 @@
                     </label>
                 </div>
             </div>
+            <ErrorComponent v-if="$v.fractionnement.$error" :errors="$v.fractionnement.$errors" />
+
         </div>
 
         <div class="col-12 mt-4">
@@ -81,7 +84,10 @@
             <div class="container-fluid p-0">
                 <div class="row align-items-center">
                     <div class="col-12">
-                        <button type="submit"
+                      <button v-if="loader" type="button" class="navBtn nextBtn mt-4 d-flex justify-content-center align-items-center">
+                                <vue-spinner size="30" color="white" />
+                            </button>
+                        <button v-else type="submit"
                             class="navBtn nextBtn mt-4 d-flex justify-content-center align-items-center">
                             DEVIS EXPRESS
                             <img src="../assets/icons/complete.png" width="32" alt="suivant" class="ms-3 img-fluid" />
@@ -99,15 +105,32 @@ import { ref, reactive, computed, onMounted } from "vue";
 import { useRouter } from 'vue-router';
 import { toast } from 'vue3-toastify';
 import axios from 'axios';
+import useVuelidate from '@vuelidate/core';
+import { required, email } from '@vuelidate/validators';
+import {VueSpinner} from 'vue3-spinners';
 
 const router = useRouter();
 const formStore = useFormStore();
+const loader= ref(false)
+
 const formData = reactive({
-    date_effet: formStore.getFormData.step6?.date_effet || "",
+    date_effet:  "",
+    franchise: "",
+    fractionnement:  "",
+    observations_diverses: "",
+ /*    date_effet: formStore.getFormData.step6?.date_effet || "",
     franchise: formStore.getFormData.step6?.franchise || "",
     fractionnement: formStore.getFormData.step6?.fractionnement || "",
-    observations_diverses: formStore.getFormData.step6?.observations_diverses || "",
+    observations_diverses: formStore.getFormData.step6?.observations_diverses || "", */
 });
+
+const rules = {
+  date_effet: { required },
+  franchise: { required },
+  fractionnement: { required }
+};
+
+const $v = useVuelidate(rules, formData);
 
 const isFranchise1 = ref(true);
 onMounted(() => {
@@ -157,19 +180,23 @@ const sendEmail = async () => {
 };
 
 const submitStep = async () => {
-  if (formData.date_effet && formData.franchise && formData.fractionnement) {
+  $v.value.$touch(); // Mark all fields as touched
+  if (!$v.value.$invalid) {
     formStore.updateStepData("step6", { ...formData });
+    loader.value =true;
+
     try {
         const response = await sendEmail();
         if (response?.status === 200) {
             router.push('/devis/merci');
         }
+        loader.value =false;
+
     } catch (error) {
         console.error('Error during finalizing devis:', error);
-    }
-  } else {
-    toast.error('Veuillez remplir tous les champs requis.');
+        loader.value =false;
 
+    }
   }
 }
 </script>
