@@ -20,7 +20,7 @@
       question: "Quels artisans doivent s’assurer avec une décennale ?",
       answer: `
         <p>L'assurance décennale, essentielle pour les professionnels du bâtiment, de la
-          construction et du BTP, est un domaine couvert en profondeur chez Orus. Nous assurons une large
+          construction et du BTP, est un domaine couvert en profondeur chez nous. Nous assurons une large
           gamme d'activités dans ces secteurs :</p>
         <p>- Du terrassement aux V.R.D. (Voies et Réseaux Divers) incluant canalisations, assainissement,
           chaussées, etc. ; </p>
@@ -38,7 +38,7 @@
         <p>- La plomberie et installations sanitaires ;</p>
         <p>- L’installation thermiques et de génie climatique ;</p>
         <p>- Les travaux d'électricité.</p>
-        <p>Pour déterminer si votre activité est couverte par Orus, le moyen le plus rapide est de faire
+        <p>Pour déterminer si votre activité est couverte chez nous, le moyen le plus rapide est de faire
           une estimation sur notre site.</p>
       `,
     },
@@ -74,7 +74,7 @@
       answer: `
         <p>La nécessité d'une assurance décennale dépend de la durée et de la nature des travaux que
           vous réalisez.</p>
-        <p>Chez Orus, pas besoin d'assurance décennale si vous vous occupez de petits travaux qui ne
+        <p>Chez nous, pas besoin d'assurance décennale si vous vous occupez de petits travaux qui ne
           prennent pas plus de deux heures. Par exemple, si vos tâches consistent à accrocher des tableaux
           ou à monter un meuble, une assurance décennale n'est pas nécessaire.</p>
         <p>En revanche, nous recommandons une assurance décennale si vos travaux sont plus conséquents et
@@ -159,7 +159,7 @@
               <div class="lp-hero_component">
                 <div class="lp-hero_content">
                   <div class="hero_title">
-                    <h1 class="h1">Assurance décennale artisan</h1>
+                    <h1 class="h1">ATTESTATION EXPRESS</h1>
                   </div>
                   <div class="text-size-regular">Assurez votre activité en ligne en 3 minutes et concentrez-vous sur ce
                     qui compte vraiment : votre travail de artisan. On s’occupe du reste.</div>
@@ -237,66 +237,133 @@
         </div>
       </div>
       <section class="section">
-        <div class="spacer-large" bis_skin_checked="1"></div>
-        <div class="spacer-large" bis_skin_checked="1"></div>
+        <div class="spacer-large"></div>
+        <div class="spacer-large"></div>
         <div class="container">
           <div class="text-align-center">
             <h2 class="h3">Nos partenaires</h2>
           </div>
-          <div class="partenaire_component" bis_skin_checked="1">
-            <div class="margin-top margin-custom1" bis_skin_checked="1">
-              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list" bis_skin_checked="1">
-                <div role="list" class="partenaires_list-items w-dyn-items" bis_skin_checked="1">
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+          <div class="partenaire_component">
+            <div class="margin-top margin-custom1">
+              <div class="container">
+                <h1 class="font-weight-bold h3 mb-5">Our Brand Partners</h1>
+                <hr />
+                <p>Responsive Slider</p>
+                <section class="customer-logos slider">
+                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
+                  </div>
+
+                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
+                  </div>
+
+                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
+                  </div>
+
+                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
+                  </div>
+
+                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
+                  </div>
+
+                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
+                  </div>
+
+                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
+                  </div>
+
+                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
+                  </div>
+                </section>
+
+                <p class="my-5 py-5 small">Responsive Mobile Friendly Slider for Website Partner , Sponsor Etc. <br /> Design & Develop by : <a href="https://www.linkedin.com/in/imayushshrivastava/"> @imayushshrivastava</a> Under <a href="https://www.google.com/search?q=develop+india+online"> DIO </a> </p>
+              </div>
+              <!-- <div class="partenaires_list-wrapper no-scrollbar w-dyn-list">
+                <div role="list" class="partenaires_list-items w-dyn-items">
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
                         src="../assets/images/partenaires/partenaire1.png"
                         loading="eager" alt="partenaire1" class="logo-partenaire"></div>
                   </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
                         src="../assets/images/partenaires/partenaire2.png"
                         loading="eager" alt="partenaire2" class="logo-partenaire"></div>
                   </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
                         src="../assets/images/partenaires/partenaire3.png"
                         loading="eager" alt="partenaire3" class="logo-partenaire"></div>
                   </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
                         src="../assets/images/partenaires/partenaire4.png"
                         loading="eager" alt="partenaire4" class="logo-partenaire"></div>
                   </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
                         src="../assets/images/partenaires/partenaire5.png"
                         loading="eager" alt="partenaire5" class="logo-partenaire"></div>
+                  </div>                  
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
+                        src="../assets/images/partenaires/partenaire6.png"
+                        loading="eager" alt="partenaire6" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
+                        src="../assets/images/partenaires/partenaire7.png"
+                        loading="eager" alt="partenaire7" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
+                        src="../assets/images/partenaires/partenaire8.png"
+                        loading="eager" alt="partenaire8" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
+                        src="../assets/images/partenaires/partenaire9.png"
+                        loading="eager" alt="partenaire9" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
+                        src="../assets/images/partenaires/partenaire10.png"
+                        loading="eager" alt="partenaire10" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
+                        src="../assets/images/partenaires/partenaire11.png"
+                        loading="eager" alt="partenaire11" class="logo-partenaire"></div>
+                  </div>
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
+                        src="../assets/images/partenaires/partenaire12.png"
+                        loading="eager" alt="partenaire12" class="logo-partenaire"></div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
-          <div class="partenaire_component w-condition-invisible" bis_skin_checked="1">
-            <div class="margin-top margin-custom1" bis_skin_checked="1">
-              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list" bis_skin_checked="1">
-                <div role="list" class="partenaires_list-items w-dyn-items" bis_skin_checked="1">
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+          <div class="partenaire_component w-condition-invisible">
+            <div class="margin-top margin-custom1">
+              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list">
+                <div role="list" class="partenaires_list-items w-dyn-items">
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
                         src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/6570814eda3c2afc09449e2b_LOGOBIOBURGER.webp"
                         loading="eager" alt="Bioburger" class="logo-partenaire"></div>
                   </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
                         src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657082796f50e4b444fed815_LOGOBRIGADE.webp"
                         loading="eager" alt="la brigade" class="logo-partenaire"></div>
                   </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
                         src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65708163f7ba342d20442f8f_LOGOBLEND.webp"
                         loading="eager" alt="blend" class="logo-partenaire"></div>
                   </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
+                  <div role="listitem" class="home-partenaires_items w-dyn-item">
+                    <div class="home-partenaires_item"><img
                         src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657081700c28a8d6019d3775_LOGOOTACOS.webp"
                         loading="eager" alt="o tacos" class="logo-partenaire"></div>
                   </div>
@@ -305,7 +372,7 @@
             </div>
           </div>
         </div>
-        <div class="spacer-large" bis_skin_checked="1"></div>
+        <div class="spacer-large"></div>
       </section>
       <section class="section">
         <div class="padding-section-64">
@@ -388,7 +455,7 @@
                   </svg>
                   <div class="garantie_content-wrapper">
                     <div class="items-title">Sans frais de dossier</div>
-                    <p class="point_p">Et sans primo comptant. Avec Orus, pas de frais cachés.</p>
+                    <p class="point_p">Et sans primo comptant. Avec nous, pas de frais cachés.</p>
                   </div>
                 </div>
                 <div id="w-node-d9bbea03-d608-8058-95c5-9fe62bb9fbf1-d9d1c075" class="garantie_item">
@@ -414,7 +481,7 @@
                   </svg>
                   <div class="garantie_content-wrapper">
                     <div class="items-title">Des tarifs plus justes</div>
-                    <p class="point_p">Orus récompense votre savoir-faire et expérience avec des prix plus accessibles.
+                    <p class="point_p">Nous récompensons votre savoir-faire et expérience avec des prix plus accessibles.
                     </p>
                   </div>
                 </div>
@@ -439,9 +506,8 @@
                 <h2 class="h3">Qu’est-ce qu’une assurance décennale artisan ?</h2>
                 <div class="features_rich-text w-richtext">
                   <p>
-                    Pour les pros du bâtiment et de la construction, l'
-                    <strong>assurance décennale</strong>
-                    est incontournable. Elle vous assure avant, pendant, et après votre chantier. Chez Orus, elle
+                    Pour les pros du bâtiment et de la construction, l'<strong>assurance décennale</strong>
+                    est incontournable. Elle vous assure avant, pendant, et après votre chantier. Elle
                     comprend :
                   </p>
                   <ul start="" role="list">

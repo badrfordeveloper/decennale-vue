@@ -9291,6 +9291,10 @@ a {
     margin-top: auto
 }
 
+.partenaires_list-items {
+    flex-flow: row
+}
+
 @media screen and (max-width: 991px) {
     .wrapper-nav {
         grid-column-gap: 1rem;
@@ -9668,10 +9672,6 @@ a {
     .partenaires_wrapper {
         align-items: flex-start;
         display: block
-    }
-
-    .partenaires_list-items {
-        flex-flow: row
     }
 
     .partenaires_list-items.is-center {
