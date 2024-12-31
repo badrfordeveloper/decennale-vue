@@ -142,12 +142,12 @@ onMounted(() => {
 });
 
 const fractionnementOptions = ref([
-  ...(isFranchise1.value ? [
+  ...(/* isFranchise1.value ? [
       { id: 'trimestriel', value: 'Trimestriel (+6%)', label: 'Trimestriel (+6%)', alt: 'non', condition: null, columnClass: 'col-md-4 col-12 mt-0 pe-0' },
       { id: 'semestriel', value: 'Semestriel (+3%)', label: 'Semestriel (+3%)', alt: 'non', condition: null, columnClass: 'col-md-4 col-12 mt-0 pe-0' },
       { id: 'annuel', value: 'annuel', label: 'Annuel', alt: 'non', condition: null, columnClass: 'col-md-4 col-12 mt-0 pe-0' },
-  ] : [
-    { id: 'mensuel', value: 'mensuel', label: 'Mensuel', alt: 'oui', condition: 'sous conditions', columnClass: 'col-md-3 col-12 mt-0 pe-0' },
+  ] : */ [
+    { id: 'mensuel', value: 'mensuel', label: 'Mensuel', alt: 'oui', condition: null, columnClass: 'col-md-3 col-12 mt-0 pe-0' },
     { id: 'trimestriel', value: 'trimestriel', label: 'Trimestriel', alt: 'non', condition: null, columnClass: 'col-md-3 col-12 mt-0 pe-0' },
     { id: 'semestriel', value: 'semestriel', label: 'Semestriel', alt: 'non', condition: null, columnClass: 'col-md-3 col-12 mt-0 pe-0' },
     { id: 'annuel', value: 'annuel', label: 'Annuel', alt: 'non', condition: null, columnClass: 'col-md-3 col-12 mt-0 pe-0' },
