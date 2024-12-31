@@ -4,8 +4,8 @@
       {{ selectedActivities.length > 0 ? "Exercez-vous d'autres activités ?" : "Quelle est votre activité principale ?"}}
     </h3>
 
-    <input v-model="searchTerm" @input="filterActivities"
-      :placeholder="selectedActivities.length > 0 ? 'Ajouter une autre activité' : 'Exemple : Maçon...'"
+    <input v-model="searchTerm" @input="filterActivities" v-focus 
+      :placeholder="selectedActivities.length > 0 ? 'Ajouter une autre activité' : 'Rechercher une activité'"
       class="activity-input" v-show="selectedActivities.length < 5" aria-label="Rechercher une activité" />
 
     <ul v-if="filteredActivities.length" class="activity-dropdown">
@@ -143,7 +143,7 @@ function showInitialActivities() {
   if (!activities.value) return;
 
   if (selectedActivities.value.length === 0) {
-    filteredActivities.value = activities.value.slice(0, 5);
+    filteredActivities.value = activities.value;
   }
 }
 
