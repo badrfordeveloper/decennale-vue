@@ -168,7 +168,7 @@
         <p className='text-lg text-center py-6'>Si vous souhaitez obtenir plus d’informations, vous pouvez nous
           contacter.</p>
         <div className='text-center'>
-          <a className='text-4xl mobile:text-xl font-bold text-center' href="tel:0146592228">01 46 59 22
+          <a className='text-4xl mobile:text-xl font-bold text-center' href="tel:0972880101">01 46 59 22
             28</a>
         </div>
         <div className="grid grid-cols-3 py-6 items-center">

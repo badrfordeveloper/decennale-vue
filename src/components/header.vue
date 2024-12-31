@@ -66,7 +66,7 @@
                                 aria-label="whatsapp">
                                 <i class='fa fa-whatsapp' style='font-size:36px;color:green'></i>
                             </a>
-                            <a href="tel:0146592228" class="social-button" aria-label="phone">
+                            <a href="tel:0972880101" class="social-button" aria-label="phone">
                                 <i class="fa fa-phone" style='font-size:36px'></i>
                             </a>
                             <a href="mailto:pib@decennale-express.fr" class="social-button" aria-label="envelope">
