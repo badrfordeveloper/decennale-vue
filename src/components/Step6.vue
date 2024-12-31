@@ -232,7 +232,7 @@ const submitStep = async () => {
 }
 
 #form {
-  width: 90%;
+  width: 100%;
   max-width: 500px;
 }
 #form #form-title {
@@ -284,6 +284,15 @@ const submitStep = async () => {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+#form #franchise-slider label:last-child::before {
+  padding-right: 0px;
+}
+#form #franchise-slider label:nth-child(2)::before {
+  padding-right: 20px;
+}
+#form #franchise-slider label:nth-child(4)::before {
+  padding-right: 20px;
 }
 #form #franchise-slider label::before {
   content: attr(data-franchise);

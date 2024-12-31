@@ -186,5 +186,13 @@ function updateCurrentStep(step) {
     .stepperdiv {
         display: none !important;
     }
+    .container-fluid{
+        padding: 15px !important;
+    }
+    .container{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
 }
 </style>

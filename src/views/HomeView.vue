@@ -1,8 +1,15 @@
 <script setup>
   import "../assets/orus.css"; 
-  import { ref, onMounted, onUnmounted } from "vue";
-  
   import "../assets/index.js"; 
+  import { ref, onMounted } from "vue";
+  import { Swiper as SwiperCore } from 'swiper';
+  import { Autoplay, Pagination } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/autoplay';
+  import 'swiper/css/pagination';
+
+  SwiperCore.use([Autoplay, Pagination]);
+
 
   const showModal = ref(false);
 
@@ -14,13 +21,13 @@
     localStorage.clear();
     console.log("LocalStorage cleared, starting a new devis.");
   };
-  
+
   const faqItems = ref([
     {
       question: "Quels artisans doivent s’assurer avec une décennale ?",
       answer: `
         <p>L'assurance décennale, essentielle pour les professionnels du bâtiment, de la
-          construction et du BTP, est un domaine couvert en profondeur chez Orus. Nous assurons une large
+          construction et du BTP, est un domaine couvert en profondeur chez nous. Nous assurons une large
           gamme d'activités dans ces secteurs :</p>
         <p>- Du terrassement aux V.R.D. (Voies et Réseaux Divers) incluant canalisations, assainissement,
           chaussées, etc. ; </p>
@@ -38,7 +45,7 @@
         <p>- La plomberie et installations sanitaires ;</p>
         <p>- L’installation thermiques et de génie climatique ;</p>
         <p>- Les travaux d'électricité.</p>
-        <p>Pour déterminer si votre activité est couverte par Orus, le moyen le plus rapide est de faire
+        <p>Pour déterminer si votre activité est couverte chez nous, le moyen le plus rapide est de faire
           une estimation sur notre site.</p>
       `,
     },
@@ -55,7 +62,7 @@
     {
       question: "Est-ce que les artisans sous-traitants ont l'obligation de prendre une assurance décennale ?",
       answer: `<p>Habituellement, les sous-traitants ne sont pas obligés de prendre une assurance décennale. C
-         'est l'entrepreneur principal qui a la responsabilité des travaux face au client. Les
+        'est l'entrepreneur principal qui a la responsabilité des travaux face au client. Les
           sous-traitants, eux, travaillent sous la responsabilité de cet entrepreneur principal.</p>
         <p>Mais alors, pourquoi un sous-traitant devrait-il s'assurer ?</p>
         <p>Si un problème survient après la construction ou la rénovation d'un bâtiment, c'est
@@ -74,7 +81,7 @@
       answer: `
         <p>La nécessité d'une assurance décennale dépend de la durée et de la nature des travaux que
           vous réalisez.</p>
-        <p>Chez Orus, pas besoin d'assurance décennale si vous vous occupez de petits travaux qui ne
+        <p>Chez nous, pas besoin d'assurance décennale si vous vous occupez de petits travaux qui ne
           prennent pas plus de deux heures. Par exemple, si vos tâches consistent à accrocher des tableaux
           ou à monter un meuble, une assurance décennale n'est pas nécessaire.</p>
         <p>En revanche, nous recommandons une assurance décennale si vos travaux sont plus conséquents et
@@ -90,46 +97,56 @@
     activeIndex.value = activeIndex.value === index ? null : index;
   };
 
-    const loadResource = (href, type) => {
-      if (type === "script" && !document.querySelector(`script[src="${href}"]`)) {
-        const script = document.createElement("script");
-        script.src = href;
-        script.type = "text/javascript";
-        script.async = true;
-        document.body.appendChild(script);
-      }
+  const partners = ref([
+    { name: 'AXA', logo: new URL('../assets/images/partenaires/partenaire1.png', import.meta.url).href },
+    { name: 'MMA', logo: new URL('../assets/images/partenaires/partenaire2.png', import.meta.url).href },
+    { name: 'Allianz', logo: new URL('../assets/images/partenaires/partenaire3.png', import.meta.url).href },
+    { name: 'MIC', logo: new URL('../assets/images/partenaires/partenaire4.png', import.meta.url).href },
+    { name: 'April', logo: new URL('../assets/images/partenaires/partenaire5.png', import.meta.url).href },
+    { name: 'Fidelidade', logo: new URL('../assets/images/partenaires/partenaire6.png', import.meta.url).href },
+    { name: 'ERGO', logo: new URL('../assets/images/partenaires/partenaire7.png', import.meta.url).href },
+    { name: 'Proxia', logo: new URL('../assets/images/partenaires/partenaire8.png', import.meta.url).href },
+    { name: 'QBE', logo: new URL('../assets/images/partenaires/partenaire9.png', import.meta.url).href },
+    { name: 'VHV Asssurance', logo: new URL('../assets/images/partenaires/partenaire10.png', import.meta.url).href },
+    { name: 'Axeria', logo: new URL('../assets/images/partenaires/partenaire11.png', import.meta.url).href },
+    { name: 'wakam', logo: new URL('../assets/images/partenaires/partenaire12.png', import.meta.url).href },
+  ]);
 
-      if (type === "css" && !document.querySelector(`link[href="${href}"]`)) {
-        const link = document.createElement("link");
-        link.href = href;
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        document.head.appendChild(link);
-      }
-    };
+  onMounted(() => {
+    const swiperContainer = document.querySelector(".swiper");
 
-    const removeResource = (href, type) => {
-      if (type === "script") {
-        const script = document.querySelector(`script[src="${href}"]`);
-        if (script) script.remove();
-      }
-
-      if (type === "css") {
-        const link = document.querySelector(`link[href="${href}"]`);
-        if (link) link.remove();
-      }
-    };
-
-    onMounted(() => {
-   
-    });
-
-    onUnmounted(() => {
-
-
-    });
-
+    if (swiperContainer) {
+      new SwiperCore(swiperContainer, {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        }
+      });
+    } else {
+      console.error("Swiper container not found!");
+    }
+  });
 </script>
+
+<style scoped>
+.partners-carousel {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.swiper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.swiper-slide img {
+  height: 90px;
+  object-fit: contain;
+}
+</style>
 
 <template>
 
@@ -145,7 +162,8 @@
                 </a>
               </div>
               <div class="nav-button-group">
-                <a href="/devis"  @click="clearLocalStorage" class="nav-button-primary plausible-event-name--startquote w-inline-block">
+                <a href="/devis" @click="clearLocalStorage"
+                  class="nav-button-primary plausible-event-name--startquote w-inline-block">
                   <div class="button-text hide-mobile-landscape">Mon devis en 3 minutes</div>
                   <div class="button-text show-mobile-landscape">Devis en 3 minutes</div>
                 </a>
@@ -159,7 +177,7 @@
               <div class="lp-hero_component">
                 <div class="lp-hero_content">
                   <div class="hero_title">
-                    <h1 class="h1">Assurance décennale artisan</h1>
+                    <h1 class="h1">ATTESTATION EXPRESS</h1>
                   </div>
                   <div class="text-size-regular">Assurez votre activité en ligne en 3 minutes et concentrez-vous sur ce
                     qui compte vraiment : votre travail de artisan. On s’occupe du reste.</div>
@@ -237,75 +255,24 @@
         </div>
       </div>
       <section class="section">
-        <div class="spacer-large" bis_skin_checked="1"></div>
-        <div class="spacer-large" bis_skin_checked="1"></div>
+        <div class="spacer-large"></div>
+        <div class="spacer-large"></div>
         <div class="container">
           <div class="text-align-center">
             <h2 class="h3">Nos partenaires</h2>
           </div>
-          <div class="partenaire_component" bis_skin_checked="1">
-            <div class="margin-top margin-custom1" bis_skin_checked="1">
-              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list" bis_skin_checked="1">
-                <div role="list" class="partenaires_list-items w-dyn-items" bis_skin_checked="1">
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
-                        src="../assets/images/partenaires/partenaire1.png"
-                        loading="eager" alt="partenaire1" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
-                        src="../assets/images/partenaires/partenaire2.png"
-                        loading="eager" alt="partenaire2" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
-                        src="../assets/images/partenaires/partenaire3.png"
-                        loading="eager" alt="partenaire3" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
-                        src="../assets/images/partenaires/partenaire4.png"
-                        loading="eager" alt="partenaire4" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
-                        src="../assets/images/partenaires/partenaire5.png"
-                        loading="eager" alt="partenaire5" class="logo-partenaire"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="partenaire_component w-condition-invisible" bis_skin_checked="1">
-            <div class="margin-top margin-custom1" bis_skin_checked="1">
-              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list" bis_skin_checked="1">
-                <div role="list" class="partenaires_list-items w-dyn-items" bis_skin_checked="1">
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
-                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/6570814eda3c2afc09449e2b_LOGOBIOBURGER.webp"
-                        loading="eager" alt="Bioburger" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
-                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657082796f50e4b444fed815_LOGOBRIGADE.webp"
-                        loading="eager" alt="la brigade" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
-                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65708163f7ba342d20442f8f_LOGOBLEND.webp"
-                        loading="eager" alt="blend" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item" bis_skin_checked="1">
-                    <div class="home-partenaires_item" bis_skin_checked="1"><img
-                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657081700c28a8d6019d3775_LOGOOTACOS.webp"
-                        loading="eager" alt="o tacos" class="logo-partenaire"></div>
+          <div class="">
+            <div class="partners-carousel">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" v-for="(partner, index) in partners" :key="index">
+                    <img :src="partner.logo" :alt="partner.name" min-height="150"/>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="spacer-large" bis_skin_checked="1"></div>
       </section>
       <section class="section">
         <div class="padding-section-64">
@@ -388,7 +355,7 @@
                   </svg>
                   <div class="garantie_content-wrapper">
                     <div class="items-title">Sans frais de dossier</div>
-                    <p class="point_p">Et sans primo comptant. Avec Orus, pas de frais cachés.</p>
+                    <p class="point_p">Et sans primo comptant. Avec nous, pas de frais cachés.</p>
                   </div>
                 </div>
                 <div id="w-node-d9bbea03-d608-8058-95c5-9fe62bb9fbf1-d9d1c075" class="garantie_item">
@@ -414,7 +381,8 @@
                   </svg>
                   <div class="garantie_content-wrapper">
                     <div class="items-title">Des tarifs plus justes</div>
-                    <p class="point_p">Orus récompense votre savoir-faire et expérience avec des prix plus accessibles.
+                    <p class="point_p">Nous récompensons votre savoir-faire et expérience avec des prix plus
+                      accessibles.
                     </p>
                   </div>
                 </div>
@@ -439,9 +407,8 @@
                 <h2 class="h3">Qu’est-ce qu’une assurance décennale artisan ?</h2>
                 <div class="features_rich-text w-richtext">
                   <p>
-                    Pour les pros du bâtiment et de la construction, l'
-                    <strong>assurance décennale</strong>
-                    est incontournable. Elle vous assure avant, pendant, et après votre chantier. Chez Orus, elle
+                    Pour les pros du bâtiment et de la construction, l'<strong>assurance décennale</strong>
+                    est incontournable. Elle vous assure avant, pendant, et après votre chantier. Elle
                     comprend :
                   </p>
                   <ul start="" role="list">
@@ -538,7 +505,7 @@
                 <div class="button-text">09 72 88 01 01</div>
               </a>
               <a data-property-ctaText="Mon devis en 5 minutes" data-analytics="Cta Subscription Start Clicked"
-                data-property-position="Hero" data-property-pageName="Home" href="/devis" 
+                data-property-position="Hero" data-property-pageName="Home" href="/devis"
                 class="button-primary plausible-event-name--startquote w-inline-block">
                 <div class="button-text">Mon devis en 3 minutes</div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="arrow_cta">
