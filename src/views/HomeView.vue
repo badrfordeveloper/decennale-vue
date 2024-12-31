@@ -1,8 +1,15 @@
 <script setup>
   import "../assets/orus.css"; 
-  import { ref, onMounted, onUnmounted } from "vue";
-  
   import "../assets/index.js"; 
+  import { ref, onMounted } from "vue";
+  import { Swiper as SwiperCore } from 'swiper';
+  import { Autoplay, Pagination } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/autoplay';
+  import 'swiper/css/pagination';
+
+  SwiperCore.use([Autoplay, Pagination]);
+
 
   const showModal = ref(false);
 
@@ -14,7 +21,7 @@
     localStorage.clear();
     console.log("LocalStorage cleared, starting a new devis.");
   };
-  
+
   const faqItems = ref([
     {
       question: "Quels artisans doivent s’assurer avec une décennale ?",
@@ -55,7 +62,7 @@
     {
       question: "Est-ce que les artisans sous-traitants ont l'obligation de prendre une assurance décennale ?",
       answer: `<p>Habituellement, les sous-traitants ne sont pas obligés de prendre une assurance décennale. C
-         'est l'entrepreneur principal qui a la responsabilité des travaux face au client. Les
+        'est l'entrepreneur principal qui a la responsabilité des travaux face au client. Les
           sous-traitants, eux, travaillent sous la responsabilité de cet entrepreneur principal.</p>
         <p>Mais alors, pourquoi un sous-traitant devrait-il s'assurer ?</p>
         <p>Si un problème survient après la construction ou la rénovation d'un bâtiment, c'est
@@ -90,46 +97,56 @@
     activeIndex.value = activeIndex.value === index ? null : index;
   };
 
-    const loadResource = (href, type) => {
-      if (type === "script" && !document.querySelector(`script[src="${href}"]`)) {
-        const script = document.createElement("script");
-        script.src = href;
-        script.type = "text/javascript";
-        script.async = true;
-        document.body.appendChild(script);
-      }
+  const partners = ref([
+    { name: 'AXA', logo: new URL('../assets/images/partenaires/partenaire1.png', import.meta.url).href },
+    { name: 'MMA', logo: new URL('../assets/images/partenaires/partenaire2.png', import.meta.url).href },
+    { name: 'Allianz', logo: new URL('../assets/images/partenaires/partenaire3.png', import.meta.url).href },
+    { name: 'MIC', logo: new URL('../assets/images/partenaires/partenaire4.png', import.meta.url).href },
+    { name: 'April', logo: new URL('../assets/images/partenaires/partenaire5.png', import.meta.url).href },
+    { name: 'Fidelidade', logo: new URL('../assets/images/partenaires/partenaire6.png', import.meta.url).href },
+    { name: 'ERGO', logo: new URL('../assets/images/partenaires/partenaire7.png', import.meta.url).href },
+    { name: 'Proxia', logo: new URL('../assets/images/partenaires/partenaire8.png', import.meta.url).href },
+    { name: 'QBE', logo: new URL('../assets/images/partenaires/partenaire9.png', import.meta.url).href },
+    { name: 'VHV Asssurance', logo: new URL('../assets/images/partenaires/partenaire10.png', import.meta.url).href },
+    { name: 'Axeria', logo: new URL('../assets/images/partenaires/partenaire11.png', import.meta.url).href },
+    { name: 'wakam', logo: new URL('../assets/images/partenaires/partenaire12.png', import.meta.url).href },
+  ]);
 
-      if (type === "css" && !document.querySelector(`link[href="${href}"]`)) {
-        const link = document.createElement("link");
-        link.href = href;
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        document.head.appendChild(link);
-      }
-    };
+  onMounted(() => {
+    const swiperContainer = document.querySelector(".swiper");
 
-    const removeResource = (href, type) => {
-      if (type === "script") {
-        const script = document.querySelector(`script[src="${href}"]`);
-        if (script) script.remove();
-      }
-
-      if (type === "css") {
-        const link = document.querySelector(`link[href="${href}"]`);
-        if (link) link.remove();
-      }
-    };
-
-    onMounted(() => {
-   
-    });
-
-    onUnmounted(() => {
-
-
-    });
-
+    if (swiperContainer) {
+      new SwiperCore(swiperContainer, {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        }
+      });
+    } else {
+      console.error("Swiper container not found!");
+    }
+  });
 </script>
+
+<style scoped>
+.partners-carousel {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.swiper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.swiper-slide img {
+  height: 90px;
+  object-fit: contain;
+}
+</style>
 
 <template>
 
@@ -145,7 +162,8 @@
                 </a>
               </div>
               <div class="nav-button-group">
-                <a href="/devis"  @click="clearLocalStorage" class="nav-button-primary plausible-event-name--startquote w-inline-block">
+                <a href="/devis" @click="clearLocalStorage"
+                  class="nav-button-primary plausible-event-name--startquote w-inline-block">
                   <div class="button-text hide-mobile-landscape">Mon devis en 3 minutes</div>
                   <div class="button-text show-mobile-landscape">Devis en 3 minutes</div>
                 </a>
@@ -243,136 +261,18 @@
           <div class="text-align-center">
             <h2 class="h3">Nos partenaires</h2>
           </div>
-          <div class="partenaire_component">
-            <div class="margin-top margin-custom1">
-              <div class="container">
-                <h1 class="font-weight-bold h3 mb-5">Our Brand Partners</h1>
-                <hr />
-                <p>Responsive Slider</p>
-                <section class="customer-logos slider">
-                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
-                  </div>
-
-                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
-                  </div>
-
-                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
-                  </div>
-
-                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
-                  </div>
-
-                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
-                  </div>
-
-                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
-                  </div>
-
-                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
-                  </div>
-
-                  <div class="slide"><img src="https://mydio.in/assets/logo/dio.svg">
-                  </div>
-                </section>
-
-                <p class="my-5 py-5 small">Responsive Mobile Friendly Slider for Website Partner , Sponsor Etc. <br /> Design & Develop by : <a href="https://www.linkedin.com/in/imayushshrivastava/"> @imayushshrivastava</a> Under <a href="https://www.google.com/search?q=develop+india+online"> DIO </a> </p>
-              </div>
-              <!-- <div class="partenaires_list-wrapper no-scrollbar w-dyn-list">
-                <div role="list" class="partenaires_list-items w-dyn-items">
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire1.png"
-                        loading="eager" alt="partenaire1" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire2.png"
-                        loading="eager" alt="partenaire2" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire3.png"
-                        loading="eager" alt="partenaire3" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire4.png"
-                        loading="eager" alt="partenaire4" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire5.png"
-                        loading="eager" alt="partenaire5" class="logo-partenaire"></div>
-                  </div>                  
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire6.png"
-                        loading="eager" alt="partenaire6" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire7.png"
-                        loading="eager" alt="partenaire7" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire8.png"
-                        loading="eager" alt="partenaire8" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire9.png"
-                        loading="eager" alt="partenaire9" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire10.png"
-                        loading="eager" alt="partenaire10" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire11.png"
-                        loading="eager" alt="partenaire11" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="../assets/images/partenaires/partenaire12.png"
-                        loading="eager" alt="partenaire12" class="logo-partenaire"></div>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-          </div>
-          <div class="partenaire_component w-condition-invisible">
-            <div class="margin-top margin-custom1">
-              <div class="partenaires_list-wrapper no-scrollbar w-dyn-list">
-                <div role="list" class="partenaires_list-items w-dyn-items">
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/6570814eda3c2afc09449e2b_LOGOBIOBURGER.webp"
-                        loading="eager" alt="Bioburger" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657082796f50e4b444fed815_LOGOBRIGADE.webp"
-                        loading="eager" alt="la brigade" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65708163f7ba342d20442f8f_LOGOBLEND.webp"
-                        loading="eager" alt="blend" class="logo-partenaire"></div>
-                  </div>
-                  <div role="listitem" class="home-partenaires_items w-dyn-item">
-                    <div class="home-partenaires_item"><img
-                        src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/657081700c28a8d6019d3775_LOGOOTACOS.webp"
-                        loading="eager" alt="o tacos" class="logo-partenaire"></div>
+          <div class="">
+            <div class="partners-carousel">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" v-for="(partner, index) in partners" :key="index">
+                    <img :src="partner.logo" :alt="partner.name" min-height="150"/>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="spacer-large"></div>
       </section>
       <section class="section">
         <div class="padding-section-64">
@@ -481,7 +381,8 @@
                   </svg>
                   <div class="garantie_content-wrapper">
                     <div class="items-title">Des tarifs plus justes</div>
-                    <p class="point_p">Nous récompensons votre savoir-faire et expérience avec des prix plus accessibles.
+                    <p class="point_p">Nous récompensons votre savoir-faire et expérience avec des prix plus
+                      accessibles.
                     </p>
                   </div>
                 </div>
@@ -604,7 +505,7 @@
                 <div class="button-text">09 72 88 01 01</div>
               </a>
               <a data-property-ctaText="Mon devis en 5 minutes" data-analytics="Cta Subscription Start Clicked"
-                data-property-position="Hero" data-property-pageName="Home" href="/devis" 
+                data-property-position="Hero" data-property-pageName="Home" href="/devis"
                 class="button-primary plausible-event-name--startquote w-inline-block">
                 <div class="button-text">Mon devis en 3 minutes</div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="arrow_cta">
