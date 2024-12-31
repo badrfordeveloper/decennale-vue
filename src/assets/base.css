@@ -9,7 +9,7 @@
   --vt-c-black-mute: #282828;
 
   --vt-c-indigo: #2c3e50;
-  --vt-c-limouni: #31b2f4;
+  --vt-c-limouni: #000091;
   --vt-c-zra9-bahet: #b0e2fd;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
@@ -22,11 +22,11 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: #000;
 
-  --color1: #31b2f4;
+  --color1: #000091;
   --color2: #f9fafb;
   --color3: #b0e2fd;
   --color4: #707070;
-  --color5: #31b2f4;
+  --color5: #000091;
   --color6: #f4627f;
   --green1: #a1c84e;
   --green2: #d0e1a4;
@@ -251,13 +251,13 @@ span.underligned {
   color: var(--bs-progress-bar-color);
   text-align: center;
   white-space: nowrap;
-  background-color: var(--bs-progress-bar-bg);
+  background-color: #E1000F;
   transition: var(--bs-progress-bar-transition);
 }
 
 .progressMobile {
   border-radius: 50px;
-  background: var(--color-limouni) !important;
+  background: #E1000F !important;
 }
 
 .progressMobile,
@@ -402,13 +402,15 @@ button.pusletooltip {
   width: 96%;
   margin: auto;
 }
-.firstBtn:hover{
-  color: var(--color1);
-}
-.firstBtn {
-  width: 100%;
+.firstBtn:hover,.nextBtn:hover{
+  color: #000091;
   background-color: var(--color3);
-  color: #000;
+}
+
+.firstBtn, .nextBtn  {
+  width: 100%;
+  background-color: #000091;
+  color: #fff;
   height: 60px;
   border-radius: 9px;
   border: 0;
@@ -534,7 +536,7 @@ button.pusletooltip {
 }
 .progressMobile {
   border-radius: 50px;
-  background: var(--color-limouni) !important;
+  background: #E1000F !important;
 }
 .progressMobile, .progress {
   height: 4px !important;

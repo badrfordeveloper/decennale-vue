@@ -118,7 +118,7 @@
     if (swiperContainer) {
       new SwiperCore(swiperContainer, {
         slidesPerView: 4,
-        spaceBetween: 20,
+        spaceBetween: 15,
         loop: true,
         autoplay: {
           delay: 2500,
@@ -837,7 +837,7 @@
                 <p class="contact_text">Nous répondons à vos questions du lundi au vendredi de 09h00 à 18h00.</p>
               </div>
               <a id="contact-modal-book-a-slot"
-                href="https://wa.me/33972880101?text=Bonjour,%20Je%20souhaite%20%C3%A9changer%20au%20sujet%20d'une%20assurance%20professionnelle.%20Pour%20l'activit%C3%A9%20suivante%20:%20Ma%20question%20est%20:%20"
+                href="https://wa.me/33767779822?text=Bonjour,%20Je%20souhaite%20%C3%A9changer%20au%20sujet%20d'une%20assurance%20professionnelle.%20Pour%20l'activit%C3%A9%20suivante%20:%20Ma%20question%20est%20:%20"
                 target="_blank" class="button-secondary w-inline-block">
                 <div class="button-text">Échanger sur Whatsapp</div>
               </a>
@@ -846,7 +846,7 @@
         </div>
       </div>
       <footer class=" o-bg-blue900 p-4 text-center" style="padding: 20px;text-align: center;">
-        <p class="footer-copyright m-0">© 2025 DECENNALE EXPRESS tous droits réservés. STE GLS LASSURANCES.</p>
+        <p class="footer-copyright m-0">© 2025 DECENNALE EXPRESS tous droits réservés.</p>
 
       </footer>
     </div>

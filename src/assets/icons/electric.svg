@@ -38,7 +38,7 @@
             <g id="Groupe_804" data-name="Groupe 804" transform="translate(8.311 -0.001)" opacity="0.65">
               <g id="Groupe_803" data-name="Groupe 803">
                 <g id="Groupe_802" data-name="Groupe 802" clip-path="url(#clip-path-5)">
-                  <path id="Tracé_305" data-name="Tracé 305" d="M6.934,44.1,13.55,24.5a.238.238,0,0,0-.109-.283L5.754,19.849a.238.238,0,0,1-.043-.384L26.348.654a.239.239,0,0,1,.387.252L20.121,20.492a.239.239,0,0,0,.109.283l7.689,4.363a.239.239,0,0,1,.043.384L7.321,44.349A.239.239,0,0,1,6.934,44.1Z" transform="translate(-4.66 0.383)" fill="none" stroke="#31b2f4" stroke-miterlimit="10" stroke-width="2"/>
+                  <path id="Tracé_305" data-name="Tracé 305" d="M6.934,44.1,13.55,24.5a.238.238,0,0,0-.109-.283L5.754,19.849a.238.238,0,0,1-.043-.384L26.348.654a.239.239,0,0,1,.387.252L20.121,20.492a.239.239,0,0,0,.109.283l7.689,4.363a.239.239,0,0,1,.043.384L7.321,44.349A.239.239,0,0,1,6.934,44.1Z" transform="translate(-4.66 0.383)" fill="none" stroke="#000091" stroke-miterlimit="10" stroke-width="2"/>
                 </g>
               </g>
             </g>

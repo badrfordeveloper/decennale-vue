@@ -1,13 +1,13 @@
 <template>
-    <header class="container-fluid">
+    <header class="container-fluid head">
         <div id="header-bar" class="container">
             <div class="row align-items-center">
                 <div class="col-5 col-md-2 col-lg-2 col-xl-3 d-flex align-items-center">
 <!--                     <img src="../assets/icons/back.svg" alt="retour" class="slideback me-2" @click="prevStep">
  -->                    <router-link to="/">
                         <!-- <h1>ECA</h1> -->
-                        <div class="d-none d-lg-block"><img src="../assets/logo.png" width="250" height="35" alt="decennale-express" class="img-fluid"></div>
-                        <div class="d-block d-lg-none"><img src="../assets/logo.png" width="100" height="30" alt="decennale-express" class="img-fluid"></div>
+                        <div class="d-none d-lg-block"><img src="../assets/logo.png" width="300" height="35" alt="decennale-express" class="img-fluid"></div>
+                        <div class="d-block d-lg-none"><img src="../assets/logo.png" width="250" height="35" alt="decennale-express" class="img-fluid"></div>
                     </router-link>
                 </div>
                 <div class="col-md-8 col-lg-8 col-xl-6 d-none d-md-block">
@@ -143,6 +143,12 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 45px;
+}
+
+@media (max-width: 575px) {
+    .container-fluid.head{
+        padding: 10px 0px !important;
+    }
 }
 
 </style>

@@ -115,7 +115,7 @@ function updateCurrentStep(step) {
 }
 
 .prev-btn:hover {
-    background: var(--color5);
+    background: #b0e2fd;
     cursor: pointer;
 }
 
@@ -163,13 +163,15 @@ function updateCurrentStep(step) {
 } */
 
 .step.active {
-    background-color: #31b2f4;
+    background-color: #000091;
     color: #fff;
     font-weight: bold;
+    height: 100%;
+    align-content: center;
 }
 
 .stepHover:hover {
-    background-color: #f9d9c3;
+    background-color: #b0e2fd;
 }
 
 .stepper {
@@ -193,6 +195,8 @@ function updateCurrentStep(step) {
         padding-left: 0px;
         padding-right: 0px;
     }
-    
+    #formulaire{
+        padding: 5px 0px;
+    }
 }
 </style>

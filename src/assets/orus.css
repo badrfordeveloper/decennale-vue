@@ -4107,7 +4107,7 @@ a {
     border-left-style: solid;
     border-left-width: 1px;
     border-left-color: #b0e2fd;
-    background-color: #31b2f4;
+    background-color: #000091;
     color: var(--color--text--base--color-text-base-primary);
     border-radius: 8px;
     justify-content: center;
@@ -4123,7 +4123,7 @@ a {
 .nav-button-primary:hover {
     border-color: #b0e2fd;
     background-color: #b0e2fd;
-    color: #31b2f4;
+    color: #000091;
 }
 
 .nav-button-primary:focus {
@@ -6940,7 +6940,9 @@ a {
 .iconx16 {
     flex: none;
     width: 1rem;
-    height: 1rem
+    height: 1rem;
+    justify-content: center;
+    display: flex;
 }
 
 .button-text {
@@ -7992,7 +7994,7 @@ a {
 .button-primary {
     grid-column-gap: .75rem;
     grid-row-gap: .75rem;
-    background-color: #31b2f4;
+    background-color: #000091;
     color: var(--color--text--base--color-text-base-primary);
     border-radius: 8px;
     justify-content: center;
@@ -8007,7 +8009,7 @@ a {
 
 .button-primary:hover {
     background-color: #b0e2fd;
-    color: #31b2f4;
+    color: #000091;
 }
 
 .button-primary:focus {

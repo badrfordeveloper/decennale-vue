@@ -147,7 +147,7 @@
                 <vue-spinner
                 v-if="loadingDevis2"
                 size="30"
-                color="#31b2f4"
+                color="#000091"
                 ></vue-spinner>
 
                 <div  v-else-if="isMobile && !loadingDevis2 && pdfFileSource">

@@ -221,7 +221,7 @@ const submitStep = async () => {
 }
 .nextBtn:hover{
     background-color: #b0e2fd !important;
-    color: #31b2f4 !important;
+    color: #000091 !important;
 }
 #form-wrapper {
   width: 100%;
@@ -261,7 +261,7 @@ const submitStep = async () => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #31b2f4;
+  background: #000091;
 }
 #form #franchise-slider.franchise-false::before {
   width: calc(100% * (1 / 2));
@@ -315,7 +315,7 @@ const submitStep = async () => {
   transform: translate(-50%, -50%);
   width: 30px;
   height: 30px;
-  border: 2px solid #31b2f4;
+  border: 2px solid #000091;
   background: #fff;
   border-radius: 50%;
   pointer-events: none;
@@ -336,7 +336,7 @@ const submitStep = async () => {
 #form #franchise-slider input:checked + label::before {
   font-weight: 800;
   opacity: 1;
-  color: #31b2f4;
+  color: #000091;
 }
 #form #franchise-slider input:checked + label::after {
   border-width: 4px;

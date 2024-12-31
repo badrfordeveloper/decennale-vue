@@ -6,7 +6,7 @@
 
     <input v-model="searchTerm" @input="filterActivities" v-focus 
       :placeholder="selectedActivities.length > 0 ? 'Ajouter une autre activité' : 'Rechercher une activité'"
-      class="activity-input" v-show="selectedActivities.length < 5" aria-label="Rechercher une activité" />
+      class="activity-input" v-show="selectedActivities.length < 10" aria-label="Rechercher une activité" />
 
     <ul v-if="filteredActivities.length" class="activity-dropdown">
       <li v-for="activity in filteredActivities" :key="activity.name"
@@ -16,7 +16,7 @@
       </li>
     </ul>
 
-    <h6 style="margin-top: 20px;" v-if="selectedActivities.length">Vos activités (5 maximum)</h6>
+    <h6 style="margin-top: 20px;" v-if="selectedActivities.length">Vos activités (10 maximum)</h6>
 
     <ul class="selected-activities">
       <li v-for="activity in selectedActivities" :key="activity.name" class="selected-activity">
@@ -167,7 +167,7 @@ function filterActivities() {
 
   if (term === "") {
     filteredActivities.value = selectedActivities.value.length === 0 
-      ? activities.value.slice(0, 5) 
+      ? activities.value.slice(0, 10) 
       : [];
     return;
   }
@@ -186,7 +186,7 @@ function isActivitySelected(activity) {
 }
 
 function selectActivity(activity) {
-  if (!isActivitySelected(activity) && selectedActivities.value.length < 5) {
+  if (!isActivitySelected(activity) && selectedActivities.value.length < 10) {
     selectedActivities.value.push(activity);
     searchTerm.value = "";
     filteredActivities.value = [];
@@ -315,7 +315,7 @@ async function submitStep() {
 }
 
 .activity-item:hover {
-  background-color: #f5f5f5;
+  background-color: #b0e2fd;
 }
 
 .selected-activities {
@@ -350,16 +350,16 @@ async function submitStep() {
 .details-button {
   padding: 5px 10px;
   font-size: 14px;
-  color: #31b2f4;
+  color: #000091;
   background-color: transparent;
-  border: 1px solid #31b2f4;
+  border: 1px solid #000091;
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .details-button:hover {
-  background-color: #31b2f4;
+  background-color: #000091;
   color: #fff;
 }
 
@@ -430,9 +430,9 @@ async function submitStep() {
     padding: 16px;
     border-radius: 8px;
     margin-top: 32px;
-    background-color: #ffedc2;
+    background-color: #b0e2fd;
     color: #0c0c0c;
-    border: 1px solid #a99b7b;
+    border: 1px solid #b0e2fd;
 }
 .css-70qvj9 {
     display: flex
