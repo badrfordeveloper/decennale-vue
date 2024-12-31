@@ -163,7 +163,7 @@ function updateCurrentStep(step) {
 } */
 
 .step.active {
-    background-color: #f97316;
+    background-color: #31b2f4;
     color: #fff;
     font-weight: bold;
 }

@@ -470,7 +470,7 @@
         opacity: 0.4;
     }
     span.underligned.yellow:after {
-        background: #f97316;
+        background: #31b2f4;
         opacity: 0.4;
     }
     .assuredIcon {

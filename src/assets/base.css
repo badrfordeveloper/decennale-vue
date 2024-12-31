@@ -9,7 +9,8 @@
   --vt-c-black-mute: #282828;
 
   --vt-c-indigo: #2c3e50;
-  --vt-c-limouni: rgb(249 115 22 / var(--tw-bg-opacity, 1));
+  --vt-c-limouni: #31b2f4;
+  --vt-c-zra9-bahet: #b0e2fd;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -21,11 +22,11 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: #000;
 
-  --color1: #f97316;
+  --color1: #31b2f4;
   --color2: #f9fafb;
   --color3: #b0e2fd;
   --color4: #707070;
-  --color5: #f9d9c3;
+  --color5: #31b2f4;
   --color6: #f4627f;
   --green1: #a1c84e;
   --green2: #d0e1a4;
@@ -438,7 +439,7 @@ button.pusletooltip {
   transition: 0.5s;
 }
 #formulaire .btn-check:checked + .btn, #formulaire .btn.active {
-  background-color: var(--color5) !important;
+  background-color: var( --vt-c-zra9-bahet) !important;
   border-color: var(--color1) !important;
   color: #3e3e3e;
 }

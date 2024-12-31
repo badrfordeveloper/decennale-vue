@@ -52,7 +52,7 @@
         <div class="css-1gt2dqj">
           <div class="css-1hw29i9">
             <div class="css-6slv8k">
-              <p class="css-8swbkq">Votre expérience devra être justifiée : fiches de paie, factures, certificats de travail, etc.</p>
+              <p class="css-8swbkq">Votre expérience devra être justifiée : fiches de paie, <span v-if="profession != 'PROFESSION_INTELLECTUELLE_BATIMENT'">factures,</span>  certificats de travail, etc.</p>
             </div>
           </div>
         </div>
@@ -330,7 +330,7 @@ async function submitStep() {
   border-radius: 5px;
   margin-bottom: 10px;
   padding: 12px 16px;
-  background-color: #f7ece4;
+  background-color: #ff515417;
 }
 @media (max-width: 768px) {
     .activity-details {
@@ -350,16 +350,16 @@ async function submitStep() {
 .details-button {
   padding: 5px 10px;
   font-size: 14px;
-  color: #f97316;
+  color: #31b2f4;
   background-color: transparent;
-  border: 1px solid #f97316;
+  border: 1px solid #31b2f4;
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .details-button:hover {
-  background-color: #f97316;
+  background-color: #31b2f4;
   color: #fff;
 }
 
@@ -430,8 +430,9 @@ async function submitStep() {
     padding: 16px;
     border-radius: 8px;
     margin-top: 32px;
-    background-color: #f9d9c3;
-    color: #070042;
+    background-color: #ffedc2;
+    color: #0c0c0c;
+    border: 1px solid #a99b7b;
 }
 .css-70qvj9 {
     display: flex

@@ -6,7 +6,7 @@
 <!--                     <img src="../assets/icons/back.svg" alt="retour" class="slideback me-2" @click="prevStep">
  -->                    <router-link to="/">
                         <!-- <h1>ECA</h1> -->
-                        <div class="d-none d-lg-block"><img src="../assets/logo.png" width="169" height="35" alt="decennale-express" class="img-fluid"></div>
+                        <div class="d-none d-lg-block"><img src="../assets/logo.png" width="250" height="35" alt="decennale-express" class="img-fluid"></div>
                         <div class="d-block d-lg-none"><img src="../assets/logo.png" width="100" height="30" alt="decennale-express" class="img-fluid"></div>
                     </router-link>
                 </div>
