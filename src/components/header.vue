@@ -3,8 +3,8 @@
         <div id="header-bar" class="container">
             <div class="row align-items-center">
                 <div class="col-5 col-md-2 col-lg-2 col-xl-3 d-flex align-items-center">
-                    <img src="../assets/icons/back.svg" alt="retour" class="slideback me-2" @click="prevStep">
-                    <router-link to="/">
+<!--                     <img src="../assets/icons/back.svg" alt="retour" class="slideback me-2" @click="prevStep">
+ -->                    <router-link to="/">
                         <!-- <h1>ECA</h1> -->
                         <div class="d-none d-lg-block"><img src="../assets/logo.png" width="169" height="35" alt="decennale-express" class="img-fluid"></div>
                         <div class="d-block d-lg-none"><img src="../assets/logo.png" width="100" height="30" alt="decennale-express" class="img-fluid"></div>
@@ -122,14 +122,7 @@
     }
 </script>
 <style>
-.slideback{
-    padding: 12px;
-    border-radius: 50%;
-}
-.slideback:hover{
-    background: var(--color5) ;
-    cursor: pointer;
-}
+
 .img-fluid {
     max-width: 100%;
     height: auto;

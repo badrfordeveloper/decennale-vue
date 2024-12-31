@@ -101,7 +101,9 @@ async function submitStep() {
    
     $v.value.$touch(); // Mark all fields as touched
     if (!$v.value.$invalid) {
-        if(data.siren != formStore.formData.step1.siren){
+        //if(data.siren != formStore.formData.step1.siren){
+
+        if(true){
             loader.value =true;
             await axios.get('https://api.insee.fr/api-sirene/3.11/siret?q=siren:'+data.siren,{
             headers: {
@@ -109,12 +111,25 @@ async function submitStep() {
             }})
             .then(response => {
                 if (response.status === 200) {
-                    console.log(response)
+
                     const etablissement = response.data.etablissements[0];
+                    let adresse = etablissement.adresseEtablissement.numeroVoieEtablissement;
+
+                    if(etablissement.adresseEtablissement.typeVoieEtablissement != null  ){
+                        adresse += " "+ etablissement.adresseEtablissement.typeVoieEtablissement;
+                    }
+
+                    if(etablissement.adresseEtablissement.libelleVoieEtablissement != null ){
+                        adresse += " "+ etablissement.adresseEtablissement.libelleVoieEtablissement
+                    }
+                    if(etablissement.adresseEtablissement.complementAdresseEtablissement != null ){
+                        adresse += "  "+ etablissement.adresseEtablissement.complementAdresseEtablissement
+                    }
+          
                     const infosStep2 = {
                         nom_entreprise: etablissement.uniteLegale.denominationUniteLegale, //
                         type: formStore.formData.step2.type || "",
-                        adresse:  etablissement.adresseEtablissement.numeroVoieEtablissement + " "+ etablissement.adresseEtablissement.typeVoieEtablissement,
+                        adresse: adresse,
                         code_postal:  etablissement.adresseEtablissement.codePostalEtablissement,//
                         ville:  etablissement.adresseEtablissement.libelleCommuneEtablissement,//
                         mobile: formStore.formData.step2.mobile || "",

@@ -63,7 +63,6 @@ export const useFormStore = defineStore('form', {
 
   actions: {
     updateStepData(step, data) {
-      console.log(data);
       if(step == "tarifs" || step == "selectedTarifOptions" || step == "dependecies" ){
         this.formData[step]=[];
       }
@@ -86,8 +85,8 @@ export const useFormStore = defineStore('form', {
      
     },
   },
-  persist: {
-    enabled: true,
+ /*  persist: {
+    enabled: false,
     storage: localStorage // or sessionStorage
-  },
+  }, */
 });
