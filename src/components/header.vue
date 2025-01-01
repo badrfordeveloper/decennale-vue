@@ -2,7 +2,7 @@
     <header class="container-fluid head">
         <div id="header-bar" class="container">
             <div class="row align-items-center">
-                <div class="col-5 col-md-2 col-lg-2 col-xl-3 d-flex align-items-center">
+                <div class="col-10 col-md-2 col-lg-2 col-xl-3 d-flex align-items-center">
 <!--                     <img src="../assets/icons/back.svg" alt="retour" class="slideback me-2" @click="prevStep">
  -->                    <router-link to="/">
                         <!-- <h1>ECA</h1> -->
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-7 col-md-2 col-lg-2 col-xl-3 text-end p-0">
+                <div class="col-2 col-md-2 col-lg-2 col-xl-3 text-end p-0">
                     <div class="questionLink d-flex justify-content-end align-items-center text-decoration-none">
                         <div class="assistanteImg online" data-bs-toggle="modal" data-bs-target="#aide">
                             <p class="d-none d-md-none d-lg-none d-xl-block">Besoin d'aide ?</p>
@@ -145,9 +145,12 @@
     gap: 45px;
 }
 
+.container-fluid.head{
+    padding: 20px 10px 0px 0px !important;
+}
 @media (max-width: 575px) {
     .container-fluid.head{
-        padding: 10px 0px !important;
+        padding: 10px 10px 0px 0px !important;
     }
 }
 

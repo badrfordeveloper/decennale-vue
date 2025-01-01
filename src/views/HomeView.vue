@@ -165,7 +165,7 @@
                 <a href="/devis" @click="clearLocalStorage"
                   class="nav-button-primary plausible-event-name--startquote w-inline-block">
                   <div class="button-text hide-mobile-landscape">Mon devis en 3 minutes</div>
-                  <div class="button-text show-mobile-landscape">Devis en 3 minutes</div>
+                  <div class="button-text show-mobile-landscape">Devis</div>
                 </a>
               </div>
             </div>
