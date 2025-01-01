@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <div class="row justify-content-md-center justify-content-lg-center m-0">
+            <div class="row justify-content-md-center justify-content-lg-center m-0 mb-4">
 
                 <div
                     class="col-md-9 col-lg-9 col-xl-9 col-xxl-9 stepper hideSlides px-0 px-md-2 animate__animated animate__fadeIn animate__slow">
