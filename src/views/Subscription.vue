@@ -92,7 +92,6 @@ const progressPercentage = computed(() => {
 
 function prevStep() {
     formStore.prevStep(router);
-    console.log('hhee')
 }
 function updateCurrentStep(step) {
     if(step < formStore.currentStep){
