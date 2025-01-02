@@ -52,7 +52,7 @@
         <div class="css-1gt2dqj">
           <div class="css-1hw29i9">
             <div class="css-6slv8k">
-              <p class="css-8swbkq">Votre expérience devra être justifiée : fiches de paie, <span v-if="profession != 'PROFESSION_INTELLECTUELLE_BATIMENT'">factures,</span>  certificats de travail, etc.</p>
+              <p class="css-8swbkq">Votre expérience devra être justifiée : fiches de paie, <span class="css-8swbkq" v-if="profession != 'PROFESSION_INTELLECTUELLE_BATIMENT'">factures,</span>  certificats de travail, etc.</p>
             </div>
           </div>
         </div>
@@ -114,6 +114,7 @@ const selectedActivities = ref([]);
 const showModal = ref(false);
 const selectedActivityDetails = ref(null);
 const formStore = useFormStore();
+const profession = ref(formStore.getFormData?.step1?.profession || "");
 
 const selectedActivityNames = computed(() =>
   selectedActivities.value.map(activity => activity.name)
@@ -126,13 +127,11 @@ onMounted(() => {
 });
 
 function initializeActivities() {
-  const profession = formStore.getFormData?.step1?.profession;
-  
-  if (profession === "ARTISAN_ENTREPRISE_BATIMENT") {
+  if (profession.value === "ARTISAN_ENTREPRISE_BATIMENT") {
     activities.value = activitiesDuBatiment;
-  } else if (profession === "PROFESSION_INTELLECTUELLE_BATIMENT") {
+  } else if (profession.value === "PROFESSION_INTELLECTUELLE_BATIMENT") {
     activities.value = activitiesPIB;
-  } else if (profession === "ACTIVITE_PISCINISTE") {
+  } else if (profession.value === "ACTIVITE_PISCINISTE") {
     activities.value = activitiesDuPisicine;
   } else {
     activities.value = [];
