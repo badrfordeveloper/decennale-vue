@@ -8194,7 +8194,8 @@ a {
 
 .lp-feature_image.is-lp {
     position: absolute;
-    inset: 0%
+    inset: 0%;
+    height: auto;
 }
 
 .lp-activity_collection-list-wrapper {

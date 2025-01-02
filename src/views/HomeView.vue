@@ -158,7 +158,7 @@
             <div class="nav-container d-flex justify-content-between">
               <div class="nav_items-wrapper">
                 <a aria-label="Logo " href="/" class="nav_logo-link w-inline-block">
-                  <img src='../assets/logo.png' width="300" height="75" alt="" />
+                  <img src='../assets/logo.png' width="300" height="75" alt="" class="img-fluid" />
                 </a>
               </div>
               <div class="nav-button-group">
@@ -241,7 +241,7 @@
                 </div>
                 <div class="lp-hero_image-wrapper">
                   <div data-format="landscape" class="lp-feature_image-wrap">
-                    <img loading="lazy" alt="" src="../assets/images/decennale.png" class="lp-feature_image is-lp" />
+                    <img loading="lazy" alt="" src="../assets/images/decennaleExpress.png" class="lp-feature_image is-lp" />
                   </div>
                 </div>
               </div>
@@ -330,8 +330,8 @@
                     </defs>
                   </svg>
                   <div class="garantie_content-wrapper">
-                    <div class="items-title">Attestation en 24h</div>
-                    <p class="point_p">Vous recevez un accord principe immédiat et votre attestation en moins de 24 h.
+                    <div class="items-title">Attestation en express</div>
+                    <p class="point_p">Vous recevez un accord principe immédiat et votre attestation en express.
                     </p>
                   </div>
                 </div>
@@ -355,7 +355,7 @@
                   </svg>
                   <div class="garantie_content-wrapper">
                     <div class="items-title">Sans frais de dossier</div>
-                    <p class="point_p">Et sans primo comptant. Avec nous, pas de frais cachés.</p>
+                    <p class="point_p">Avec nous, pas de frais cachés.</p>
                   </div>
                 </div>
                 <div id="w-node-d9bbea03-d608-8058-95c5-9fe62bb9fbf1-d9d1c075" class="garantie_item">
@@ -381,8 +381,7 @@
                   </svg>
                   <div class="garantie_content-wrapper">
                     <div class="items-title">Des tarifs plus justes</div>
-                    <p class="point_p">Nous récompensons votre savoir-faire et expérience avec des prix plus
-                      accessibles.
+                    <p class="point_p">Nous trouvons pour vous les tarifs les plus justes.
                     </p>
                   </div>
                 </div>

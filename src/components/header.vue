@@ -69,7 +69,7 @@
                             <a href="tel:0972880101" class="social-button" aria-label="phone">
                                 <i class="fa fa-phone" style='font-size:36px'></i>
                             </a>
-                            <a href="mailto:pib@decennale-express.fr" class="social-button" aria-label="envelope">
+                            <a href="mailto:devis@decennale-express.fr" class="social-button" aria-label="envelope">
                                 <i class="fa fa-envelope" style='font-size:36px'></i>
                             </a>
                         </div>

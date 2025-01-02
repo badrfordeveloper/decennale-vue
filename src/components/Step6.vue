@@ -14,39 +14,51 @@
             </div>
 
             <div class="col-12">
-                <div class="d-flex flex-md-row flex-column align-items-md-center">
-                    <label class="formLabel mb-4 text-start" for="franchise">Franchise</label>
-                    <div id="form-wrapper">
-                        <div id="form">
-                            <div id="franchise-slider" :class="{'franchise-false': isFranchise1}">
-                                <template v-if="isFranchise1">
-                              
-                                  <div class="group-input-franchise">
-                                    <input type="radio" name="franchise" id="franchise4" value="500 € à 1500 €"
-                                        v-model="formData.franchise" />
-                                    <label for="franchise4" data-franchise="500 € à 1500 €"></label> 
-                                  </div>
-                                  <div class="group-input-franchise">
-                                    <input type="radio" name="franchise" id="franchise5" value="2000 € à 3000 €"
-                                        v-model="formData.franchise" />
-                                    <label for="franchise5" data-franchise="2000 € à 3000 €"></label>
-                                  </div>
-                                </template>
-                                <template v-else>
-                                    <input type="radio" name="franchise" id="franchise1" value="1500 €"
-                                        v-model="formData.franchise" />
-                                    <label for="franchise1" data-franchise="1500 €"></label>
-    
-                                    <input type="radio" name="franchise" id="franchise2" value="2000 € (-3%)"
-                                        v-model="formData.franchise" />
-                                    <label for="franchise2" data-franchise="2000 € (-3%)"></label>
-    
-                                    <input type="radio" name="franchise" id="franchise3" value="3000 € (-5%)"
-                                        v-model="formData.franchise" />
-                                    <label for="franchise3" data-franchise="3000 € (-5%)"></label>
-                                </template>
-                            </div>
+
+                 
+              
+                <div class="d-flex flex-md-row flex-column align-items-md-start gap-md-5">
+                    <label class="formLabel mt-0 mb-4 text-start" for="franchise">Franchise</label>
+                    <div class="d-flex flex-md-row flex-column gap-3 m-auto">
+     
+
+                        <div class="form-check custom-check">
+                          <input class="form-check-input custom-check-input " v-model="formData.franchise"  value="500 €" type="radio" name="franchise" id="franchise_1">
+                          <label class="form-check-label" for="franchise_1">
+                            500 €
+                          </label>
                         </div>
+                         <div class="form-check custom-check">
+                          <input class="form-check-input custom-check-input " v-model="formData.franchise"  value="1000 €" type="radio" name="franchise" id="franchise_2">
+                          <label class="form-check-label" for="franchise_2">
+                            1000 €
+                          </label>
+                        </div>
+                         <div class="form-check custom-check">
+                          <input class="form-check-input custom-check-input " v-model="formData.franchise"  value="1500 €" type="radio" name="franchise" id="franchise_3">
+                          <label class="form-check-label" for="franchise_3">
+                            1500 €
+                          </label>
+                        </div>
+                         <div class="form-check custom-check">
+                          <input class="form-check-input custom-check-input " v-model="formData.franchise"  value="2000 €" type="radio" name="franchise" id="franchise_4">
+                          <label class="form-check-label" for="franchise_4">
+                            2000 €
+                          </label>
+                        </div>
+                         <div class="form-check custom-check">
+                          <input class="form-check-input custom-check-input " v-model="formData.franchise"  value="2500 €" type="radio" name="franchise" id="franchise_5">
+                          <label class="form-check-label" for="franchise_5">
+                            2500 €
+                          </label>
+                        </div>
+                         <div class="form-check custom-check">
+                          <input class="form-check-input custom-check-input " v-model="formData.franchise"  value="3000 €" type="radio" name="franchise" id="franchise_6">
+                          <label class="form-check-label" for="franchise_6">
+                            3000 €
+                          </label>
+                        </div>
+                    
                     </div>
                 </div>
                 <ErrorComponent v-if="$v.franchise.$error" :errors="$v.franchise.$errors" />
@@ -206,6 +218,16 @@ const submitStep = async () => {
 </script>
 
 <style scoped>
+.form-check-label{
+  font-size: 15px;
+}
+.custom-check{
+
+}
+ #formulaire  .custom-check-input{
+     border-radius: 50%;
+    padding: 0px;
+}
 .group-input-franchise{
   position: relative;
   flex: 1;
@@ -360,6 +382,9 @@ form:valid #franchise-slider input:checked + label::before {
 }
 .iconLabel{
     width: auto;
+}
+#franchise-label{
+  font-size: 15px;
 }
 @-webkit-keyframes spin {
   from {
