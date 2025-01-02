@@ -213,6 +213,10 @@ const submitStep = async () => {
 </script>
 
 <style scoped>
+.form-check-input:checked{
+  background-color: #000091;
+  border-color: #000091;
+}
 .form-check-label{
   font-size: 15px;
 }
