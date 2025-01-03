@@ -1,13 +1,51 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="./src/assets/logoIcon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DÉCENNALE EXPRESS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DÉCENNALE EXPRESS - ATTESTATION EXPRESS</title>
+  <meta name="description"
+    content="Assurez votre activité artisanale rapidement. Obtenez un devis gratuit pour votre assurance décennale en 3 minutes et votre attestation express.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="./src/assets/logoIcon.png">
+  <link rel="canonical" href="https://decennale-express.fr">
+
+  <!-- Préchargement des ressources critiques -->
+  <link rel="preload" href="/src/assets/logoIcon.png" as="image">
+  <link rel="preload" href="/src/main.js" as="script">
+
+  <!-- JSON-LD pour les données structurées -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Assurance Décennale Express",
+      "url": "https://decennale-express.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "229 Rue de la Convention",
+        "addressLocality": "Paris",
+        "addressRegion": "Île-de-France",
+        "postalCode": "75015",
+        "addressCountry": "FR"
+      },
+      "telephone": "09 72 88 01 01",
+      "logo": "https://decennale-express.fr/assets/logo-E_T9laKt.png",
+      "sameAs": [
+        "https://www.instagram.com/gls_lassurances/",
+        "https://www.facebook.com/lassurance"
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <noscript>
+    Cette application nécessite JavaScript pour fonctionner. Veuillez l'activer dans votre navigateur.
+  </noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
