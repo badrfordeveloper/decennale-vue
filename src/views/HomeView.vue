@@ -146,6 +146,259 @@
   height: 90px;
   object-fit: contain;
 }
+/**********************************************/
+.landings-page-content {
+  /* min-height: calc(100vh - 80px); */
+  margin-bottom: 100px;
+  padding-top: 84px;
+  overflow: hidden;
+}
+.landings-page-content{
+  .container {
+      max-width: 1280px;
+      width: 100%;
+      margin: 24px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content {
+    background-color: #f0ece7 !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 24px;
+    border-radius: 32px;
+    gap: 5px;
+  }
+
+  .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .title {
+    margin: 0 0 16px 0;
+    span {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 700;
+      font-family: "FilsonProAlan, Futura, Verdana, sans-serif";
+    }
+  }
+
+  .spacer {
+      height: 16px; /* Spacer height */
+  }
+
+  .description-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px; /* Space between paragraphs */
+  }
+
+  .description {
+      font-size: 16px; /* Adjust as needed */
+      line-height: 24px; /* Adjust as needed */
+      color: #666; /* Example text color */
+      margin: 0;
+  }
+
+  .image-container {
+      margin-top: 24px; /* Space above the image */
+      text-align: center; /* Center the image */
+      max-height: 631.5px;
+  }
+
+  .image-container img {
+      max-width: 100%; /* Make the image responsive */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 32px; /* Match the border radius of the section */
+  }
+}
+
+.button-container {
+    display: flex;
+    gap: 16px; /* Space between buttons */
+}
+
+.button {
+    padding: 12px 24px;
+    background-color: #007bff; /* Example button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+/*************************************************/
+.hero {
+    padding: 40px 0; /* Add padding to the hero section */
+}
+.top-margin {
+    margin-top: 40px !important;
+}
+
+.hero-container {
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.hero-text {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.mutuelle-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 24px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.hero-image {
+    flex: 0 0 336px; /* Fixed width for the image */
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.background-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send the SVG to the back */
+}
+.bullet-points-and-media {
+    padding: 40px 0; /* Add padding to the bullet points section */
+}
+
+.bullet-points-and-media .container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.bullet-points-and-media .content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.image-column {
+    flex: 1;
+    padding: 20px;
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px; /* Match the border radius */
+}
+
+.text-column {
+    flex: 2;
+    padding: 20px;
+}
+
+.text-column h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.text-column p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.bullet-points {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Space between bullet points */
+}
+
+.bullet-point {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    color: #666;
+}
+
+.bullet-point svg {
+    margin-right: 8px;
+    margin-bottom: 16px;
+}
+
+.nav-button-primary {
+    grid-column-gap: .75rem;
+    grid-row-gap: .75rem;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #b0e2fd;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #b0e2fd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #b0e2fd;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: #b0e2fd;
+    background-color: #000091;
+    color: var(--color--text--base--color-text-base-primary);
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: .4375rem 1.25rem;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.455, .03, .515, .955);
+    display: flex;
+    box-shadow: 0 2px 2px #00006308, 0 1px 2px #00006308
+}
+
+.nav-button-primary:hover {
+    border-color: #b0e2fd;
+    background-color: #b0e2fd;
+    color: #000091;
+}
 </style>
 
 <template>
@@ -158,306 +411,230 @@
             <div class="nav-container d-flex justify-content-between">
               <div class="nav_items-wrapper">
                 <a aria-label="Logo " href="/" class="nav_logo-link w-inline-block">
-                  <img src='../assets/logo.png' width="300" height="75" alt="" class="img-fluid" />
+                  <img src='../assets/media/logo.png' width="300" height="75" alt="" class="img-fluid" />
                 </a>
               </div>
               <div class="nav-button-group">
                 <a href="/devis" @click="clearLocalStorage"
                   class="nav-button-primary plausible-event-name--startquote w-inline-block">
-                  <div class="button-text hide-mobile-landscape">Mon devis en 3 minutes</div>
+                  <div class="button-text hide-mobile-landscape">Mon devis en 2 minutes</div>
                   <div class="button-text show-mobile-landscape">Devis</div>
                 </a>
               </div>
             </div>
           </div>
         </header>
-        <section class="hero">
-          <div class="padding-hero-section">
-            <div class="container">
-              <div class="lp-hero_component">
-                <div class="lp-hero_content">
-                  <div class="hero_title">
-                    <h1 class="h1">ATTESTATION EXPRESS</h1>
-                  </div>
-                  <div class="text-size-regular">Assurez votre activité en ligne en 3 minutes et concentrez-vous sur ce
-                    qui compte vraiment : votre travail de artisan. On s’occupe du reste.</div>
-                  <div class="hero_subtitle-wrapper ">
-                    <div class="hero-list_item-wrapper">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="none" viewBox="0 0 16 16"
-                        class="iconx16">
-                        <path fill="#01044A"
-                          d="M14.753 3.219c.319.294.319.769 0 1.034l-8.25 8.25c-.266.319-.74.319-1.034 0l-4.25-4.25c-.292-.265-.292-.74 0-1.034a.754.754 0 0 1 1.061 0L6 10.94l7.719-7.722c.293-.292.769-.292 1.034 0Z">
-                        </path>
-                      </svg>
-                      <div class="text-size-regular">Votre devis en 3 minutes</div>
+        <section id="landings-page-content" class="landings-page-content">
+          <div class="container">
+            <div class="content">
+                <div class="text-container">
+                    <h1 role="heading" aria-level="1" class="title">
+                        <span>Votre santé, notre priorité !</span>
+                    </h1>
+                    <div class="spacer"></div>
+                    <div class="description-container">
+                        <p class="description">
+                          Une couverture complète, une sérénité assurée. Vivez pleinement, on s’occupe du reste !"
+                        </p>
+                        <p class="description">
+                          Optez pour une mutuelle senior de qualité, à prix accessible !
+                        </p>
+                        <p class="description">
+                          NÉ ENTRE 1920 ET 1966 : Vous êtes éligible à une nouvelle mutuelle senior adaptée <br>selon vos besoins.
+                        </p>
+                        <p class="description">
+                          Grâce à la loi n° 2019-733 du 14 juillet 2019, Les personnes de plus de 55 ans, <br>vous pouvez résilier gratuitement votre mutuelle santé
+                        </p>
                     </div>
-                    <div class="hero-list_item-wrapper">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="none" viewBox="0 0 16 16"
-                        class="iconx16">
-                        <path fill="#01044A"
-                          d="M14.753 3.219c.319.294.319.769 0 1.034l-8.25 8.25c-.266.319-.74.319-1.034 0l-4.25-4.25c-.292-.265-.292-.74 0-1.034a.754.754 0 0 1 1.061 0L6 10.94l7.719-7.722c.293-.292.769-.292 1.034 0Z">
-                        </path>
-                      </svg>
-                      <div class="text-size-regular">Des conseillers disponibles par téléphone, mail et SMS</div>
+                    <div class="spacer"></div>
+                    <div class="button-container">
+                        <a href="/fr-company-discovery-dispatch" rel="nofollow" class="button">Mon devis en 2 min</a>
+                        <a href="/fr-fr/contact" rel="nofollow" class="button">Être rappelé</a>
                     </div>
-                    <div class="hero-list_item-wrapper">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="none" viewBox="0 0 16 16"
-                        class="iconx16">
-                        <path fill="#01044A"
-                          d="M14.753 3.219c.319.294.319.769 0 1.034l-8.25 8.25c-.266.319-.74.319-1.034 0l-4.25-4.25c-.292-.265-.292-.74 0-1.034a.754.754 0 0 1 1.061 0L6 10.94l7.719-7.722c.293-.292.769-.292 1.034 0Z">
-                        </path>
-                      </svg>
-                      <div class="text-size-regular">Sans engagement et sans frais cachés</div>
-                    </div>
-                  </div>
-                  <div class="button-group">
-                    <a data-property-ctaText="Mon devis en 5 minutes" data-analytics="Cta Subscription Start Clicked"
-                      data-property-position="Hero" data-property-pageName="Home" href="/devis"
-                      class="button-primary plausible-event-name--startquote w-inline-block">
-                      <div class="button-text">Mon devis en 3 minutes</div>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="arrow_cta">
-                        <path fill="#fff"
-                          d="m8.935 2.207 5.5 5.25a.75.75 0 0 1 0 1.086l-5.5 5.25A.75.75 0 0 1 7.9 12.707l4.147-3.956H1.417a.75.75 0 0 1 0-1.5h10.628L7.898 3.295a.753.753 0 0 1-.025-1.063c.287-.3.734-.31 1.062-.025Z">
-                        </path>
-                      </svg>
-                    </a>
-                    <a href="tel:0972880101" class="button-secondary w-inline-block">
-                      <div class="iconx16 w-embed">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                          <g clip-path="url(#a)">
-                            <path fill="#030222"
-                              d="m15.01 10.01-3.07-1.317a1.632 1.632 0 0 0-1.912.468l-.857 1.046a9.324 9.324 0 0 1-3.375-3.346L6.844 6c.56-.456.753-1.24.47-1.907L5.99.985A1.641 1.641 0 0 0 4.12.042L1.268.7A1.626 1.626 0 0 0 0 2.293C0 9.853 6.147 16 13.706 16c.768 0 1.423-.521 1.566-1.266l.658-2.855a1.585 1.585 0 0 0-.92-1.869Zm-.513 1.53-.66 2.857c-.014.034-.065.102-.131.102C6.975 14.5 1.5 9.024 1.5 2.293a.13.13 0 0 1 .104-.131l2.855-.659a.14.14 0 0 1 .156.078l1.317 3.073a.136.136 0 0 1-.04.158L4.37 6.034a.75.75 0 0 0-.199.91 10.69 10.69 0 0 0 4.86 4.86c.284.153.69.071.911-.198l1.25-1.527c.035-.044.1-.06.154-.036l3.07 1.316c.06.053.094.119.082.181Z" />
-                          </g>
-                          <defs>
-                            <clipPath id="a">
-                              <path fill="#fff" d="M0 0h16v16H0z" />
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </div>
-                      <div class="button-text">09 72 88 01 01</div>
-                    </a>
-                  </div>
+                    <div class="spacer"></div>
                 </div>
-                <div class="lp-hero_image-wrapper">
-                  <div data-format="landscape" class="lp-feature_image-wrap">
-                    <img loading="lazy" alt="" src="../assets/images/decennaleExpress.png" class="lp-feature_image is-lp" />
-                  </div>
+                <div></div>
+                <div class="image-container">
+                    <img src="../assets/media/old.png" alt="prioritesantemutuelle-santé" width="400"/>
+                    <!-- <img src="https://6vvt7k9n.twic.pics/v1/image:prismic/ZnP9BZm069VX16TE_Asset.png" alt="Descriptive Alt Text" /> -->
                 </div>
-              </div>
             </div>
           </div>
         </section>
-        <div class="background_linear is-vw">
-          <div
-            style="-webkit-transform:translate3d(-50%, -20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-50%, -20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-50%, -20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-50%, -20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-            class="circle_background_linear"></div>
-        </div>
       </div>
-      <section class="section">
-        <div class="spacer-large"></div>
-        <div class="spacer-large"></div>
+
+      <section id="hero" class="hero">
+          <div class="hero-container">
+              <div class="hero-content">
+                  <div class="hero-text">
+                      <p class="mutuelle-title">Mutuelle santé</p>
+                      <h1 class="hero-title">Quelle est la meilleure mutuelle santé ?</h1>
+                      <p class="hero-description">
+                          Il n’y a pas de bonne ou de mauvaise complémentaire santé. La meilleure mutuelle santé est celle qui s’adapte en tous points au profil de l’assuré et de ses besoins (soins courants, dentaires, optiques, hospitalisation, médecine généraliste, spécialiste et douce...). On vous explique comment choisir la meilleure mutuelle parmi les offres de complémentaire, adaptée à vos besoins et votre budget.
+                      </p>
+                      <div class="button-container">
+                          <a href="/fr-company-discovery-dispatch" rel="nofollow" class="button">Demander un devis</a>
+                      </div>
+                  </div>
+                  <div class="hero-image">
+                      <img src="https://6vvt7k9n.twic.pics/v1/image:prismic/Zg69YTskWekewDxa_professions-liberales.jpg" alt="Mutuelle Santé" />
+                  </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 1037 831" fill="none" aria-hidden="true" class="background-svg">
+                  <g opacity="0.64" filter="url(#filter)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M246.519 412.718C266.543 370.757 296.115 332.895 329.931 301.732C354.596 278.906 381.781 262.367 408.568 250.475C508.82 205.917 625.516 218.218 714.895 282.733C738.764 299.955 762.104 321.824 781.862 349.297C808.782 386.885 843.26 493.498 764.093 539.97C685.058 586.443 595.016 524.799 556.427 519.468C517.838 514.274 479.381 528.352 456.44 539.834C450.605 542.294 380.057 598.334 343.324 604.895C311.498 610.636 273.439 605.305 249.702 580.565C208.859 538.057 223.578 460.694 246.519 412.718Z" fill="url(#gradient)"></path>
+                  </g>
+                  <defs>
+                      <filter id="filter" x="0" y="0" width="1037" height="831" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                          <feGaussianBlur stdDeviation="72"></feGaussianBlur>
+                      </filter>
+                      <linearGradient id="gradient" x1="518.5" y1="199.105" x2="501.564" y2="607.413" gradientUnits="userSpaceOnUse">
+                          <stop offset="0.05" stop-color="#82C0FF"></stop>
+                          <stop offset="0.41" stop-color="#BEAAFF"></stop>
+                          <stop offset="0.9" stop-color="#FF8FD8"></stop>
+                      </linearGradient>
+                  </defs>
+              </svg>
+          </div>
+      </section>
+
+      <section id="bullet-points-and-media" class="bullet-points-and-media">
+        <div class="spacer"></div>
         <div class="container">
-          <div class="text-align-center">
-            <h2 class="h3">Nos partenaires</h2>
-          </div>
-          <div class="">
-            <div class="partners-carousel">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide" v-for="(partner, index) in partners" :key="index">
-                    <img :src="partner.logo" :alt="partner.name" min-height="150"/>
-                  </div>
+            <div class="content">
+                <div class="image-column">
+                    <img src="../assets/media/giphy.gif" alt="Relaxed Marmot" />
                 </div>
-              </div>
+                <div class="text-column">
+                    <h2>Jamais seul avec Nous, l'assurance santé qui fait simple.</h2>
+                    <div class="bullet-points">
+                        <div class="bullet-point">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="32" height="32" class="" aria-hidden="true" style="vertical-align: text-bottom;"><defs><linearGradient x1="0" x2="0" y1="33%" y2="99%" id="green-to-blue-:rt:"><stop offset="0" stop-color="#7AF0C5"></stop><stop offset="0.6363636363636365" stop-color="#83D9E2"></stop><stop offset="1" stop-color="#82C0FF"></stop></linearGradient></defs><g clip-path="url(#hourglass_svg__a_:r32:)"><path fill="url(#green-to-blue-:rt:)" fill-rule="evenodd" d="M19 7.168c0 2.326-2.112 4.617-4.181 5.832C16.889 14.215 19 16.506 19 18.832c0 2.729-3.5 3.178-7 3.168s-7-.478-7-3.168c0-2.366 2.085-4.63 4.156-5.832C7.085 11.798 5 9.533 5 7.168 5 4.478 8.5 4.01 12 4s7 .439 7 3.168m-7 12.93c-2.467 0-4-.216-4-1.39 0-1.37 2.285-2.61 4-2.61s4 1.261 4 2.61c0 1.192-1.495 1.39-4 1.39" clip-rule="evenodd"></path></g><defs><clipPath id="hourglass_svg__a_:r32:"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                            <p>Une mutuelle sans carence : inscrivez-vous en 5 minutes, vous êtes couverts immédiatement !</p>
+                        </div>
+                        <div class="bullet-point">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="32" height="32"  aria-hidden="true" style="vertical-align: text-bottom;"><defs><linearGradient x1="0" x2="0" y1="16%" y2="97%" id="yellow-to-green-:ru:"><stop offset="0" stop-color="#8EEA7B"></stop><stop offset="0.5185185185185185" stop-color="#22E39E"></stop><stop offset="1" stop-color="#82F2CA"></stop></linearGradient></defs><path fill="url(#yellow-to-green-:ru:)" fill-rule="evenodd" d="M15.837 7A.8.8 0 0 0 16 6.519c0-1.065-1.57-2.519-4-2.519-2.392 0-4 1.47-4 2.519Q8 6.78 8.155 7h-.946a4 4 0 0 0-3.921 3.211l-1.207 6A4 4 0 0 0 6 21h11.998a4 4 0 0 0 3.921-4.789l-1.207-6A4 4 0 0 0 16.793 7zM14 7.26c0 .456-.766.74-2 .74-1.252 0-2-.277-2-.74 0-.525.804-1.26 2-1.26 1.215 0 2 .727 2 1.26m-3.25 4.49a1.25 1.25 0 1 1 2.5 0v1.5h1.5a1.25 1.25 0 0 1 0 2.5h-1.5v1.5a1.25 1.25 0 1 1-2.5 0v-1.5h-1.5a1.25 1.25 0 0 1 0-2.5h1.5z" clip-rule="evenodd"></path></svg>
+                            <p>Des remboursements à la vitesse de l'éclair : 90 % des remboursements sont traités en moins de 24h.</p>
+                        </div>
+                        <div class="bullet-point">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="32" height="32"  aria-hidden="true" style="vertical-align: text-bottom;"><defs><linearGradient x1="0" x2="0" y1="-3%" y2="97%" id="pink-to-blue-:r10:"><stop offset="0" stop-color="#FF8FD8"></stop><stop offset="0.68" stop-color="#8D71FF"></stop><stop offset="1" stop-color="#8C99FA"></stop></linearGradient></defs><path fill="url(#pink-to-blue-:r10:)" d="M5.5 6a1.5 1.5 0 1 0-1.306-2.238C2.854 4.49 2 5.706 2 7.292c0 1.424.56 3.283 1.516 4.794.788 1.245 1.972 2.44 3.518 2.803l.02.282c.053.686.16 1.614.378 2.555.215.926.556 1.944 1.118 2.752.58.832 1.462 1.522 2.7 1.522.804 0 1.499-.239 2.071-.682.555-.43.941-1.009 1.225-1.612.54-1.15.81-2.632 1.048-3.945l.015-.082c.257-1.417.488-2.647.906-3.535.2-.428.416-.709.638-.88.205-.159.464-.264.847-.264.709 0 1.001.242 1.168.492.215.322.332.837.332 1.508q0 .25-.02.5h.02c.704 0 1.366.182 1.942.502.035-.322.058-.66.058-1.002 0-.83-.133-1.814-.668-2.617C20.25 9.508 19.292 9 18 9c-.804 0-1.498.239-2.071.682-.555.43-.941 1.009-1.225 1.612-.54 1.15-.81 2.632-1.048 3.945l-.015.082c-.257 1.417-.488 2.647-.905 3.535-.202.428-.417.708-.639.88-.205.159-.464.264-.847.264-.387 0-.724-.185-1.058-.665-.351-.505-.62-1.237-.812-2.061a15.6 15.6 0 0 1-.343-2.406c1.498-.388 2.654-1.575 3.429-2.795.959-1.51 1.534-3.37 1.534-4.78 0-1.607-.844-2.836-2.211-3.56a1.5 1.5 0 1 0-.504 2.045c.493.395.715.903.715 1.514 0 .966-.43 2.46-1.223 3.71C9.97 12.272 8.983 13 8 13c-1.012 0-1.998-.726-2.794-1.984C4.421 9.776 4 8.283 4 7.292c0-.59.226-1.101.733-1.503.224.134.487.211.767.211"></path><path fill="url(#pink-to-blue-:r10:)" d="M21.146 15.618a2.5 2.5 0 0 0-1.91-.604 2.5 2.5 0 1 0 1.91.604"></path></svg>
+                            <p>Une gestion de votre santé simplifiée : inscription, garanties, devis, remboursements, tout se passe en ligne, facilement.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+        <div class="spacer"></div>
+    </section>
+
+      <section id="hero" class="hero top-margin">
+          <div class="hero-container">
+              <div class="hero-content">
+                  <div class="hero-image">
+                      <img src="https://6vvt7k9n.twic.pics/v1/image:prismic/Zg69YTskWekewDxa_professions-liberales.jpg" alt="Mutuelle Santé" />
+                  </div>
+                  <div class="hero-text">
+                      <p class="mutuelle-title">Mutuelle santé</p>
+                      <h1 class="hero-title">Quelle est la meilleure mutuelle santé ?</h1>
+                      <p class="hero-description">
+                          Il n’y a pas de bonne ou de mauvaise complémentaire santé. La meilleure mutuelle santé est celle qui s’adapte en tous points au profil de l’assuré et de ses besoins (soins courants, dentaires, optiques, hospitalisation, médecine généraliste, spécialiste et douce...). On vous explique comment choisir la meilleure mutuelle parmi les offres de complémentaire, adaptée à vos besoins et votre budget.
+                      </p>
+                      <div class="button-container">
+                          <a href="/fr-company-discovery-dispatch" rel="nofollow" class="button">Demander un devis</a>
+                      </div>
+                  </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 1037 831" fill="none" aria-hidden="true" class="background-svg">
+                  <g opacity="0.64" filter="url(#filter)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M246.519 412.718C266.543 370.757 296.115 332.895 329.931 301.732C354.596 278.906 381.781 262.367 408.568 250.475C508.82 205.917 625.516 218.218 714.895 282.733C738.764 299.955 762.104 321.824 781.862 349.297C808.782 386.885 843.26 493.498 764.093 539.97C685.058 586.443 595.016 524.799 556.427 519.468C517.838 514.274 479.381 528.352 456.44 539.834C450.605 542.294 380.057 598.334 343.324 604.895C311.498 610.636 273.439 605.305 249.702 580.565C208.859 538.057 223.578 460.694 246.519 412.718Z" fill="url(#gradient)"></path>
+                  </g>
+                  <defs>
+                      <filter id="filter" x="0" y="0" width="1037" height="831" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                          <feGaussianBlur stdDeviation="72"></feGaussianBlur>
+                      </filter>
+                      <linearGradient id="gradient" x1="518.5" y1="199.105" x2="501.564" y2="607.413" gradientUnits="userSpaceOnUse">
+                          <stop offset="0.05" stop-color="#82C0FF"></stop>
+                          <stop offset="0.41" stop-color="#BEAAFF"></stop>
+                          <stop offset="0.9" stop-color="#FF8FD8"></stop>
+                      </linearGradient>
+                  </defs>
+              </svg>
+          </div>
       </section>
+      
       <section class="section">
-        <div class="padding-section-64">
-          <div class="container">
-            <div class="text-align-center">
-              <h2 class="h3">L'assurance décennale que les artisans attendaient</h2>
-            </div>
-            <div class="margin-top margin-large">
-              <div class="garantie_wrapper">
-                <div id="w-node-d9bbea03-d608-8058-95c5-9fe62bb9fbc2-d9d1c075" class="garantie_item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 48 48" fill="none"
-                    class="garantie_illu">
-                    <g id="Avatar">
-                      <rect width="48" height="48" rx="24" fill="url(#paint0_radial_1664_34465)"></rect>
-                      <g id="icon/receipt" clip-path="url(#clip0_1664_34465)">
-                        <path id="Vector"
-                          d="M28.5 18.708c.413 0 .75.38.75.75 0 .455-.337.75-.75.75h-9c-.414 0-.75-.295-.75-.75 0-.37.336-.75.75-.75h9ZM18.75 28.5a.75.75 0 0 1 .75-.75h9c.413 0 .75.337.75.75s-.337.75-.75.75h-9a.751.751 0 0 1-.75-.75Zm9.75-5.292c.413 0 .75.38.75.75 0 .455-.337.75-.75.75h-9c-.414 0-.75-.295-.75-.75 0-.37.336-.75.75-.75h9Zm-9.784-8.86 2.13-2.128a.748.748 0 0 1 1.059 0L24 14.314l2.095-2.094a.748.748 0 0 1 1.06 0l2.128 2.128 2.475-2.162a.746.746 0 0 1 .801-.119.752.752 0 0 1 .441.683v22.5c0 .295-.173.52-.44.684a.74.74 0 0 1-.802-.121l-2.475-2.161-2.128 2.128a.744.744 0 0 1-1.06 0L24 33.684l-2.095 2.096a.744.744 0 0 1-1.06 0l-2.13-2.128-2.47 2.16a.745.745 0 0 1-.805.122c-.268-.164-.44-.389-.44-.684v-22.5a.75.75 0 0 1 1.244-.564l2.472 2.162Zm-.46 17.672a.795.795 0 0 1 1.024.075l2.095 2.096 2.095-2.096a.744.744 0 0 1 1.06 0l2.095 2.096 2.095-2.096a.792.792 0 0 1 1.022-.075l1.758 1.575V14.403l-1.758 1.536a.747.747 0 0 1-1.022-.034l-2.095-2.094-2.095 2.094a.748.748 0 0 1-1.06 0l-2.095-2.094-2.095 2.094a.75.75 0 0 1-1.024.034L16.5 14.403v19.192l1.756-1.575Z"
-                          fill="#070042"></path>
-                      </g>
-                    </g>
-                    <defs>
-                      <radialGradient id="paint0_radial_1664_34465" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                        gradientTransform="matrix(48 0 0 191.2 0 48)">
-                        <stop stop-color="#C9F0FC"></stop>
-                        <stop offset="1" stop-color="#CDEFFA"></stop>
-                      </radialGradient>
-                      <clipPath id="clip0_1664_34465">
-                        <path fill="#fff" d="M12 12h24v24H12z"></path>
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <div class="garantie_content-wrapper">
-                    <div class="items-title">Votre devis gratuit
-                      en 3 minutes</div>
-                    <p class="point_p">Enfin un devis rapide et transparent pour savoir combien coûte votre assurance
-                      decennale.</p>
+        <div class="hero-container">
+          <div class="padding-section-small">
+            <div class="container">
+              <div class="lp-features_wrapper">
+                <div class="lp-feature_image-wrapper">
+                  <div data-format="portrait" class="lp-feature_image-wrap">
+                    <img loading="lazy" alt="L&#x27;assurances décennale obligatoire des artisans"
+                      src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65ef164cb8d6991caf764e28_65d61113ff25d679554ec21c_pexels-yan-krukau-8837715-1.webp"
+                      class="lp-feature_image is-lp" />
                   </div>
                 </div>
-                <div id="w-node-d9bbea03-d608-8058-95c5-9fe62bb9fbd3-d9d1c075" class="garantie_item">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="garantie_illu">
-                    <g id="Avatar">
-                      <rect width="48" height="48" rx="24" fill="url(#paint0_radial_1664_34473)"></rect>
-                      <g id="icon/thumbs-up">
-                        <path id="Vector"
-                          d="M25.538 15.83a1.124 1.124 0 1 1 2.17.595l-.211.769a10.248 10.248 0 0 1-1.158 2.667.747.747 0 0 0 .638 1.144H33c.83 0 1.5.67 1.5 1.5 0 .53-.277.998-.694 1.265a.744.744 0 0 0-.248.999 1.505 1.505 0 0 1-.619 2.072.75.75 0 0 0-.248 1.125 1.492 1.492 0 0 1-.722 2.34.754.754 0 0 0-.502.87c.024.104.033.212.033.324 0 .83-.67 1.5-1.5 1.5h-4.195a3.78 3.78 0 0 1-2.082-.628l-1.804-1.205a3.706 3.706 0 0 1-1.05-1.06.754.754 0 0 0-1.04-.215.753.753 0 0 0-.216 1.04c.38.577.876 1.084 1.471 1.482l1.805 1.205a5.234 5.234 0 0 0 2.911.881H30c1.655 0 3-1.345 3-3v-.028a3 3 0 0 0 1.27-3.755 2.994 2.994 0 0 0 .849-3.093A2.994 2.994 0 0 0 36 22.5c0-1.655-1.345-3-3-3h-4.762c.29-.614.53-1.252.707-1.917l.211-.769a2.632 2.632 0 0 0-1.842-3.225 2.628 2.628 0 0 0-3.225 1.842l-.21.77a6.38 6.38 0 0 1-2.729 3.702l-.145.094a4.897 4.897 0 0 0-1.383 1.322.748.748 0 0 0 .187 1.045.747.747 0 0 0 1.046-.187c.253-.361.572-.675.956-.914l.145-.094a7.863 7.863 0 0 0 3.37-4.57l.212-.77ZM13.5 22.5h3V33h-3V22.5Zm-1.5 0V33c0 .83.67 1.5 1.5 1.5h3c.83 0 1.5-.67 1.5-1.5V22.5c0-.83-.67-1.5-1.5-1.5h-3c-.83 0-1.5.67-1.5 1.5Z"
-                          fill="#433A00"></path>
-                      </g>
-                    </g>
-                    <defs>
-                      <radialGradient id="paint0_radial_1664_34473" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                        gradientTransform="matrix(48 0 0 191.52 0 48)">
-                        <stop stop-color="#FFECA8"></stop>
-                        <stop offset="1" stop-color="#FFF1BE"></stop>
-                      </radialGradient>
-                    </defs>
-                  </svg>
-                  <div class="garantie_content-wrapper">
-                    <div class="items-title">Attestation en express</div>
-                    <p class="point_p">Vous recevez un accord principe immédiat et votre attestation en express.
+                <div class="lp_features_content-wrapper">
+                  <h2 class="h3">Qu’est-ce qu’une assurance décennale artisan ?</h2>
+                  <div class="features_rich-text w-richtext">
+                    <p>
+                      Pour les pros du bâtiment et de la construction, l'<strong>assurance décennale</strong>
+                      est incontournable. Elle vous assure avant, pendant, et après votre chantier. Elle
+                      comprend :
                     </p>
+                    <ul start="" role="list">
+                      <li>
+                        <strong>La RC décennale (RCD)</strong>
+                        : elle prend en charge les dommages survenant après la livraison du chantier, pour une période de
+                        10 ans.
+                      </li>
+                      <li>
+                        <strong>La RC professionnelle (RCP)</strong>
+                        : cette garantie couvre les dommages causés à autrui lors de vos travaux, vous protégeant surtout
+                        avant et pendant le chantier.
+                      </li>
+                      <li>
+                        <strong>La garantie biennale pour l'équipement</strong>
+                        : valable 2 ans, elle couvre les équipements installés sur le chantier.
+                      </li>
+                    </ul>
+                    <p>Donc, que ce soit pour des dommages survenant après la fin des travaux ou pour ceux causés pendant
+                      les travaux, l'assurance décennale est votre bouclier ! </p>
                   </div>
-                </div>
-                <div id="w-node-d9bbea03-d608-8058-95c5-9fe62bb9fbe2-d9d1c075" class="garantie_item">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="garantie_illu">
-                    <g id="Avatar">
-                      <rect width="48" height="48" rx="24" fill="url(#paint0_radial_1664_34482)"></rect>
-                      <g id="icon/piggy-bank">
-                        <path id="Vector"
-                          d="M19.28 17.658c-.4-.062-.61-.404-.55-.768A4.67 4.67 0 0 1 23.332 13c2.034 0 3.763 1.3 4.4 3.111.125.31-.058.728-.404.851a.664.664 0 0 1-.85-.407 3.337 3.337 0 0 0-6.433.555.668.668 0 0 1-.767.548ZM28.666 24c0-.554.445-1 1-1 .554 0 1 .446 1 1s-.446 1-1 1c-.555 0-1-.446-1-1Zm3.687-5.758L32 19.629c.88.725 1.65 1.642 2.112 2.704h.555c.737 0 1.333.596 1.333 1.334v4c0 .737-.596 1.333-1.333 1.333h-1.334c-.687.88-1.604 1.65-2.666 2.113v1.22a2 2 0 0 1-2 2h-1.334a2 2 0 0 1-2-2v-.666h-2.666v.666a2 2 0 0 1-2 2h-1.334a2 2 0 0 1-2-2v-2A6.66 6.66 0 0 1 14.667 25a2.728 2.728 0 0 1-1.16-5.167l.195-.095a.664.664 0 0 1 .894.295.668.668 0 0 1-.298.896l-.194.096c-.472.238-.808.72-.808 1.25 0 .767.661 1.392 1.43 1.392h.074a6.623 6.623 0 0 1 6.496-5.334h6.387A4.004 4.004 0 0 1 30.667 17h.72c.65 0 1.126.613.967 1.242Zm-11.02 1.425a5.333 5.333 0 0 0-3.2 9.6l.533.4v2.666c0 .367.3.667.666.667h1.334c.366 0 .666-.3.666-.667v-2h5.334v2c0 .367.3.667.666.667h1.334c.366 0 .666-.3.666-.667v-2.095l.8-.346a5.342 5.342 0 0 0 2.134-1.692l.4-.533h2v-4h-1.43l-.345-.8a5.342 5.342 0 0 0-1.692-2.134l-.708-.533.466-1.867h-.291a2.66 2.66 0 0 0-1.988.888l-.4.446h-6.946Z"
-                          fill="#063519"></path>
-                      </g>
-                    </g>
-                    <defs>
-                      <radialGradient id="paint0_radial_1664_34482" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                        gradientTransform="matrix(48 0 0 190.88 0 48)">
-                        <stop stop-color="#E1F5A8"></stop>
-                        <stop offset="1" stop-color="#E4F5B5"></stop>
-                      </radialGradient>
-                    </defs>
-                  </svg>
-                  <div class="garantie_content-wrapper">
-                    <div class="items-title">Sans frais de dossier</div>
-                    <p class="point_p">Avec nous, pas de frais cachés.</p>
-                  </div>
-                </div>
-                <div id="w-node-d9bbea03-d608-8058-95c5-9fe62bb9fbf1-d9d1c075" class="garantie_item">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" class="garantie_illu">
-                    <g id="Avatar">
-                      <rect width="48" height="48" rx="24" fill="url(#paint0_radial_1664_34491)"></rect>
-                      <g id="icon/circle-euro" clip-path="url(#clip0_1664_34491)">
-                        <path id="Vector"
-                          d="M34.5 24a10.5 10.5 0 1 0-21 0 10.5 10.5 0 0 0 21 0ZM12 24a12 12 0 1 1 24 0 12 12 0 0 1-24 0Zm6 .75h1.134a5.464 5.464 0 0 1 .01-1.5H18a.752.752 0 0 1-.75-.75c0-.413.337-.75.75-.75h1.603a5.284 5.284 0 0 1 4.767-3h1.927c.412 0 .75.337.75.75s-.338.75-.75.75H24.37a3.79 3.79 0 0 0-3.018 1.5H25.5c.413 0 .75.337.75.75s-.337.75-.75.75h-4.833a3.933 3.933 0 0 0-.014 1.5H25.5c.413 0 .75.337.75.75s-.337.75-.75.75h-4.2a3.78 3.78 0 0 0 3.07 1.57h1.927c.412 0 .75.338.75.75 0 .413-.338.75-.75.75H24.37a5.285 5.285 0 0 1-4.8-3.07H18a.752.752 0 0 1-.75-.75c0-.413.337-.75.75-.75Z"
-                          fill="#070042"></path>
-                      </g>
-                    </g>
-                    <defs>
-                      <radialGradient id="paint0_radial_1664_34491" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                        gradientTransform="matrix(48 0 0 189.44 0 48)">
-                        <stop stop-color="#DED1F9"></stop>
-                        <stop offset="1" stop-color="#E1D8F8"></stop>
-                      </radialGradient>
-                      <clipPath id="clip0_1664_34491">
-                        <path fill="#fff" d="M12 12h24v24H12z"></path>
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <div class="garantie_content-wrapper">
-                    <div class="items-title">Des tarifs plus justes</div>
-                    <p class="point_p">Nous trouvons pour vous les tarifs les plus justes.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="spacer-large"></div>
-          </div>
-        </div>
-      </section>
-      <section class="section">
-        <div class="padding-section-small">
-          <div class="container">
-            <div class="lp-features_wrapper">
-              <div class="lp-feature_image-wrapper">
-                <div data-format="portrait" class="lp-feature_image-wrap">
-                  <img loading="lazy" alt="L&#x27;assurances décennale obligatoire des artisans"
-                    src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65ef164cb8d6991caf764e28_65d61113ff25d679554ec21c_pexels-yan-krukau-8837715-1.webp"
-                    class="lp-feature_image is-lp" />
-                </div>
-              </div>
-              <div class="lp_features_content-wrapper">
-                <h2 class="h3">Qu’est-ce qu’une assurance décennale artisan ?</h2>
-                <div class="features_rich-text w-richtext">
-                  <p>
-                    Pour les pros du bâtiment et de la construction, l'<strong>assurance décennale</strong>
-                    est incontournable. Elle vous assure avant, pendant, et après votre chantier. Elle
-                    comprend :
-                  </p>
-                  <ul start="" role="list">
-                    <li>
-                      <strong>La RC décennale (RCD)</strong>
-                      : elle prend en charge les dommages survenant après la livraison du chantier, pour une période de
-                      10 ans.
-                    </li>
-                    <li>
-                      <strong>La RC professionnelle (RCP)</strong>
-                      : cette garantie couvre les dommages causés à autrui lors de vos travaux, vous protégeant surtout
-                      avant et pendant le chantier.
-                    </li>
-                    <li>
-                      <strong>La garantie biennale pour l'équipement</strong>
-                      : valable 2 ans, elle couvre les équipements installés sur le chantier.
-                    </li>
-                  </ul>
-                  <p>Donc, que ce soit pour des dommages survenant après la fin des travaux ou pour ceux causés pendant
-                    les travaux, l'assurance décennale est votre bouclier ! </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="padding-section-small">
-          <div class="container">
-            <div class="lp-features_wrapper">
-              <div class="lp_features_content-wrapper">
-                <h2 class="h3">L’assurance décennale artisan est-elle obligatoire ?</h2>
-                <div class="features_rich-text w-richtext">
-                  <p>Si vous êtes un artisan et que vous réalisez des travaux de construction ou de rénovation, le Code
-                    civil vous qualifie de constructeur. Autrement dit vous, ou toute autre personne physique ou morale
-                    dans une telle situation, devez obligatoirement souscrire à une assurance décennale.</p>
-                  <p>Peu importe votre métier dans le domaine de la construction, que vous soyez architecte impliqué
-                    dans la conception, maçon travaillant sur le gros œuvre, ou plombier s'occupant des
-                    installations plus fines, cette règle s'applique à vous. En clair, dès que vous entrez dans un
-                    contrat de prestation de construction avec un client, l'assurance décennale devient une
-                    nécessité légale pour vous.</p>
-                  <blockquote>💡Si vous ne souscrivez pas une assurance décennale et n’êtes pas en mesure de présenter
-                    une attestation décennale sur un chantier, vous risquez des sanctions : jusqu’à 6 mois de prison et
-                    75 000 € d’amende. Et surtout, en cas de sinistre responsable, vous devrez payer les réparations de
-                    votre poche… Pensez à y souscrire dès le début de votre activité !</blockquote>
+          <div class="padding-section-small">
+            <div class="container">
+              <div class="lp-features_wrapper">
+                <div class="lp_features_content-wrapper">
+                  <h2 class="h3">L’assurance décennale artisan est-elle obligatoire ?</h2>
+                  <div class="features_rich-text w-richtext">
+                    <p>Si vous êtes un artisan et que vous réalisez des travaux de construction ou de rénovation, le Code
+                      civil vous qualifie de constructeur. Autrement dit vous, ou toute autre personne physique ou morale
+                      dans une telle situation, devez obligatoirement souscrire à une assurance décennale.</p>
+                    <p>Peu importe votre métier dans le domaine de la construction, que vous soyez architecte impliqué
+                      dans la conception, maçon travaillant sur le gros œuvre, ou plombier s'occupant des
+                      installations plus fines, cette règle s'applique à vous. En clair, dès que vous entrez dans un
+                      contrat de prestation de construction avec un client, l'assurance décennale devient une
+                      nécessité légale pour vous.</p>
+                    <blockquote>💡Si vous ne souscrivez pas une assurance décennale et n’êtes pas en mesure de présenter
+                      une attestation décennale sur un chantier, vous risquez des sanctions : jusqu’à 6 mois de prison et
+                      75 000 € d’amende. Et surtout, en cas de sinistre responsable, vous devrez payer les réparations de
+                      votre poche… Pensez à y souscrire dès le début de votre activité !</blockquote>
+                  </div>
                 </div>
-              </div>
-              <div class="lp-feature_image-wrapper">
-                <div data-format="portrait" class="lp-feature_image-wrap">
-                  <img loading="lazy" alt="L&#x27;assurance RC Decennale des artisans"
-                    src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65ef164cb8d6991caf764e24_65d6110cbff9197e3c641ebe_pexels-tim-samuel-5838215-1.webp"
-                    class="lp-feature_image is-lp" />
+                <div class="lp-feature_image-wrapper">
+                  <div data-format="portrait" class="lp-feature_image-wrap">
+                    <img loading="lazy" alt="L&#x27;assurance RC Decennale des artisans"
+                      src="https://cdn.prod.website-files.com/625fd2b3d45f6f53bf77e077/65ef164cb8d6991caf764e24_65d6110cbff9197e3c641ebe_pexels-tim-samuel-5838215-1.webp"
+                      class="lp-feature_image is-lp" />
+                  </div>
                 </div>
               </div>
             </div>
