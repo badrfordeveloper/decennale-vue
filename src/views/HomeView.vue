@@ -381,7 +381,7 @@
     border-left-style: solid;
     border-left-width: 1px;
     border-left-color: #b0e2fd;
-    background-color: #007bff;
+    background-color: #000091;
     color: var(--color--text--base--color-text-base-primary);
     border-radius: 8px;
     justify-content: center;
@@ -396,7 +396,8 @@
 
 .nav-button-primary:hover {
     border-color: #b0e2fd;
-    background-color: #0056b3;
+    background-color: #b0e2fd;
+    color: #000091;
 }
 </style>
 
